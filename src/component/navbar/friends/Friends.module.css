@@ -1,0 +1,60 @@
+.friends {
+    margin: 5px 0;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.13);
+    padding: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.userWrapper {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.13);
+    margin: 5px;
+    border-radius: 3px;
+    border: 2px solid rgba(10, 70, 104, 0.16);
+}
+
+.userInfoWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgWrapper {
+    width: 100px;
+    height: 100px;
+
+    margin: 5px 0 5px 5px;
+}
+
+.userImg {
+    min-width: 100%;
+}
+
+.userBtnWrapper {
+    margin: 5px 15px 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userBtn {
+    min-width: 100px;
+    background: rgba(57, 90, 119, 0.16);
+    color: black;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+.userBtn:hover {
+    min-width: 100px;
+    background: rgba(57, 90, 119, 0.9);
+    color: white;
+    transform: scale(1.1);
+    transition: .3s;
+}

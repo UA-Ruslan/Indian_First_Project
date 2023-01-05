@@ -1,0 +1,157 @@
+.bird_1 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 2%;
+    z-index: 2;
+    animation-name: bird_1;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+
+    animation-timing-function: linear;
+}
+
+@keyframes bird_1 {
+    0% {
+        top: 20%;
+        left: 40%;
+        transform: rotateY(0deg);
+    }
+    15% {
+        top: 19%;
+        left: 43%;
+    }
+    35% {
+
+        top: 18%;
+        left: 47%;
+        transform: rotateX(0deg);
+    }
+    50% {
+        top: 17%;
+        left: 50%;
+        transform: rotateY(180deg);
+    }
+    75% {
+        transform: rotateX(30deg);
+        top: 18%;
+        left: 47%;
+    }
+    85% {
+        top: 19%;
+        left: 43%;
+    }
+    100% {
+        top: 20%;
+        left: 40%;
+        transform: rotateY(180deg);
+    }
+}
+
+.bird_2 {
+    position: absolute;
+    top: 0;
+    left:15%;
+    width: 3%;
+    z-index: 4;
+    animation-name: bird_2;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+}
+
+@keyframes bird_2 {
+    0% {
+        width: 1%;
+        transform: rotateZ(0deg);
+        top: 0;
+        left:20%;
+    }
+    25% {
+        top: 2%;
+        left:15%;
+    }
+
+    50% {
+        width: 4%;
+        top: 8%;
+        left:11%;
+        transform: rotate3d(0, 0, 1, 60deg);
+    }
+    60% {
+        top: 10%;
+        left:15%;
+    }
+    75% {
+
+        width: 4%;
+        top: 10%;
+        left: 20%;
+        transform: rotate3d(0, 1, 0 , -100deg);
+    }
+
+    85% {
+        width: 4%;
+        top: 5%;
+        left: 22%;
+    }
+
+    100% {
+        width: 1%;
+        transform: rotate3d(0,1,0, -150deg);
+        top: 0;
+        left:20%;
+    }
+}
+
+.bird_3 {
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    width: 2.5%;
+    z-index: 4;
+    animation-name: bird_3;
+    animation-duration: 45s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+}
+@keyframes bird_3 {
+    0% {
+        top: 30%;
+        left: 75%;
+        z-index: 4;
+        width: 2.5%;
+        /*transform: rotate3d(0,1,0, -300deg);*/
+    }
+    15% {
+
+    }
+    35% {
+
+
+    }
+    49% {
+        z-index: 4;
+        width: 2.5%;
+    }
+    50% {
+        top: 25%;
+        left: 35%;
+        z-index: 2;
+        width: 1.8%;
+    }
+    75% {
+
+    }
+    85% {
+        width: 1.8%;
+    }
+    100% {
+        top: 30%;
+        left: 75%;
+        z-index: 2;
+        transform: rotate3d(0,1,0, 180deg);
+    }
+}

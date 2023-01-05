@@ -1,0 +1,41 @@
+{
+  "users": {
+    "items": [
+      {
+        "id": 1,
+        "following": true,
+        "name": "White Fang",
+        "location": "Wachatty",
+        "imgUrl": "https://pngimg.com/uploads/american_indian/american_indian_PNG36.png"
+      },
+      {
+        "id": 2,
+        "following": false,
+        "name": "Wind Voice",
+        "location": "Wachutu",
+        "imgUrl": "https://free-png.ru/wp-content/uploads/2022/05/free-png.ru-91-340x325.png"
+      },
+      {
+        "id": 3,
+        "following": false,
+        "name": "Cunning Fox",
+        "location": "Wild West",
+        "imgUrl": "https://pngimg.com/uploads/american_indian/small/american_indian_PNG16.png"
+      },
+      {
+        "id": 4,
+        "following": true,
+        "name": "Ash",
+        "location": "Azerot",
+        "imgUrl": "https://pngimg.com/uploads/american_indian/american_indian_PNG27.png"
+      },
+      {
+        "id": 5,
+        "following": false,
+        "name": "Dust",
+        "location": "Hell",
+        "imgUrl": null
+      }
+    ]
+  }
+}

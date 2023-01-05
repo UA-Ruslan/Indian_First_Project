@@ -1,0 +1,404 @@
+/*----------------clouds-animations--------------*/
+.imgBox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.cloud_1 {
+    position: absolute;
+    opacity: 0;
+    left: 3%;
+    top: 37%;
+    z-index: 4;
+    width: 15%;
+    height: 5%;
+    animation-name: cloud_1;
+    animation-duration: 55s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+@keyframes cloud_1 {
+    0% {
+        opacity: 0;
+        left: 3%;
+        top: 37%;
+    }
+    15%{
+        opacity: .35;
+        top: 33%;
+        width: 17%;
+        height: 7%;
+    }
+    50%{
+        opacity: .35;
+        width: 15%;
+        height: 4%;
+    }
+    75%{
+        opacity: .35;
+        top: 36%;
+        width: 20%;
+        height: 7%;
+    }
+    100%{
+        opacity: 0;
+        left: 80%;
+        top: 35%;
+        width: 18%;
+        height: 6%;
+    }
+}
+
+.cloud_2 {
+    opacity: 0;
+    position: absolute;
+    left: 3%;
+    top: 32%;
+    z-index: 2;
+    width: 10%;
+    height: 10%;
+    animation-name: cloud_2;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-delay: 4s;
+}
+
+@keyframes cloud_2 {
+    0% {
+        opacity: 0;
+        left: 3%;
+        top: 32%;
+        width: 10%;
+        height: 10%;
+    }
+    15% {
+        opacity: .35;
+        top: 25%;
+        width: 15%;
+        height: 7%;
+    }
+    75% {
+        top: 27%;
+        width: 12%;
+        height: 5%;
+    }
+    85% {
+        opacity: .5;
+        width: 10%;
+        height: 15%;
+    }
+    100% {
+        left: 85%;
+        top: 28%;
+        opacity: 0;
+        width: 15%;
+        height: 20%;
+    }
+}
+
+.cloud_3 {
+    opacity: 0;
+    position: absolute;
+    left: 8%;
+    top: 20%;
+    z-index: 0;
+    width: 7%;
+    height: 7%;
+    animation-name: cloud_3;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-delay: 13s;
+
+}
+
+@keyframes cloud_3 {
+    0% {
+        opacity: 0;
+        left: 2%;
+        top: 20%;
+    }
+    15% {
+        opacity: .3;
+        top: 24%;
+        width: 10%;
+        height: 5%;
+    }
+    30% {
+        opacity: .25;
+        top: 21%;
+        width:12%;
+        height: 7%;
+    }
+    75% {
+        opacity:.3;
+        top: 20%;
+        width: 14%;
+        height: 9%;
+    }
+    100% {
+        position: absolute;
+        left: 80%;
+        top: 21%;
+        opacity: 0;
+        width: 16%;
+        height: 7%;
+    }
+}
+
+.cloud_4 {
+    opacity: 0;
+    position: absolute;
+    left: 5%;
+    top: 15%;
+    z-index: 0;
+    width: 35%;
+    height: 15%;
+    animation-name: cloud_4;
+    animation-duration: 70s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-delay: 25s;
+}
+
+@keyframes cloud_4 {
+    0% {
+        opacity: 0;
+        position: absolute;
+        left: 2%;
+        top: 20%;
+    }
+    15% {
+        opacity: .6;
+        top: 21%;
+    }
+    30% {
+        opacity: .45;
+        top: 20%;
+    }
+    75% {
+        opacity:.6;
+        top:19%;
+    }
+    100% {
+        position: absolute;
+        left: 65%;
+        top: 20%;
+        opacity: 0;
+    }
+}
+
+.cloud_5 {
+    opacity: 0;
+    position: absolute;
+    left: 5%;
+    top: 3%;
+    z-index: 4;
+    width: 35%;
+    height: 15%;
+    animation-name: cloud_5;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-delay: 35s;
+}
+
+@keyframes cloud_5 {
+    0% {
+        opacity: 0;
+        position: absolute;
+        left: 2%;
+        top: 1%;
+        width: 35%;
+        height: 15%;
+    }
+    15% {
+        opacity: .6;
+        top:2%;
+        width: 37%;
+        height: 17%;
+    }
+    30% {
+        opacity: .45;
+        top: 2%;
+        width: 40%;
+        height: 18%;
+    }
+    75% {
+        opacity:.6;
+        top: 1%;
+        width: 43%;
+        height: 21%;
+    }
+    100% {
+        position: absolute;
+        left: 50%;
+        top: 2%;
+        opacity: 0;
+        width: 46%;
+        height: 25%;
+    }
+}
+
+.cloud_6 {
+    opacity: 0;
+    position: absolute;
+    left: 20%;
+    top: 29%;
+    z-index: 4;
+    width: 35%;
+    height: 15%;
+    animation-name: cloud_6;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-delay: 30s;
+}
+
+@keyframes cloud_6 {
+    0% {
+        opacity: 0;
+        left: 7%;
+        top: 27%;
+        width: 35%;
+        height: 15%;
+    }
+    15% {
+        top:23%;
+        opacity: .6;
+        width: 35%;
+        height: 25%;
+    }
+    30% {
+        opacity: .45;
+        top:28%;
+        width: 40%;
+        height: 15%;
+    }
+    75% {
+        opacity:.6;
+        top: 28%;
+        width: 30%;
+        height: 20%;
+    }
+    100% {
+        left: 60%;
+        top: 29%;
+        opacity: 0;
+        width: 35%;
+        height: 15%;
+    }
+}
+
+.cloud_7 {
+    opacity: 0;
+    position: absolute;
+    z-index: 4;
+    animation-name: cloud_7;
+    animation-duration: 55s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-delay: 20s;
+}
+
+@keyframes cloud_7 {
+    0% {
+        opacity: 0;
+        left: 3%;
+        top: 1%;
+        width: 35%;
+        height: 15%;
+    }
+    15% {
+        opacity: .6;
+        top:2%;
+    }
+    30% {
+        opacity: .45;
+        top: 2%;
+        width: 39%;
+        height: 13%;
+    }
+    75% {
+        opacity:.6;
+        top: 1%;
+        width: 33%;
+        height: 16%;
+    }
+    100% {
+        left: 65%;
+        top: 2%;
+        opacity: 0;
+        width: 35%;
+        height: 10%;
+    }
+}
+
+.cloud_8 {
+    opacity: 0;
+    position: absolute;
+    z-index: 3;
+    transform: rotate(180deg);
+    animation-name: cloud_8;
+    animation-duration: 55s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+}
+
+@keyframes cloud_8 {
+    0% {
+        opacity: 0;
+        position: absolute;
+        left: -1%;
+        top: -9%;
+        width: 3%;
+        height:5%;
+    }
+    15% {
+        opacity: .6;
+        width: 10%;
+        height: 12%;
+    }
+    30% {
+        opacity: .45;
+        width: 17%;
+        height: 15%;
+    }
+    50% {
+        width: 30%;
+        height: 33%;
+    }
+    75% {
+        opacity:.6;
+        left: -1%;
+        top: -9%;
+        width: 43%;
+        height: 40%;
+    }
+    85% {
+        left: -1%;
+        top: -9%;
+        width: 50%;
+        height: 50%;
+        opacity: .5;
+    }
+    100% {
+        left: -1%;
+        top: -9%;
+        width: 62%;
+        height: 49%;
+        opacity: 0;
+    }
+}
+/*----------------/clouds-animations--------------*/
