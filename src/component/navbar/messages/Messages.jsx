@@ -13,14 +13,14 @@ const Messages = (props) => {
 
     let ref = React.createRef();
     let sendMessage = () => {
-        props.sendMessage()
+        props.AddNewMessage()
     }
     let deleteLastMessage = () => {
-        props.deleteLastMessage()
+        props.DeleteLastMessage()
     }
     let updateMessageTxt = () => {
         let valueMessage = ref.current.value
-        props.updateMessageTxt(valueMessage)
+        props.UpdateNewMessageTxt(valueMessage)
     }
     return (
         <div>

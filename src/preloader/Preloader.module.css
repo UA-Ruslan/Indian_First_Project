@@ -1,0 +1,39 @@
+.preloaderTxt {
+    position: absolute;
+    top: 6%;
+    left: calc(51% - 26px);
+}
+
+.preloaderImgLeft {
+    position: absolute;
+    top: 5%;
+    left: 44%;
+    width: 150px;
+    animation-name: preloaderImg;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.preloaderImgRight {
+    position: absolute;
+    top: 5%;
+    left: 54.5%;
+    width: 150px;
+    animation-name: preloaderImg;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1, .1, .5, 1 );
+}
+
+@keyframes preloaderImg {
+    0% {
+
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+
+

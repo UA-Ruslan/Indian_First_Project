@@ -1,9 +1,7 @@
-import React from "react";
-
 import {
-    UpdateNewPostTextActionCreator,
-    AddPostActionCreator,
-    DeleteLastPostActionCreator
+    UpdateNewPostText,
+    AddPost,
+    DeleteLastPost
 } from "../../../../redux/ProfileReducer";
 import AddRemovePost from "./AddRemovePost";
 import {connect} from "react-redux";
@@ -11,22 +9,11 @@ import {connect} from "react-redux";
 let mapStateToProps = (state) => {
     return {
         newPostText: state.postPage.newPostText,
+        postsData: state.postPage.postsData
     }
 };
-let mapDispatchToProps = (dispatch) => {
-    return {
-            addNewPost: () => {
-                dispatch(AddPostActionCreator());
-            },
-            deletePost: () => {
-                dispatch(DeleteLastPostActionCreator());
-            },
-            onPostChange: (text) => {
-                dispatch(UpdateNewPostTextActionCreator(text));
-            }
-        }
-}
-const AddRemovePostContainer = connect(mapStateToProps, mapDispatchToProps)(AddRemovePost);
+
+const AddRemovePostContainer = connect(mapStateToProps, {UpdateNewPostText, AddPost, DeleteLastPost})(AddRemovePost);
 
 
 export default AddRemovePostContainer

@@ -1,0 +1,23 @@
+.mapProfileInfoWrapper {
+    color: white;
+    margin: 20px;
+}
+
+a {
+    color: white;
+    transition: .3s;
+    margin-left: 20px;
+}
+
+a:hover {
+    transition: .3s;
+    color: black;
+}
+
+p {
+    margin: 5px 0 5px 0;
+}
+
+h3 {
+    margin-top: 0;
+}

@@ -63,7 +63,6 @@ const ProfileInfo = (props) => {
             </div>
             <div>Name: {props.name}</div>
             <div>Age: {props.age}</div>
-
         </div>
     )
 }

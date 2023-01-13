@@ -52,9 +52,9 @@ let messageReducer = (state = initialState, action) => {
     }
 }
 
-export const AddNewMessageActionCreator = () => ({type: ADD_NEW_MESSAGE})
-export const DeleteLastMessageActionCreator = () => ({type: DELETE_LAST_MESSAGE})
-export const UpdateNewMessageTxtActionCreator = (newMessageTxt) => ({
+export const AddNewMessage = () => ({type: ADD_NEW_MESSAGE})
+export const DeleteLastMessage = () => ({type: DELETE_LAST_MESSAGE})
+export const UpdateNewMessageTxt = (newMessageTxt) => ({
     type: UPDATE_NEW_MESSAGE_TXT,
     newMessageTxt: newMessageTxt
 })

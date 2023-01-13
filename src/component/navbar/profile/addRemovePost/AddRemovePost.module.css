@@ -1,7 +1,6 @@
-.feedbackBox {
+.myPostsWrapper {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
     background: rgba(255, 255, 255, 0.13);
     margin: 5px 0;
     border-radius: 3px;
@@ -28,4 +27,17 @@
 }
 ::placeholder {
     color: black;
+}
+
+
+.postsArea {
+    background: rgba(255, 255, 255, 0.13);
+    margin: 5px 0;
+    border-radius: 3px;
+    padding: 10px;
+    color: white;
+}
+.btnWrapper {
+    display: flex;
+    justify-content: space-around;
 }

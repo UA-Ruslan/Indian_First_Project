@@ -1,7 +1,7 @@
 import {
-    AddNewMessageActionCreator,
-    UpdateNewMessageTxtActionCreator,
-    DeleteLastMessageActionCreator
+    AddNewMessage,
+    UpdateNewMessageTxt,
+    DeleteLastMessage
 } from "../../../redux/MessageReducer";
 import Messages from "./Messages";
 import {connect} from "react-redux";
@@ -13,20 +13,10 @@ let mapStateToProps = (state) => {
         newMessageData: state.messagePage.newMessageData,
     };
 };
-let mapDispatchToProps = (dispatch) => {
-    return {
-        sendMessage: () => {
-            dispatch(AddNewMessageActionCreator());
-        },
 
-        deleteLastMessage: () => {
-            dispatch(DeleteLastMessageActionCreator());
-        },
-
-        updateMessageTxt: (valueMessage) => {
-            dispatch(UpdateNewMessageTxtActionCreator(valueMessage));
-        },
-    };
-};
-const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages);
+const MessagesContainer = connect(mapStateToProps, {
+    AddNewMessage,
+    UpdateNewMessageTxt,
+    DeleteLastMessage
+})(Messages);
 export default MessagesContainer;

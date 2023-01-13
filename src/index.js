@@ -9,7 +9,6 @@ import {BrowserRouter} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let rerenderTree = () => {
 root.render(
     <React.StrictMode>
         <BrowserRouter>
@@ -21,12 +20,6 @@ root.render(
         </BrowserRouter>
     </React.StrictMode>
 );
-}
-
-rerenderTree(store.getState());
-store.subscribe(() => {
-    rerenderTree(store.getState())
-});
 
 reportWebVitals();
 
