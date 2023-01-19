@@ -6,40 +6,43 @@ import {
     unfollow,
     setCurrentPage,
     setTotalUsersCount,
-    setToggleOnFetch
+    setToggleOnFetch, setToggleInProgress
 } from "../../../redux/FriendsReducer";
 import React from "react";
-import axios from "axios";
-import Preloader from "../../../preloader/Preloader";
+import Preloader from "../../preloader/Preloader";
+import {apiMethods} from "../../../api/api";
 
 
 class FriendsApiContainer extends React.Component {
     componentDidMount() {
-
         this.props.setToggleOnFetch(true)
-        axios.get(`http://localhost:4000/users?_limit=${this.props.usersOnPage}&_page=${this.props.currentPage}`).then(response => {
-            this.props.setToggleOnFetch(false)
-            this.props.setUsers(response.data)
-        })
-        axios.get("http://localhost:4000/totalUsersCount").then(response => {
-            this.props.setTotalUsersCount(response.data.totalUsersCount)
-        })
+        apiMethods.apiSetToggleOnFetch(this.props.usersOnPage, this.props.currentPage)
+            .then(data => {
+                this.props.setToggleOnFetch(false)
+                this.props.setUsers(data)
+            })
+        apiMethods.apiSetTotalUsersCount()
+            .then(data => {
+                this.props.setTotalUsersCount(data.totalUsersCount)
+            })
     }
 
     pageChangeOnClick = (el) => {
         this.props.setCurrentPage(el)
         this.props.setToggleOnFetch(true)
-        axios.get(`http://localhost:4000/users?_page=${el}&_limit=${this.props.usersOnPage}`).then(response => {
-            this.props.setToggleOnFetch(false)
-            this.props.setUsers(response.data)
-        })
+        apiMethods.apiPageChangeOnClick(this.props.usersOnPage, el)
+            .then(data => {
+                this.props.setToggleOnFetch(false)
+                this.props.setUsers(data)
+            })
     }
 
     render() {
         return (
             <>
-                {this.props.setIsFetching === true ? <Preloader /> : null}
+                {this.props.setIsFetching === true ? <Preloader/> : null}
                 <Friends
+                    unfollowOnClick={this.props.unfollowOnClick}
                     totalUsersCount={this.props.totalUsersCount}
                     usersOnPage={this.props.usersOnPage}
                     currentPage={this.props.currentPage}
@@ -47,12 +50,13 @@ class FriendsApiContainer extends React.Component {
                     follow={this.props.follow}
                     unfollow={this.props.unfollow}
                     pageChangeOnClick={this.pageChangeOnClick}
+                    setToggleInProgress={this.props.setToggleInProgress}
+                    toggleInProgress={this.props.toggleInProgress}
                 />
             </>
         )
     }
 }
-
 
 let mapPropsToState = (state) => {
     return {
@@ -61,6 +65,7 @@ let mapPropsToState = (state) => {
         usersOnPage: state.friendsPage.usersOnPage,
         currentPage: state.friendsPage.currentPage,
         setIsFetching: state.friendsPage.setIsFetching,
+        toggleInProgress: state.friendsPage.toggleInProgress,
     }
 }
 
@@ -71,6 +76,7 @@ const FriendsContainer = connect(mapPropsToState, {
     setCurrentPage,
     setTotalUsersCount,
     setToggleOnFetch,
+    setToggleInProgress,
 })
 (FriendsApiContainer);
 

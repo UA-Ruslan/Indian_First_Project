@@ -1,40 +1,40 @@
 {
   "users": [
-      {
-        "id": 1,
-        "following": true,
-        "name": "White Fang",
-        "location": "Wachatty",
-        "imgUrl": "https://pngimg.com/uploads/american_indian/american_indian_PNG36.png"
-      },
-      {
-        "id": 2,
-        "following": false,
-        "name": "Wind Voice",
-        "location": "Wachutu",
-        "imgUrl": "https://free-png.ru/wp-content/uploads/2022/05/free-png.ru-91-340x325.png"
-      },
-      {
-        "id": 3,
-        "following": false,
-        "name": "Cunning Fox",
-        "location": "Wild West",
-        "imgUrl": "https://pngimg.com/uploads/american_indian/small/american_indian_PNG16.png"
-      },
-      {
-        "id": 4,
-        "following": true,
-        "name": "Ash",
-        "location": "Azerot",
-        "imgUrl": "https://pngimg.com/uploads/american_indian/american_indian_PNG27.png"
-      },
-      {
-        "id": 5,
-        "following": false,
-        "name": "Dust",
-        "location": "Hell",
-        "imgUrl": null
-      },
+    {
+      "id": 1,
+      "following": false,
+      "name": "White Fang",
+      "location": "Wachatty",
+      "imgUrl": "https://pngimg.com/uploads/american_indian/american_indian_PNG36.png"
+    },
+    {
+      "id": 2,
+      "following": false,
+      "name": "Wind Voice",
+      "location": "Wachutu",
+      "imgUrl": "https://free-png.ru/wp-content/uploads/2022/05/free-png.ru-91-340x325.png"
+    },
+    {
+      "id": 3,
+      "following": true,
+      "name": "Cunning Fox",
+      "location": "Wild West",
+      "imgUrl": "https://pngimg.com/uploads/american_indian/small/american_indian_PNG16.png"
+    },
+    {
+      "id": 4,
+      "following": false,
+      "name": "Ash",
+      "location": "Azerot",
+      "imgUrl": "https://pngimg.com/uploads/american_indian/american_indian_PNG27.png"
+    },
+    {
+      "id": 5,
+      "following": true,
+      "name": "Dust",
+      "location": "Hell",
+      "imgUrl": null
+    },
     {
       "id": 6,
       "following": true,
@@ -142,7 +142,7 @@
     },
     {
       "id": 21,
-      "following": true,
+      "following": false,
       "name": "White Fang",
       "location": "Wachatty",
       "imgUrl": "https://pngimg.com/uploads/american_indian/american_indian_PNG36.png"
@@ -170,16 +170,15 @@
     },
     {
       "id": 25,
-      "following": false,
+      "following": true,
       "name": "Dust",
       "location": "Hell",
       "imgUrl": null
     }
-    ],
+  ],
   "totalUsersCount": {
     "totalUsersCount": 25
   },
-
   "profileInfo": [
     {
       "userId": 1,
@@ -423,7 +422,7 @@
       "userId": 18,
       "fullName": "Samurai-IT",
       "age": 32,
-      "subscriber":333,
+      "subscriber": 333,
       "status": "wont kill some one",
       "contacts": {
         "github": "https://www.github.com",
@@ -437,7 +436,7 @@
       "userId": 19,
       "fullName": "Samurai-IT",
       "age": 34,
-      "subscriber":568,
+      "subscriber": 568,
       "status": "wont kill some one",
       "contacts": {
         "github": "https://www.github.com",
@@ -532,5 +531,4 @@
       }
     }
   ]
-
 }

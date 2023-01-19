@@ -1,14 +1,14 @@
 import React from "react";
 import {connect} from "react-redux";
 import Profile from "./Profile";
-import axios from "axios";
 import {setProfileUserInfo} from '../../../redux/FriendsReducer';
+import {apiMethods} from "../../../api/api";
 
 
 class ProfileApiContainer extends React.Component {
     componentDidMount() {
-        axios.get('http://localhost:4000/profileInfo').then(response => {
-            this.props.setProfileUserInfo(response.data)
+        apiMethods.apiSetProfileUserInfo().then(data => {
+            this.props.setProfileUserInfo(data)
         })
     }
 

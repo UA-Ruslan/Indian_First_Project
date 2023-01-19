@@ -1,6 +1,6 @@
 import React from 'react';
-import preloaderImgLeft from '../img/preloader/arrowLeft.png'
-import preloaderImgRight from '../img/preloader/arrowRight.png'
+import preloaderImgLeft from '../../img/preloader/arrowLeft.png'
+import preloaderImgRight from '../../img/preloader/arrowRight.png'
 import preloaderModuleCss from './Preloader.module.css'
 
 const Preloader = (props) => {

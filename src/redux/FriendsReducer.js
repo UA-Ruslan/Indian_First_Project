@@ -5,6 +5,7 @@ const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 const SET_TOTAL_USER_COUNT = 'SET_TOTAL_USER_COUNT'
 const SET_TOGGLE_ON_FETCH = 'SET_TOGGLE_ON_FETCH'
 const SET_PROFILE_USER_INFO = 'SET_PROFILE_USER_INFO'
+const SET_TOGGLE_IN_PROGRESS = 'SET_TOGGLE_IN_PROGRESS'
 
 let initialState = {
     users: [],
@@ -12,7 +13,8 @@ let initialState = {
     usersOnPage: 4,
     currentPage: 1,
     setIsFetching: false,
-    isProfileUserInfo: []
+    setProfileUserInfo: [],
+    toggleInProgress: []
 }
 
 let friendsReducer = (state = initialState, action) => {
@@ -20,11 +22,11 @@ let friendsReducer = (state = initialState, action) => {
         case FOLLOW: {
             return {
                 ...state, users: state.users.map(user => {
-                if(user.id === action.userId) {
-                    return {...user, following: true}
-                }
-                return user
-            })
+                    if (user.id === action.userId) {
+                        return {...user, following: true}
+                    }
+                    return user
+                })
             }
         }
         case UNFOLLOW: {
@@ -50,7 +52,14 @@ let friendsReducer = (state = initialState, action) => {
             return {...state, setIsFetching: action.setToggleFetching}
         }
         case SET_PROFILE_USER_INFO: {
-            return {...state, isProfileUserInfo: action.setProfileUserInfo}
+            return {...state, setProfileUserInfo: action.setProfileUserInfo}
+        }
+        case SET_TOGGLE_IN_PROGRESS: {
+            return {
+                ...state, toggleInProgress: action.isInProgress
+                    ? [...state.toggleInProgress, action.userId]
+                    : state.toggleInProgress.filter(id => id !== action.userId)
+            }
         }
         default:
             return state
@@ -65,5 +74,6 @@ export const setCurrentPage = (setPageNum) => ({type: SET_CURRENT_PAGE, setPageN
 export const setTotalUsersCount = (setTotalUsersCount) => ({type: SET_TOTAL_USER_COUNT, setTotalUsersCount})
 export const setToggleOnFetch = (setToggleFetching) => ({type: SET_TOGGLE_ON_FETCH, setToggleFetching})
 export const setProfileUserInfo = (setProfileUserInfo) => ({type: SET_PROFILE_USER_INFO, setProfileUserInfo})
+export const setToggleInProgress = (isInProgress, userId) => ({type: SET_TOGGLE_IN_PROGRESS, isInProgress, userId})
 
 export default friendsReducer;

@@ -3,7 +3,6 @@ import './App.css';
 import './component/backgroundAnimations/animations_clouds.css'
 import './component/backgroundAnimations/animations_birds.css'
 import './component/backgroundAnimations/fireAnimate/animation_fire.css'
-import Header from "./component/header/Header";
 import Navbar from "./component/navbar/Navbar";
 import News from "./component/navbar/news/News";
 import Music from "./component/navbar/music/Music";
@@ -14,7 +13,8 @@ import {Routes, Route} from "react-router-dom";
 import MessagesContainer from "./component/navbar/messages/MessagesContainer";
 import FriendsContainer from "./component/navbar/friends/FriendsContainer";
 import ProfileContainer from "./component/navbar/profile/ProfileContainer";
-import FriendsInfoHooksContainer from "./component/navbar/friends/friendsInfo/FriendsInfoHooksContainer";
+import FriendsInfoHooksContainer from "./component/navbar/friends/friendInfo/FriendsInfoHooksContainer";
+import HeaderContainer from "./component/header/HeaderContainer";
 
 const App = (props) => {
   const [isBolt, setIsBolt] = useState(null);
@@ -30,7 +30,7 @@ const App = (props) => {
         <div className='app-wrapper'>
           <BackgroundAnimate isBolt={isBolt}/>
           <Fire/>
-          <Header setIsBolt={setIsBolt}/>
+          <HeaderContainer setIsBolt={setIsBolt}/>
           <Navbar/>
           <div className='app-wrapper-content'>
             <Routes>

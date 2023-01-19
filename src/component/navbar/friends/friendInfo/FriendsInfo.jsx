@@ -1,5 +1,5 @@
 import React from "react";
-import Preloader from "../../../../preloader/Preloader";
+import Preloader from "../../../preloader/Preloader";
 import FriendsModuleCss from './FriendsInfo.module.css'
 
 const FriendsInfo = (props) => {
@@ -51,7 +51,7 @@ const FriendsInfo = (props) => {
         )
     })
     return (
-        <div className={FriendsModuleCss.profileInfoWrapper}>
+        <div>
             {mapProfileInfo}
         </div>
     )

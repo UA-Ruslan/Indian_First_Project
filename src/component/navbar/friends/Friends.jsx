@@ -2,6 +2,7 @@ import React from "react";
 import friendsModuleCss from "./Friends.module.css"
 import defaultAva from "../../../img/people/defaultAva.png"
 import {NavLink} from "react-router-dom";
+import axios from "axios";
 
 const Friends = (props) => {
 
@@ -11,6 +12,8 @@ const Friends = (props) => {
     for (let i = 1; i <= pageCount; i++) {
         arrPageCount.push(i)
     }
+
+
     return (
         <div className={friendsModuleCss.friends}>
             <div className={friendsModuleCss.usersPageNumberArea}>
@@ -43,11 +46,21 @@ const Friends = (props) => {
                 </div>
                 <div className={friendsModuleCss.userBtnWrapper}>
                     {user.following
-                        ? <button className={friendsModuleCss.userBtn} onClick={() => {
-                            props.unfollow(user.id)
+                        ? <button disabled={props.toggleInProgress.some(id => id === user.id)} className={friendsModuleCss.userBtn} onClick={() => {
+                            props.setToggleInProgress(true, user.id)
+                            axios.patch(`http://localhost:4000/users/${user.id}`, {following: false})
+                                .then(response => {
+                                    props.unfollow(user.id)
+                                    props.setToggleInProgress(false, user.id)
+                                })
                         }}>unfollow</button>
-                        : <button className={friendsModuleCss.userBtn} onClick={() => {
-                            props.follow(user.id)
+                        : <button disabled={props.toggleInProgress.some(id=> id === user.id)} className={friendsModuleCss.userBtn} onClick={() => {
+                            props.setToggleInProgress(true, user.id)
+                            axios.patch(`http://localhost:4000/users/${user.id}`, {following: true})
+                                .then(response => {
+                                    props.follow(user.id)
+                                    props.setToggleInProgress(false, user.id)
+                                })
                         }}>follow</button>
                     }
                 </div>

@@ -1,13 +1,14 @@
 import React from "react";
 import {connect} from "react-redux";
 import {setProfileUserInfo} from "../../../../redux/FriendsReducer";
-import axios from "axios";
 import FriendsInfo from "./FriendsInfo";
+import {apiMethods} from "../../../../api/api";
 
 class FriendsInfoApiContainer extends React.Component {
     componentDidMount() {
-        axios.get(`http://localhost:4000/users?_page=${this.props.id}&_limit=1&_embed=profileInfo`).then(response => {
-            this.props.setProfileUserInfo(response.data)
+        apiMethods.apiSetProfileUserInfo2(this.props.id)
+            .then(data => {
+            this.props.setProfileUserInfo(data)
         })
     }
 
@@ -22,7 +23,7 @@ class FriendsInfoApiContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        friendsProfileInfo: state.friendsPage.isProfileUserInfo
+        friendsProfileInfo: state.friendsPage.setProfileUserInfo
     }
 }
 
