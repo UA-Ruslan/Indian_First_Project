@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "following": true,
+      "following": false,
       "name": "White Fang",
       "location": "Wachatty",
       "imgUrl": "https://pngimg.com/uploads/american_indian/american_indian_PNG36.png"
