@@ -12,7 +12,7 @@ import BackgroundAnimate from "./component/backgroundAnimations/ImgsAnimate";
 import {Routes, Route} from "react-router-dom";
 import MessagesContainer from "./component/navbar/messages/MessagesContainer";
 import FriendsContainer from "./component/navbar/friends/FriendsContainer";
-import ProfileContainer from "./component/navbar/profile/ProfileContainer";
+import Profile from "./component/navbar/profile/Profile";
 import FriendsInfoHooksContainer from "./component/navbar/friends/friendInfo/FriendsInfoHooksContainer";
 import HeaderContainer from "./component/header/HeaderContainer";
 
@@ -34,7 +34,7 @@ const App = (props) => {
           <Navbar/>
           <div className='app-wrapper-content'>
             <Routes>
-              <Route path='/*' element={<ProfileContainer store={props.store}/>}/>
+              <Route path='/*' element={<Profile/>}/>
               <Route path='/:id' element={<FriendsInfoHooksContainer/>}/>
               <Route path='/messages/*' element={<MessagesContainer />}/>
               <Route path='/news' element={<News/>}/>

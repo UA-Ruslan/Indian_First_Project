@@ -1,3 +1,5 @@
+import {apiMethods} from "../api/api";
+
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET-USERS'
@@ -12,9 +14,9 @@ let initialState = {
     totalUsersCount: null,
     usersOnPage: 4,
     currentPage: 1,
-    setIsFetching: false,
+    preloader: false,
     setProfileUserInfo: [],
-    toggleInProgress: []
+    toggleDisabled: []
 }
 
 let friendsReducer = (state = initialState, action) => {
@@ -49,16 +51,16 @@ let friendsReducer = (state = initialState, action) => {
             return {...state, totalUsersCount: action.setTotalUsersCount}
         }
         case SET_TOGGLE_ON_FETCH: {
-            return {...state, setIsFetching: action.setToggleFetching}
+            return {...state, preloader: action.setPreloader}
         }
         case SET_PROFILE_USER_INFO: {
             return {...state, setProfileUserInfo: action.setProfileUserInfo}
         }
         case SET_TOGGLE_IN_PROGRESS: {
             return {
-                ...state, toggleInProgress: action.isInProgress
-                    ? [...state.toggleInProgress, action.userId]
-                    : state.toggleInProgress.filter(id => id !== action.userId)
+                ...state, toggleDisabled: action.isDisabled
+                    ? [...state.toggleDisabled, action.userId]
+                    : state.toggleDisabled.filter(id => id !== action.userId)
             }
         }
         default:
@@ -67,13 +69,58 @@ let friendsReducer = (state = initialState, action) => {
 }
 
 
-export const follow = (userId) => ({type: FOLLOW, userId})
-export const unfollow = (userId) => ({type: UNFOLLOW, userId})
-export const setUsers = (setUsers) => ({type: SET_USERS, setUsers})
-export const setCurrentPage = (setPageNum) => ({type: SET_CURRENT_PAGE, setPageNum})
-export const setTotalUsersCount = (setTotalUsersCount) => ({type: SET_TOTAL_USER_COUNT, setTotalUsersCount})
-export const setToggleOnFetch = (setToggleFetching) => ({type: SET_TOGGLE_ON_FETCH, setToggleFetching})
-export const setProfileUserInfo = (setProfileUserInfo) => ({type: SET_PROFILE_USER_INFO, setProfileUserInfo})
-export const setToggleInProgress = (isInProgress, userId) => ({type: SET_TOGGLE_IN_PROGRESS, isInProgress, userId})
+export const follow = (userId) => ({type: FOLLOW, userId});
+export const unfollow = (userId) => ({type: UNFOLLOW, userId});
+export const setUsers = (setUsers) => ({type: SET_USERS, setUsers});
+export const setCurrentPage = (setPageNum) => ({type: SET_CURRENT_PAGE, setPageNum});
+export const setTotalUsersCount = (setTotalUsersCount) => ({type: SET_TOTAL_USER_COUNT, setTotalUsersCount});
+export const setPreloader = (setPreloader) => ({type: SET_TOGGLE_ON_FETCH, setPreloader});
+export const setProfileUserInfo = (setProfileUserInfo) => ({type: SET_PROFILE_USER_INFO, setProfileUserInfo});
+export const setDisabledOnBtn = (isDisabled, userId) => ({type: SET_TOGGLE_IN_PROGRESS, isDisabled, userId});
+
+
+
+export const thunkGetUsers = (usersOnPage, currentPage) => {
+    return (dispatch) => {
+        dispatch(setPreloader(true));
+        apiMethods.apiSetTogglePreloader(usersOnPage, currentPage)
+            .then(data => {
+                dispatch(setPreloader(false));
+                dispatch(setUsers(data));
+            });
+    }
+};
+export const thunkGetTotalUsersCount = () => {
+    return (dispatch) => {
+        apiMethods.apiSetTotalUsersCount()
+            .then(data => {
+                dispatch(setTotalUsersCount(data.totalUsersCount));
+            });
+    }
+};
+
+
+export const thunkPageChangeOnClick = (el, usersOnPage) => {
+    return (dispatch) => {
+        dispatch(setCurrentPage(el));
+        dispatch(setPreloader(true));
+        apiMethods.apiPageChangeOnClick(usersOnPage, el)
+            .then(data => {
+                dispatch(setPreloader(false));
+                dispatch(setUsers(data));
+            });
+    }
+};
+export const thunkUserProfileInfo = (id) => {
+    return (dispatch) => {
+        dispatch(setPreloader(true));
+        apiMethods.apiSetProfileUserInfo2(id)
+            .then(data => {
+                dispatch(setPreloader(false));
+                dispatch(setProfileUserInfo(data));
+            })
+    }
+}
+
 
 export default friendsReducer;

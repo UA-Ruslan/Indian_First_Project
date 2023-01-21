@@ -2,14 +2,14 @@
   "users": [
     {
       "id": 1,
-      "following": false,
+      "following": true,
       "name": "White Fang",
       "location": "Wachatty",
       "imgUrl": "https://pngimg.com/uploads/american_indian/american_indian_PNG36.png"
     },
     {
       "id": 2,
-      "following": false,
+      "following": true,
       "name": "Wind Voice",
       "location": "Wachutu",
       "imgUrl": "https://free-png.ru/wp-content/uploads/2022/05/free-png.ru-91-340x325.png"

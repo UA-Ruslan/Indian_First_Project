@@ -1,20 +1,20 @@
 import React from "react";
 import {connect} from "react-redux";
-import {setProfileUserInfo} from "../../../../redux/FriendsReducer";
+import {setProfileUserInfo, setPreloader, thunkUserProfileInfo} from "../../../../redux/FriendsReducer";
 import FriendsInfo from "./FriendsInfo";
-import {apiMethods} from "../../../../api/api";
+import Preloader from "../../../preloader/Preloader";
 
 class FriendsInfoApiContainer extends React.Component {
     componentDidMount() {
-        apiMethods.apiSetProfileUserInfo2(this.props.id)
-            .then(data => {
-            this.props.setProfileUserInfo(data)
-        })
+        this.props.thunkUserProfileInfo(this.props.id)
     }
 
     render() {
         return (
-            <FriendsInfo friendsProfileInfo={this.props.friendsProfileInfo}/>
+            <>
+                {this.props.preloader === true ? <Preloader/> : null}
+                <FriendsInfo friendsProfileInfo={this.props.friendsProfileInfo}/>
+            </>
         )
     }
 
@@ -23,8 +23,9 @@ class FriendsInfoApiContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        friendsProfileInfo: state.friendsPage.setProfileUserInfo
+        friendsProfileInfo: state.friendsPage.setProfileUserInfo,
+        preloader: state.friendsPage.preloader,
     }
 }
 
-export default connect(mapStateToProps, {setProfileUserInfo})(FriendsInfoApiContainer);
+export default connect(mapStateToProps, {setProfileUserInfo, setPreloader, thunkUserProfileInfo})(FriendsInfoApiContainer);

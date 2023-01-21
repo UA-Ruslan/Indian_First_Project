@@ -29,7 +29,7 @@ export const apiMethods = {
                 })
         )
     },
-    apiSetToggleOnFetch(usersOnPage, currentPage) {
+    apiSetTogglePreloader(usersOnPage, currentPage) {
         return (
             axiosLocalServerInstance.get(`users?_limit=${usersOnPage}&_page=${currentPage}`)
                 .then(response => {
@@ -49,16 +49,6 @@ export const apiMethods = {
                 })
         )
     },
-    apiSetProfileUserInfo() {
-        return (
-            axiosLocalServerInstance.get('profileInfo')
-                .then(response => {
-                    return (
-                        response.data
-                    )
-                })
-        )
-    },
     apiSetProfileUserInfo2(id) {
         return (
             axiosLocalServerInstance.get(`users?_page=${id}&_limit=1&_embed=profileInfo`)
@@ -68,7 +58,22 @@ export const apiMethods = {
                     )
                 })
         )
+    },
+    apiSetUnfollow (id) {
+        return (
+            axiosLocalServerInstance.patch(`users/${id}`, {following: false})
+                .then(response => {
+                    return (response.data)
+                })
+        )
+    },
+    apiSetFollow(id) {
+        return (
+            axiosLocalServerInstance.patch(`users/${id}`, {following: true})
+                .then(response => {
+                    return (response.data)
+                })
+        )
     }
-
 
 }

@@ -2,7 +2,7 @@ import React from "react";
 import friendsModuleCss from "./Friends.module.css"
 import defaultAva from "../../../img/people/defaultAva.png"
 import {NavLink} from "react-router-dom";
-import axios from "axios";
+import {apiMethods} from "../../../api/api";
 
 const Friends = (props) => {
 
@@ -46,20 +46,20 @@ const Friends = (props) => {
                 </div>
                 <div className={friendsModuleCss.userBtnWrapper}>
                     {user.following
-                        ? <button disabled={props.toggleInProgress.some(id => id === user.id)} className={friendsModuleCss.userBtn} onClick={() => {
-                            props.setToggleInProgress(true, user.id)
-                            axios.patch(`http://localhost:4000/users/${user.id}`, {following: false})
-                                .then(response => {
+                        ? <button disabled={props.toggleDisabled.some(id => id === user.id)} className={friendsModuleCss.userBtn} onClick={() => {
+                            props.setDisabledOnBtn(true, user.id)
+                            apiMethods.apiSetUnfollow(user.id)
+                                .then(data => {
                                     props.unfollow(user.id)
-                                    props.setToggleInProgress(false, user.id)
+                                    props.setDisabledOnBtn(false, user.id)
                                 })
                         }}>unfollow</button>
-                        : <button disabled={props.toggleInProgress.some(id=> id === user.id)} className={friendsModuleCss.userBtn} onClick={() => {
-                            props.setToggleInProgress(true, user.id)
-                            axios.patch(`http://localhost:4000/users/${user.id}`, {following: true})
-                                .then(response => {
+                        : <button disabled={props.toggleDisabled.some(id=> id === user.id)} className={friendsModuleCss.userBtn} onClick={() => {
+                            props.setDisabledOnBtn(true, user.id)
+                            apiMethods.apiSetFollow(user.id)
+                                .then(data => {
                                     props.follow(user.id)
-                                    props.setToggleInProgress(false, user.id)
+                                    props.setDisabledOnBtn(false, user.id)
                                 })
                         }}>follow</button>
                     }
