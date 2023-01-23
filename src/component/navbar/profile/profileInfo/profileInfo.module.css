@@ -10,9 +10,14 @@
     position: relative;
 }
 
+
 img {
     max-width: 25%;
     align-self: center;
+}
+
+.avatar img {
+    margin-top: 3px;
 }
 
 .leftTop {
@@ -116,8 +121,8 @@ img {
     position: absolute;
     top: 21%;
     left: 25.2%;
-    height: 46.9%;
-    width: 52.3%;
+    height: 40%;
+    width: 50%;
     background: #313131;
     z-index: 4;
     border-radius: 100%;
@@ -188,4 +193,13 @@ img {
     background: #313131;
     z-index: 4;
     border-radius: 100%;
+}
+
+
+/*--------------------------------------------------------------------*/
+
+@media screen and (max-width: 920px){
+    .avatar img {
+        margin-top: 5px;
+    }
 }
