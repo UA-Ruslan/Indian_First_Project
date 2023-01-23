@@ -8,6 +8,7 @@
     text-align: center;
     color: white;
     position: relative;
+    height: 325px;
 }
 
 
@@ -18,6 +19,7 @@ img {
 
 .avatar img {
     margin-top: 3px;
+    height: 100%;
 }
 
 .leftTop {
@@ -98,7 +100,7 @@ img {
     position: absolute;
     left: 32%;
     top: 23%;
-    height: 40%;
+    height: 41.8%;
     width: 45%;
     background: #313131;
     z-index: 4;
@@ -121,7 +123,7 @@ img {
     position: absolute;
     top: 21%;
     left: 25.2%;
-    height: 40%;
+    height: 41.8%;
     width: 50%;
     background: #313131;
     z-index: 4;
@@ -134,7 +136,7 @@ img {
     position: absolute;
     left: 5%;
     top: 23%;
-    height: 40%;
+    height: 41.8%;
     width: 45%;
     background: #313131;
     z-index: 4;
@@ -155,7 +157,7 @@ img {
     position: absolute;
     left: 65%;
     top: 23%;
-    height: 40%;
+    height: 41.8%;
     width: 45%;
     background: #313131;
     z-index: 4;
@@ -188,7 +190,7 @@ img {
     position: absolute;
     left: 32%;
     top: 23%;
-    height: 40%;
+    height: 41.8%;
     width: 45%;
     background: #313131;
     z-index: 4;
@@ -197,9 +199,13 @@ img {
 
 
 /*--------------------------------------------------------------------*/
-
+@media screen and (max-width: 1024px){
+    .avatar img {
+        margin-top: 3px;
+    }
+}
 @media screen and (max-width: 920px){
     .avatar img {
-        margin-top: 5px;
+        margin-top: 3px;
     }
 }
