@@ -2,6 +2,7 @@ import React from "react";
 import messages from './Messages.module.css';
 import Dialog from "./dialog/Dialog";
 import Message from "./dialog/message/Message";
+import {Navigate} from "react-router-dom";
 
 const Messages = (props) => {
 
@@ -22,6 +23,7 @@ const Messages = (props) => {
         let valueMessage = ref.current.value
         props.UpdateNewMessageTxt(valueMessage)
     }
+    if (!props.isAuth) return <Navigate to='/login'/>
     return (
         <div>
 
