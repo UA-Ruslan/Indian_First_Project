@@ -5,6 +5,7 @@ import {
 } from "../../../redux/MessageReducer";
 import Messages from "./Messages";
 import {connect} from "react-redux";
+import {WithAuthRedirect} from '../../hok/withAuthRedirect'
 
 let mapStateToProps = (state) => {
     return {
@@ -15,9 +16,11 @@ let mapStateToProps = (state) => {
     };
 };
 
+let withRedirect = WithAuthRedirect(Messages)
+
 const MessagesContainer = connect(mapStateToProps, {
     AddNewMessage,
     UpdateNewMessageTxt,
     DeleteLastMessage
-})(Messages);
+})(withRedirect);
 export default MessagesContainer;
