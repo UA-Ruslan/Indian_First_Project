@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import profileInfo from './profileInfo.module.css'
+import ProfileStatus from "./profileStatus/ProfileStatus";
 
 const ProfileInfo = (props) => {
     const [switchToggled, setSwitchToggled] = useState("false");
@@ -39,6 +40,7 @@ const ProfileInfo = (props) => {
         <div onMouseMove={eyeMove} onClick={oldClass} onMouseOver={oldClass} onMouseOut={mouseOut}
              className={profileInfo.avatar}>
             <img className={profileInfo.injun} src={require("../../../../img/people/injun_1.png")} alt="ava"/>
+            <ProfileStatus status='My status...'/>
             <div>
                 <div className={switchToggled ? profileInfo.leftEyeTop : profileInfo.leftTop}>
                 </div>

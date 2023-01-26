@@ -5,22 +5,23 @@ import {
 } from "../../../redux/MessageReducer";
 import Messages from "./Messages";
 import {connect} from "react-redux";
-import {WithAuthRedirect} from '../../hok/withAuthRedirect'
+import {WithAuthRedirect} from '../../../hok/withAuthRedirect'
+import {compose} from "redux";
 
 let mapStateToProps = (state) => {
     return {
         dialogsInfo: state.messagePage.dialogsInfo,
         messages: state.messagePage.messages,
         newMessageData: state.messagePage.newMessageData,
-        isAuth: state.authUserData.isAuth
     };
 };
 
-let withRedirect = WithAuthRedirect(Messages)
-
-const MessagesContainer = connect(mapStateToProps, {
-    AddNewMessage,
-    UpdateNewMessageTxt,
-    DeleteLastMessage
-})(withRedirect);
-export default MessagesContainer;
+export default compose (
+    connect(mapStateToProps, {
+        AddNewMessage,
+        UpdateNewMessageTxt,
+        DeleteLastMessage
+    }),
+    WithAuthRedirect
+)
+(Messages)

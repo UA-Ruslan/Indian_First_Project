@@ -14,7 +14,7 @@ import MessagesContainer from "./component/navbar/messages/MessagesContainer";
 import FriendsContainer from "./component/navbar/friends/FriendsContainer";
 import FriendsInfoHooksContainer from "./component/navbar/friends/friendInfo/FriendsInfoHooksContainer";
 import HeaderContainer from "./component/header/HeaderContainer";
-import Login from "./component/login/Login";
+import Login from "./component/header/login/Login";
 import ProfileContainer from "./component/navbar/profile/ProfileContainer";
 
 const App = (props) => {
