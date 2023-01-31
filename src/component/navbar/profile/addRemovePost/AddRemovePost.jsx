@@ -11,7 +11,7 @@ const AddRemovePost = (props) => {
 
     let newPostElement = React.createRef();
     let addNewPost = () => {
-        props.AddPost()
+        !newPostElement.current.value ? alert("You can't add an empty post") : props.AddPost()
     }
     let deletePost = () => {
         props.DeleteLastPost()

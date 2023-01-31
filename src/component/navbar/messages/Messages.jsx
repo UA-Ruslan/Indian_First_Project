@@ -13,7 +13,7 @@ const Messages = (props) => {
 
     let ref = React.createRef();
     let sendMessage = () => {
-        props.AddNewMessage()
+        !ref.current.value ? alert('Your message is to short') : props.AddNewMessage()
     }
     let deleteLastMessage = () => {
         props.DeleteLastMessage()

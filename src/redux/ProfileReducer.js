@@ -1,6 +1,9 @@
+import {apiMethods} from "../api/api";
+
 const ADD_POST = 'ADD-POST';
 const DELETE_LAST_POST = 'DELETE-LAST-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+const SET_STATUS = 'SET_STATUS'
 
 let initialState = {
     postsData: [
@@ -10,6 +13,7 @@ let initialState = {
         {id: 4, message: 'Conitiva', likesCount: '0'},
     ],
     newPostText: '',
+    status: '',
 }
 
 let profileReducer = (state = initialState, action) => {
@@ -37,8 +41,12 @@ let profileReducer = (state = initialState, action) => {
             }
 
         }
-
-
+        case SET_STATUS: {
+            return {
+                ...state,
+                status: action.setStatus
+            }
+        }
         default:
             return state;
     }
@@ -47,5 +55,24 @@ let profileReducer = (state = initialState, action) => {
 export const AddPost = () => ({type: ADD_POST});
 export const DeleteLastPost = () => ({type: DELETE_LAST_POST});
 export const UpdateNewPostText = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
+export const SetStatus = (setStatus)=> ({type: SET_STATUS, setStatus});
+
+
+export const thunkGetStatus = () => {
+    return (dispatch) => {
+        apiMethods.apiGetStatus()
+            .then(data =>{
+                dispatch(SetStatus(data.myStatus))
+            })
+    }
+}
+export const thunkSetStatus = (status) => {
+    return (dispatch) => {
+        apiMethods.apiSetStatus(status)
+            .then(data => {
+                dispatch(SetStatus(status));
+            })
+    }
+}
 
 export default profileReducer;

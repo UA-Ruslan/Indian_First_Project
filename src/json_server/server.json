@@ -530,5 +530,8 @@
         "youtube": "https://www.youtube.com"
       }
     }
-  ]
+  ],
+  "myStatus": {
+    "myStatus": "Fuck me!"
+  }
 }
