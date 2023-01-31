@@ -74,6 +74,22 @@ export const apiMethods = {
                     return (response.data)
                 })
         )
+    },
+    apiGetStatus () {
+        return(
+            axiosLocalServerInstance.get(`myStatus`)
+                .then(response => {
+                    return (response.data)
+                })
+        )
+    },
+    apiSetStatus (status) {
+        return (
+            axiosLocalServerInstance.put(`myStatus`, {myStatus: status})
+                .then(response => {
+                    return (response.data)
+                })
+        )
     }
 
 }

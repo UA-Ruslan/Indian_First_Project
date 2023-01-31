@@ -36,11 +36,13 @@ const ProfileInfo = (props) => {
         profileInfo.rightEyeMiddle = profileInfo.rightEyeMiddle3
     }
 
+
+
     return (
         <div onMouseMove={eyeMove} onClick={oldClass} onMouseOver={oldClass} onMouseOut={mouseOut}
              className={profileInfo.avatar}>
             <img className={profileInfo.injun} src={require("../../../../img/people/injun_1.png")} alt="ava"/>
-            <ProfileStatus status='My status...'/>
+            <ProfileStatus  status={props.status} setStatus={props.setStatus}/>
             <div>
                 <div className={switchToggled ? profileInfo.leftEyeTop : profileInfo.leftTop}>
                 </div>
@@ -63,8 +65,8 @@ const ProfileInfo = (props) => {
                     </div>
                 </div>
             </div>
-            <div>Name: {props.name}</div>
-            <div>Age: {props.age}</div>
+            <div>Name: Night Woolf</div>
+            <div>Age: 36</div>
         </div>
     )
 }

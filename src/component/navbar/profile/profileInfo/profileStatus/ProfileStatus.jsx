@@ -3,7 +3,8 @@ import profileStatusModuleCss from './profileStatus.module.css'
 
 class ProfileStatus extends React.Component {
     state = {
-        editMode: false
+        editMode: false,
+        status: this.props.status
     }
 
     activateEditMode() {
@@ -16,6 +17,20 @@ class ProfileStatus extends React.Component {
         this.setState({
             editMode: false
         })
+        this.props.setStatus(this.state.status)
+    }
+
+    onInputChange = (event) => {
+        this.setState({
+            status: event.currentTarget.value
+        })
+    }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.status !== this.props.status) {
+            this.setState({
+                status: this.props.status
+            })
+        }
     }
 
     render() {
@@ -24,13 +39,13 @@ class ProfileStatus extends React.Component {
             <div className={profileStatusModuleCss.statusWrapper}>
                 {!this.state.editMode &&
                     <div>
-                        <span onDoubleClick={this.activateEditMode.bind(this)}>{this.props.status}</span>
+                        <span>Status: </span><span onDoubleClick={this.activateEditMode.bind(this)}>{this.props.status || '"click twice to add status"'}</span>
                     </div>
                 }
                 {this.state.editMode &&
                     <div>
                         <input autoFocus={true} onBlur={this.deactivateEditMode.bind(this)}
-                               placeholder={this.props.status}
+                               value={this.state.status} onChange={this.onInputChange}
                                type="text"/>
                     </div>
                 }
