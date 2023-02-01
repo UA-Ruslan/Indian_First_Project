@@ -2,7 +2,6 @@ import {apiMethods} from "../api/api";
 
 const ADD_POST = 'ADD-POST';
 const DELETE_LAST_POST = 'DELETE-LAST-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 const SET_STATUS = 'SET_STATUS'
 
 let initialState = {
@@ -12,7 +11,6 @@ let initialState = {
         {id: 3, message: 'Aloha', likesCount: '2'},
         {id: 4, message: 'Conitiva', likesCount: '0'},
     ],
-    newPostText: '',
     status: '',
 }
 
@@ -20,10 +18,10 @@ let profileReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_POST: {
+            let newPost ={id: 5, message: action.newPostText, likesCount: 3}
             return {
                 ...state,
-                newPostText: '',
-                postsData: [{id: 5, message: state.newPostText, likesCount: 3}, ...state.postsData ]
+                postsData: [newPost, ...state.postsData ]
             }
         }
         case DELETE_LAST_POST: {
@@ -33,13 +31,6 @@ let profileReducer = (state = initialState, action) => {
             }
             stateCopy.postsData.shift();
             return stateCopy;
-        }
-        case UPDATE_NEW_POST_TEXT: {
-            return {
-                ...state,
-                newPostText: action.newText,
-            }
-
         }
         case SET_STATUS: {
             return {
@@ -52,9 +43,8 @@ let profileReducer = (state = initialState, action) => {
     }
 }
 
-export const AddPost = () => ({type: ADD_POST});
+export const AddPost = (newPostText) => ({type: ADD_POST, newPostText});
 export const DeleteLastPost = () => ({type: DELETE_LAST_POST});
-export const UpdateNewPostText = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
 export const SetStatus = (setStatus)=> ({type: SET_STATUS, setStatus});
 
 

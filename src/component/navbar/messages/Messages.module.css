@@ -1,3 +1,13 @@
+.txtAreaBtn {
+    padding: 10px;
+    margin: 5px 0;
+    background: rgba(57, 90, 119, 0.48);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .allDialogs {
     color: white;
     display: flex;
@@ -17,28 +27,6 @@
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.13);
     padding: 10px;
-}
-
-.newMessageArea {
-    width: calc(100% - 20px);
-    margin: 5px 0;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.13);
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.txtAreaBtn {
-    padding: 10px;
-    margin: 5px 0;
-    background: rgba(57, 90, 119, 0.48);
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .addNewMessage {
@@ -66,9 +54,19 @@
     transition: .5s;
 }
 
-.btnStyle {
-    min-width: 20%;
-    height: 50%;
+.sendBtnStyle {
+    min-width: 160px;
+    background: rgba(57, 90, 119, 0.35);
+    color: black;
+    border-radius: 3px;
+    font-family: 'Syne Tactile', cursive;
+    transition: .3s;
+    align-self: center;
+    margin: 10px 80px 10px 20px;
+}
+
+.deleteBtnStyle {
+    min-width: 160px;
     background: rgba(57, 90, 119, 0.35);
     color: black;
     border-radius: 3px;
@@ -78,9 +76,25 @@
     margin: 10px 20px;
 }
 
-.btnStyle:hover {
+
+.sendBtnStyle:hover {
     background: rgba(57, 90, 119, 0.9);
     color: white;
     transform: scale(1.1);
     transition: .3s;
+}
+
+.deleteBtnStyle:hover {
+    background: rgba(57, 90, 119, 0.9);
+    color: white;
+    transform: scale(1.1);
+    transition: .3s;
+}
+
+.messageFormWrapper {
+    display: flex;
+}
+
+.messageForm {
+    display: flex;
 }
