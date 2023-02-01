@@ -1,6 +1,5 @@
 const ADD_NEW_MESSAGE = 'ADD-NEW-MESSAGE'
 const DELETE_LAST_MESSAGE = 'DELETE-LAST-MESSAGE'
-const UPDATE_NEW_MESSAGE_TXT = 'UPDATE-NEW-MESSAGE-TXT'
 
 let initialState = {
     dialogsInfo: [
@@ -20,7 +19,6 @@ let initialState = {
         {id: 5, messagesData: "I am bat to the bone!"},
         {id: 6, messagesData: "My name is Regina Falangi."},
     ],
-    newMessageData: '',
 }
 
 let messageReducer = (state = initialState, action) => {
@@ -29,7 +27,7 @@ let messageReducer = (state = initialState, action) => {
             return {
                 ...state,
                 newMessageData: '',
-                messages: [...state.messages, {id: 7, messagesData: state.newMessageData}]
+                messages: [...state.messages, {id: 7, messagesData: action.newMessageData}]
             }
         }
         case DELETE_LAST_MESSAGE: {
@@ -41,20 +39,12 @@ let messageReducer = (state = initialState, action) => {
             stateCopy.messages.pop();
             return stateCopy;
         }
-        case UPDATE_NEW_MESSAGE_TXT: {
-            return {
-                ...state,
-                newMessageData: action.newMessageTxt
-            }
-        }
         default:
             return state;
     }
 }
 
-export const AddNewMessage = () => ({type: ADD_NEW_MESSAGE})
+export const AddNewMessage = (newMessageData) => ({type: ADD_NEW_MESSAGE, newMessageData})
 export const DeleteLastMessage = () => ({type: DELETE_LAST_MESSAGE})
-export const UpdateNewMessageTxt = (newMessageTxt) => ({type: UPDATE_NEW_MESSAGE_TXT, newMessageTxt: newMessageTxt
-})
 
 export default messageReducer;

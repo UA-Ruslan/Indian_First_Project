@@ -1,9 +1,3 @@
-.btnWrapper {
-    display: flex;
-    justify-content: space-around;
-    margin: 15px 0 15px 0;
-}
-
 .myPostsWrapper {
     display: flex;
     flex-direction: column;
@@ -13,12 +7,21 @@
     padding: 5px
 }
 
+.postsArea {
+    background: rgba(255, 255, 255, 0.13);
+    margin: 5px 0;
+    border-radius: 3px;
+    padding: 10px;
+    color: white;
+}
+
 .btnStyle {
-    min-width: 15%;
+    width: 150px;
     background: rgba(57, 90, 119, 0.16);
     color: #bdbdbc;
     border-radius: 3px;
     transition: .3s;
+    margin: 15px 50px 15px 50px;
 }
 
 .btnStyle:hover {
@@ -39,11 +42,15 @@
     color: black;
 }
 
+.btnWrapper {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0 15px 0;
+}
 
-.postsArea {
-    background: rgba(255, 255, 255, 0.13);
-    margin: 5px 0;
-    border-radius: 3px;
-    padding: 10px;
-    color: white;
+.postFormWrapper {
+    display: flex;
+}
+.postForm {
+    display: flex;
 }

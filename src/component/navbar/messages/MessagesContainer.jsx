@@ -1,8 +1,4 @@
-import {
-    AddNewMessage,
-    UpdateNewMessageTxt,
-    DeleteLastMessage
-} from "../../../redux/MessageReducer";
+import {AddNewMessage, DeleteLastMessage} from "../../../redux/MessageReducer";
 import Messages from "./Messages";
 import {connect} from "react-redux";
 import {WithAuthRedirect} from '../../../hok/withAuthRedirect'
@@ -17,11 +13,4 @@ let mapStateToProps = (state) => {
 };
 
 export default compose (
-    connect(mapStateToProps, {
-        AddNewMessage,
-        UpdateNewMessageTxt,
-        DeleteLastMessage
-    }),
-    WithAuthRedirect
-)
-(Messages)
+    connect(mapStateToProps, {AddNewMessage, DeleteLastMessage}), WithAuthRedirect)(Messages)
