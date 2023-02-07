@@ -51,7 +51,7 @@ export const thunkLogout = () => (dispatch) => {
         .then(data => {
             if (data.resultCode === 0) {
                 dispatch(setAuthUserData(null, null, null, true));
-
+                window.location.reload(false)
             }
         })
 }

@@ -10,8 +10,7 @@ const Header = (props) => {
     }
     const logoutBtn = () => {
         return (
-            props.thunkLogout(),
-                window.location.reload(false)
+            props.thunkLogout()
         )
     }
     const loginBtn = () => {
