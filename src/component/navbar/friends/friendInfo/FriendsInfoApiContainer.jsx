@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import {setProfileUserInfo, setPreloader, thunkUserProfileInfo} from "../../../../redux/FriendsReducer";
+import {setProfileUserInfo, setPreloader, thunkUserProfileInfo} from "../../../../utilit/redux/FriendsReducer";
 import FriendsInfo from "./FriendsInfo";
 import Preloader from "../../../preloader/Preloader";
 

@@ -2,7 +2,7 @@ import React from "react";
 import friendsModuleCss from "./Friends.module.css"
 import defaultAva from "../../../img/people/defaultAva.png"
 import {NavLink} from "react-router-dom";
-import {apiMethods} from "../../../api/api";
+import {apiMethods} from "../../../utilit/api/api";
 
 const Friends = (props) => {
 
@@ -30,7 +30,7 @@ const Friends = (props) => {
                 <div className={friendsModuleCss.imgWrapper}>
                     <NavLink to={'/' + user.id}>
                         <img className={friendsModuleCss.userImg} src={user.imgUrl != null ? user.imgUrl : defaultAva}
-                             alt='Photo'/>
+                             alt='UserImg'/>
                     </NavLink>
                 </div>
                 <div className={friendsModuleCss.userInfoWrapper}>

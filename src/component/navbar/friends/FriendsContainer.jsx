@@ -7,7 +7,7 @@ import {
     setCurrentPage,
     setDisabledOnBtn, thunkGetUsers, thunkGetTotalUsersCount,
     thunkPageChangeOnClick,
-} from "../../../redux/FriendsReducer";
+} from "../../../utilit/redux/FriendsReducer";
 import React from "react";
 import Preloader from "../../preloader/Preloader";
 

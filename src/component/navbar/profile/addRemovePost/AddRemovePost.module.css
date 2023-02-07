@@ -31,12 +31,7 @@
     transition: .3s;
 }
 
-.textareaStyle {
-    min-width: 20%;
-    background: rgba(57, 90, 119, 0.42);
-    color: white;
-    border-radius: 3px;
-}
+
 
 ::placeholder {
     color: black;

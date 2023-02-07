@@ -12,21 +12,33 @@
 }
 
 .authWrapper {
-    align-self: center;
     display: flex;
     align-items: center;
-    justify-content: center;
-    float: right;
-    background: rgba(255, 255, 255, 0.13);
-    height: 50%;
-    width: 10%;
-    border-radius: 5px;
+    margin-right: 20px;
+
+}
+
+.logoutBtn {
+    background: rgba(57, 90, 119, 0.16);
+    color: #bdbdbc;
+    border-radius: 3px;
+    transition: .3s;
     margin-right: 20px;
 }
 
-.authNavLink {
-    margin: 0;
+.logoutBtn:hover {
+    transition: .3s;
+    transform: scale(1.1);
+    background: rgba(57, 90, 119, 0.9);
+    color: white;
 }
+
+.authFree {
+    margin-right: 20px;
+    justify-self: center;
+    align-self: center;
+}
+
 .headerArea {
     width: 100%;
     height: 100%;

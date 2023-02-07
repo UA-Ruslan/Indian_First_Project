@@ -27,7 +27,7 @@ let messageReducer = (state = initialState, action) => {
             return {
                 ...state,
                 newMessageData: '',
-                messages: [...state.messages, {id: 7, messagesData: action.newMessageData}]
+                messages: [{id: 7, messagesData: action.newMessageData},...state.messages ]
             }
         }
         case DELETE_LAST_MESSAGE: {

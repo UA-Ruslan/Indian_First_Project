@@ -9,16 +9,6 @@ const axiosLocalServerInstance = axios.create({
     baseURL: `http://localhost:4000/`
 })
 export const apiMethods = {
-    authUserData() {
-        return (
-            axiosSamuraiInstance.get(`auth/me`)
-                .then(response => {
-                    return (
-                        response.data
-                    )
-                })
-        )
-    },
     apiPageChangeOnClick(usersOnPage, el) {
         return (
             axiosLocalServerInstance.get(`users?_limit=${usersOnPage}&_page=${el}`)
@@ -88,6 +78,32 @@ export const apiMethods = {
             axiosLocalServerInstance.put(`myStatus`, {myStatus: status})
                 .then(response => {
                     return (response.data)
+                })
+        )
+    },
+    apiAuthUserData() {
+        return (
+            axiosSamuraiInstance.get(`auth/me`)
+                .then(response => {
+                    return (
+                        response.data
+                    )
+                })
+        )
+    },
+    apiLogin (email, password, rememberMe= false) {
+        return(
+            axiosSamuraiInstance.post(`/auth/login`, {email, password, rememberMe})
+                .then(response => {
+                    return (response.data)
+                })
+        )
+    },
+    apiLogout () {
+        return (
+            axiosSamuraiInstance.delete(`/auth/login`)
+                .then(response => {
+                    return(response.data)
                 })
         )
     }

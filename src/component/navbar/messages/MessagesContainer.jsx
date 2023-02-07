@@ -1,7 +1,7 @@
-import {AddNewMessage, DeleteLastMessage} from "../../../redux/MessageReducer";
+import {AddNewMessage, DeleteLastMessage} from "../../../utilit/redux/MessageReducer";
 import Messages from "./Messages";
 import {connect} from "react-redux";
-import {WithAuthRedirect} from '../../../hok/withAuthRedirect'
+import {WithAuthRedirect} from '../../../utilit/hok/withAuthRedirect'
 import {compose} from "redux";
 
 let mapStateToProps = (state) => {

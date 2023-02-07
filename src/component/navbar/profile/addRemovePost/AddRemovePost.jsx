@@ -10,7 +10,7 @@ const AddRemovePost = (props) => {
                                                                 likes={el.likesCount}
                                                                 key={index}/>)
     let onFormSubmit = (value) => {
-        !value.postForm ? alert("You can't add an empty post") : props.AddPost(value.postForm)
+        props.AddPost(value.postForm)
     }
 
     return (
