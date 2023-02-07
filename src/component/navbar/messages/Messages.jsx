@@ -2,7 +2,7 @@ import React from "react";
 import messages from './Messages.module.css';
 import Dialog from "./dialog/Dialog";
 import Message from "./dialog/message/Message";
-import SendMessageForm from "./dialog/SendMessageForm/SendMessageForm";
+import SendMessageForm from "./dialog/sendMessageForm/SendMessageForm";
 
 const Messages = (props) => {
 
@@ -13,14 +13,14 @@ const Messages = (props) => {
                                                                     key={pos}/>)
 
     let onSubmitNewMessage = (value) => {
-        return (
-            !value.newMessageData ? alert('Your message is to short') : props.AddNewMessage(value.newMessageData)
-        )
+         props.AddNewMessage(value.newMessageData)
     }
 
     return (
         <div>
-
+            <div className={messages.txtAreaBtn}>
+                <SendMessageForm onSubmit={onSubmitNewMessage} DeleteLastMessage={props.DeleteLastMessage}/>
+            </div>
             <div className={messages.allDialogs}>
                 <div className={messages.dialogsArea}>
                     {dialogsInfoMap}
@@ -29,9 +29,7 @@ const Messages = (props) => {
                     {messagesMap}
                 </div>
             </div>
-            <div className={messages.txtAreaBtn}>
-                <SendMessageForm onSubmit={onSubmitNewMessage} DeleteLastMessage={props.DeleteLastMessage}/>
-            </div>
+
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import {AddPost, DeleteLastPost} from "../../../../redux/ProfileReducer";
+import {AddPost, DeleteLastPost} from "../../../../utilit/redux/ProfileReducer";
 import AddRemovePost from "./AddRemovePost";
 import {connect} from "react-redux";
 

@@ -1,0 +1,42 @@
+.formControlWrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.textareaStyle {
+    width: 300px;
+    max-width: 300px;
+    max-height: 55px;
+    background: rgba(57, 90, 119, 0.42);
+    color: white;
+    border-radius: 3px;
+    border: 1px solid #ffffff;
+    transition: .3s;
+}
+
+.textareaStyle:hover {
+    background: rgba(57, 90, 119, 0.9);
+    transition: .3s;
+}
+::placeholder {
+    color: black;
+    transition: .5s;
+}
+.textareaStyle:hover::placeholder {
+    color: white;
+    transition: .5s;
+}
+
+.formControl.error input,
+.formControl.error textarea {
+    border: 2px solid red;
+    background: rgba(255, 0, 0, 0.32);
+}
+
+.spanDec {
+    position: absolute;
+    top: 85%;
+    left: 0;
+    color: rgb(255, 255, 255);
+}

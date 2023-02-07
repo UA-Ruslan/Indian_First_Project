@@ -1,0 +1,51 @@
+.formControl.error input {
+    border: 2px solid red;
+    background: rgba(255, 0, 0, 0.44);
+}
+
+.inputStyle {
+    background: rgba(57, 90, 119, 0.42);
+    border-radius: 3px;
+    border: 1px solid white;
+    transition: .5s;
+}
+
+
+.inputStyle:hover {
+    background: rgba(57, 90, 119, 0.9);
+    transition: .5s;
+    color: white;
+}
+
+
+::placeholder {
+    color: black;
+    transition: .5s;
+}
+
+.inputStyle:hover::placeholder {
+    color: white;
+}
+.spanStyle {
+    color: white;
+}
+
+.btnStyle {
+    background: rgba(57, 90, 119, 0.42);
+    border-radius: 3px;
+    transition: .5s;
+    border: 1px solid white;
+}
+
+.btnStyle:hover {
+    transition: .5s;
+    transform: scale(1.1);
+    color: white;
+    border: 2px solid white;
+    box-shadow: 0 0 20px 3px wheat;
+}
+
+.loginWrapper {
+    margin-top: 150px;
+    text-align: center;
+}

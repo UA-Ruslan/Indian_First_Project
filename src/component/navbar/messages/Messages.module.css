@@ -29,30 +29,7 @@
     padding: 10px;
 }
 
-.addNewMessage {
-    width: 30%;
-    background: rgba(57, 90, 119, 0.42);
-    color: white;
-    border-radius: 3px;
-    border: 1px solid white;
-    transition: .5s;
-    margin: 10px 40px;
-}
 
-.addNewMessage:hover {
-    background: rgba(57, 90, 119, 0.9);
-    transition: .5s;
-}
-
-::placeholder {
-    color: black;
-    transition: .5s;
-}
-
-.addNewMessage:hover::placeholder {
-    color: white;
-    transition: .5s;
-}
 
 .sendBtnStyle {
     min-width: 160px;
@@ -62,7 +39,7 @@
     font-family: 'Syne Tactile', cursive;
     transition: .3s;
     align-self: center;
-    margin: 10px 80px 10px 20px;
+    margin: 10px 20px 10px 20px;
 }
 
 .deleteBtnStyle {

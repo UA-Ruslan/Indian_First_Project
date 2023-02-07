@@ -1,9 +1,9 @@
 import React from 'react'
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {WithAuthRedirect} from "../../../hok/withAuthRedirect";
+import {WithAuthRedirect} from "../../../utilit/hok/withAuthRedirect";
 import {compose} from "redux";
-import {thunkGetStatus, thunkSetStatus} from "../../../redux/ProfileReducer";
+import {thunkGetStatus, thunkSetStatus} from "../../../utilit/redux/ProfileReducer";
 
 class ProfileApiContainer extends React.Component {
     componentDidMount() {
