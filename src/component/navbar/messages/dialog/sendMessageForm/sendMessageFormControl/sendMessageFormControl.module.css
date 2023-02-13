@@ -1,0 +1,49 @@
+.formControlWrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.formControl {
+
+}
+.areaDec {
+    max-width: 300px;
+    max-height: 45px;
+    background: rgba(57, 90, 119, 0.42);
+    color: white;
+    border-radius: 3px;
+    border: 1px solid white;
+    transition: .5s;
+    margin: 10px 40px;
+}
+.areaDec:hover {
+    background: rgba(57, 90, 119, 0.9);
+    transition: .5s;
+}
+
+::placeholder {
+    color: black;
+    transition: .5s;
+}
+
+.areaDec:hover::placeholder {
+    color: white;
+    transition: .5s;
+}
+
+.formControl.error textarea,
+.formControl.error input {
+    border: 2px solid red;
+    background: rgba(255, 0, 0, 0.32);
+}
+
+.spanDec {
+    position: absolute;
+    top: 76%;
+    left: 14%;
+    color: rgb(255, 255, 255);
+}
+
+
+

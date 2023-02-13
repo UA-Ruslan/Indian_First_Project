@@ -9,6 +9,7 @@ let LoginForm = (props) => {
     let maxValueLength =maxLength(20)
     return (
         <form onSubmit={handleSubmit}>
+            {props.error && <span className={style.generalError}>{props.error}</span>}
             <div>
                 <Field name="email"
                        component={Input}

@@ -2,7 +2,7 @@ import React from 'react';
 import style from './loginForm/loginFormControl/LoginFormControl.module.css'
 import LoginForm from "./loginForm/LoginForm";
 import {connect} from "react-redux";
-import {thunkLogin, thunkLogout} from "../../../utilit/redux/AuthReducer";
+import {thunkLogin} from "../../../utilit/redux/AuthReducer";
 import {Navigate} from "react-router-dom";
 const Login = (props) => {
     let onSubmit = (formData) => {
