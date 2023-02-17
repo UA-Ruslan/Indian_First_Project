@@ -10,6 +10,14 @@ import {
 } from "../../../utilit/redux/FriendsReducer";
 import React from "react";
 import Preloader from "../../preloader/Preloader";
+import {
+    getCurrentPage,
+    getTotalUsersCount,
+    getUsers,
+    getUsersOnPage,
+    getPreloader,
+    setToggleDisabled
+} from "../../../utilit/redux/FriendsSelectors";
 
 
 
@@ -26,7 +34,7 @@ class FriendsApiContainer extends React.Component {
     render() {
         return (
             <>
-                {this.props.preloader === true ? <Preloader/> : null}
+                {this.props.setPreloader === true ? <Preloader/> : null}
                 <Friends
                     unfollowOnClick={this.props.unfollowOnClick}
                     totalUsersCount={this.props.totalUsersCount}
@@ -46,12 +54,12 @@ class FriendsApiContainer extends React.Component {
 
 let mapPropsToState = (state) => {
     return {
-        users: state.friendsPage.users,
-        totalUsersCount: state.friendsPage.totalUsersCount,
-        usersOnPage: state.friendsPage.usersOnPage,
-        currentPage: state.friendsPage.currentPage,
-        preloader: state.friendsPage.preloader,
-        toggleDisabled: state.friendsPage.toggleDisabled,
+        users: getUsers(state),
+        totalUsersCount: getTotalUsersCount(state),
+        usersOnPage: getUsersOnPage(state),
+        currentPage: getCurrentPage(state),
+        setPreloader: getPreloader(state),
+        toggleDisabled: setToggleDisabled(state),
     }
 }
 
