@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import {setProfileUserInfo, setPreloader, thunkUserProfileInfo} from "../../../../utilit/redux/FriendsReducer";
 import FriendsInfo from "./FriendsInfo";
 import Preloader from "../../../preloader/Preloader";
+import {getPreloader, getProfileUserInfo} from "../../../../utilit/redux/FriendsSelectors";
 
 class FriendsInfoApiContainer extends React.Component {
     componentDidMount() {
@@ -23,8 +24,8 @@ class FriendsInfoApiContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        friendsProfileInfo: state.friendsPage.setProfileUserInfo,
-        preloader: state.friendsPage.preloader,
+        friendsProfileInfo: getProfileUserInfo(state),
+        preloader: getPreloader(state),
     }
 }
 

@@ -14,7 +14,7 @@ let initialState = {
     totalUsersCount: null,
     usersOnPage: 4,
     currentPage: 1,
-    preloader: false,
+    setPreloader: false,
     setProfileUserInfo: [],
     toggleDisabled: []
 }
@@ -51,7 +51,7 @@ let friendsReducer = (state = initialState, action) => {
             return {...state, totalUsersCount: action.setTotalUsersCount}
         }
         case SET_TOGGLE_ON_FETCH: {
-            return {...state, preloader: action.setPreloader}
+            return {...state, setPreloader: action.setPreloader}
         }
         case SET_PROFILE_USER_INFO: {
             return {...state, setProfileUserInfo: action.setProfileUserInfo}
