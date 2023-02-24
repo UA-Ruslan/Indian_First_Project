@@ -1,13 +1,12 @@
 .navArea {
     grid-area: n;
-    margin: 0 5px 5px;
+    margin: 0 5px 5px 5px;
     border-radius: 5px;
     background: rgba(20, 19, 19, 0.36);
     padding: 10px;
     z-index: 5;
 }
 .item a{
-    color: saddlebrown;
     padding: 0;
     margin: 0;
     text-decoration: none;
@@ -17,7 +16,14 @@
     margin: 5px 0;
     border-radius: 3px;
     padding: 5px;
+    transition: .3s;
 }
-.item a.activeLink {
-    color: red;
+
+.item:hover {
+    transition: .3s;
+    padding-left: 10px;
+}
+
+.navLinkDec {
+    transition: .3s;
 }

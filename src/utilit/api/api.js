@@ -1,14 +1,48 @@
 import axios from "axios";
 
-const axiosSamuraiInstance = axios.create({
-    withCredentials: true,
-    baseURL: `https://social-network.samuraijs.com/api/1.0/`
-})
+// const axiosSamuraiInstance = axios.create({
+//     withCredentials: true,
+//     baseURL: `https://social-network.samuraijs.com/api/1.0/`
+// })
 const axiosLocalServerInstance = axios.create({
     withCredentials: true,
     baseURL: `http://localhost:4000/`
 })
+
 export const apiMethods = {
+
+    //----------------------------------------------------------------Samurai.js-Server-------------------------------------------------//
+
+    // apiAuthUserData() {
+    //     return (
+    //         axiosSamuraiInstance.get(`auth/me`)
+    //             .then(response => {
+    //                 return (
+    //                     response.data
+    //                 )
+    //             })
+    //     )
+    // },
+    // apiLogin (email, password, rememberMe= false) {
+    //     return(
+    //         axiosSamuraiInstance.post(`/auth/login`, {email, password, rememberMe})
+    //             .then(response => {
+    //                 return (response.data)
+    //             })
+    //     )
+    // },
+    // apiLogout () {
+    //     return (
+    //         axiosSamuraiInstance.delete(`/auth/login`)
+    //             .then(response => {
+    //                 return(response.data)
+    //             })
+    //     )
+    // }
+
+
+    //----------------------------------------------------------------My-Local-Server-------------------------------------------------------//
+
     apiPageChangeOnClick(usersOnPage, el) {
         return (
             axiosLocalServerInstance.get(`users?_limit=${usersOnPage}&_page=${el}`)
@@ -49,7 +83,7 @@ export const apiMethods = {
                 })
         )
     },
-    apiSetUnfollow (id) {
+    apiSetUnfollow(id) {
         return (
             axiosLocalServerInstance.patch(`users/${id}`, {following: false})
                 .then(response => {
@@ -65,15 +99,15 @@ export const apiMethods = {
                 })
         )
     },
-    apiGetStatus () {
-        return(
+    apiGetStatus() {
+        return (
             axiosLocalServerInstance.get(`myStatus`)
                 .then(response => {
                     return (response.data)
                 })
         )
     },
-    apiSetStatus (status) {
+    apiSetStatus(status) {
         return (
             axiosLocalServerInstance.put(`myStatus`, {myStatus: status})
                 .then(response => {
@@ -81,9 +115,12 @@ export const apiMethods = {
                 })
         )
     },
+
+
+
     apiAuthUserData() {
         return (
-            axiosSamuraiInstance.get(`auth/me`)
+            axiosLocalServerInstance.get(`authMe`)
                 .then(response => {
                     return (
                         response.data
@@ -91,21 +128,21 @@ export const apiMethods = {
                 })
         )
     },
-    apiLogin (email, password, rememberMe= false) {
-        return(
-            axiosSamuraiInstance.post(`/auth/login`, {email, password, rememberMe})
+    apiLogin(email, login) {
+        return (
+            axiosLocalServerInstance.put(`authMe`, {email, login})
                 .then(response => {
                     return (response.data)
                 })
         )
     },
-    apiLogout () {
+    apiLogout(a, b) {
         return (
-            axiosSamuraiInstance.delete(`/auth/login`)
+            axiosLocalServerInstance.put(`authMe`, {a, b})
                 .then(response => {
-                    return(response.data)
+                    return (response.data)
                 })
         )
-    }
+    },
 
 }

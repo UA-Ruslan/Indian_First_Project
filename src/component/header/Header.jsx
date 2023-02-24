@@ -10,7 +10,8 @@ const Header = (props) => {
     }
     const logoutBtn = () => {
         return (
-            props.thunkLogout()
+            props.thunkLogout(null, null)
+            // props.thunkLogout()
         )
     }
     const loginBtn = () => {
@@ -44,7 +45,7 @@ const Header = (props) => {
                 ?
                 <div className={style.authWrapper}>
                     <div>
-                        <button onClick={logoutBtn} className={style.logoutBtn}>logout</button>
+                        <button onClick={logoutBtn} className={`${style.logoutBtn} ${"btnSameParams"}`}>Logout</button>
                     </div>
                     <div>
                         {props.login}
@@ -52,7 +53,7 @@ const Header = (props) => {
                 </div>
                 :
                 <div className={style.authWrapper}>
-                    <button className={style.logoutBtn} onClick={loginBtn}>login</button>
+                    <button className={`${style.logoutBtn} ${"btnSameParams"}`} onClick={loginBtn}>Login</button>
                 </div>}
         </header>)
 }

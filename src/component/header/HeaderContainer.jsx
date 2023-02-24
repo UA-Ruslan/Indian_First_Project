@@ -6,7 +6,7 @@ import {setAuthUserData, thunkLogout} from "../../utilit/redux/AuthReducer";
 class HeaderContainer extends React.Component {
     render() {
         return (
-            <Header {...this.props}/>
+                <Header {...this.props}/>
         )
     }
 }

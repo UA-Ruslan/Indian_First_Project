@@ -1,204 +1,174 @@
-.avatar {
+.profileInfoWrapper {
     background: rgba(255, 255, 255, 0.13);
     margin: 5px 0;
     border-radius: 3px;
     padding: 10px;
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: white;
+    justify-content: space-between;
+    color: wheat;
     position: relative;
-    /*height: 325px;*/
+    top: 0;
+    left: 0;
+    grid-area: a;
 }
-
 
 img {
-    max-width: 25.5%;
-    align-self: center;
+    max-width: 25%;
 }
 
-.avatar img {
-    /*height: 100%;*/
-    margin-top: 13px;
-}
-
-.leftTop {
-    min-height: 1%;
-    width: 1%;
-    background: #ffba6d;
+.title {
     position: absolute;
-    left: 48%;
-    top: 20%;
+    z-index: -1;
+    width: min-content;
+    margin: 0;
+    padding: 0;
+}
+
+
+.spanWrapper {
+    display: block;
+    color: wheat;
+    background: rgba(10, 70, 104, 0.16);
+    border: 2px solid rgba(10, 70, 104, 0.25);
+    border-radius: 5px;
+    width: max-content;
+    padding: 0 20px;
+    position: relative;
+    top: 70%;
+    animation-name: spanWrapper;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes spanWrapper {
+    0% {
+        position: relative;
+        top: 70%;
+    }
+    100% {
+        position: relative;
+        top: -5%;
+    }
+}
+
+.spanWrapper1 {
+    display: block;
+    color: wheat;
+    background: rgba(10, 70, 104, 0.16);
+    border: 2px solid rgba(10, 70, 104, 0.25);
+    border-radius: 5px;
+    width: max-content;
+    padding: 0 20px;
+    position: relative;
+    top: 0;
+    animation-name: spanWrapper1;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes spanWrapper1 {
+    0% {
+        position: relative;
+        top: -5%;
+    }
+    100% {
+        position: relative;
+        top: 70%;
+    }
+}
+.closeBtnActive:hover {
+    transform: scale(1.3) rotate(45deg)!important;
+}
+.closeBtnActive {
+    color: rgb(57, 90, 119);
+    width: max-content;
+    cursor: pointer;
+    margin: 0;
+    position: absolute;
+    left: 190px;
+    opacity: 0;
+    animation-name: closeBtn;
+    animation-delay: 1.5s;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+@keyframes closeBtn {
+    0% {
+        opacity: 1;
+        transform: scale(1) rotate(225deg)
+    }
+    50% {
+        transform: scale(1.5)
+    }
+    100% {
+        transform: scale(1) rotate(225deg);
+        opacity: 1;
+    }
+}
+
+.closeBtnInactive {
+    color: rgb(57, 90, 119);
+    width: max-content;
+    cursor: pointer;
+    margin: 0;
+    position: absolute;
+    left: 190px;
+}
+
+.sameAvatarParams {
+    position: absolute;
+    top: 0;
+    min-width: 241px;
+    min-height: 275px;
+    max-height: 300px;
+    left: calc(50% - 135px);
+}
+
+.status {
+    display: flex;
+    align-items: flex-end;
+    z-index: 0;
+}
+
+.leftHoverBlock {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.rightHoverBlock {
+    width: 35%;
+    height: 100%;
+}
+
+.eyesLookStraight {
     z-index: 5;
 }
 
-.leftBottom {
-    min-height: 1%;
-    width: 1%;
-    background: #ffba6d;
-    position: absolute;
-    left: 47.9%;
-    top: 21%;
-    z-index: 5;
-}
-
-.rightTop {
-    min-height: 1%;
-    width: 1%;
-    background: #ffba6d;
-    position: absolute;
-    left: 50.3%;
-    top: 20%;
-    z-index: 5;
-}
-
-.rightBottom {
-    min-height: 1%;
-    width: 1%;
-    background: #ffba6d;
-    position: absolute;
-    left: 50.4%;
-    top: 21%;
-    z-index: 5;
-}
-
-.leftLine {
-    width: .8%;
-    height: .2%;
-    background: black;
-    position: absolute;
-    left: 48.1%;
-    top: 21%;
+.eyesLookLeft {
     z-index: 6;
 }
 
-.rightLine {
-    width: .8%;
-    height: .2%;
-    background: black;
-    position: absolute;
-    left: 50.4%;
-    top: 21%;
+.eyesLookRight {
+    z-index: 6;
+}
+
+.eyesClose {
     z-index: 6;
 }
 
 
 /*-------------------------------------------------------------------*/
 
-.leftEyeArea {
-    position: absolute;
-    left: 48.1%;
-    top: 20.1%;
-    height: 1.8%;
-    width: .8%;
-    background: #fdf8f6;
-    z-index: 4;
-    border-radius: 100%;
-}
 
-.leftEyeMiddle {
-    position: absolute;
-    left: 32%;
-    top: 23%;
-    height: 41.8%;
-    width: 45%;
-    background: #313131;
-    z-index: 4;
-    border-radius: 100%;
-}
-
-
-.rightEyeArea {
-    position: absolute;
-    left: 50.4%;
-    top: 20.1%;
-    height: 1.8%;
-    width: .7%;
-    background: #fdf8f6;
-    z-index: 4;
-    border-radius: 100%;
-}
-
-.rightEyeMiddle {
-    position: absolute;
-    top: 21%;
-    left: 25.2%;
-    height: 41.8%;
-    width: 50%;
-    background: #313131;
-    z-index: 4;
-    border-radius: 100%;
-}
-
-
-
-.leftEyeMiddle1 {
-    position: absolute;
-    left: 5%;
-    top: 23%;
-    height: 41.8%;
-    width: 45%;
-    background: #313131;
-    z-index: 4;
-    border-radius: 100%;
-}
-.rightEyeMiddle1 {
-    position: absolute;
-    top: 21%;
-    left: 5%;
-    height: 46.9%;
-    width: 52.3%;
-    background: #313131;
-    z-index: 4;
-    border-radius: 100%;
-}
-
-.leftEyeMiddle2 {
-    position: absolute;
-    left: 65%;
-    top: 23%;
-    height: 41.8%;
-    width: 45%;
-    background: #313131;
-    z-index: 4;
-    border-radius: 100%;
-}
-
-.rightEyeMiddle2 {
-    position: absolute;
-    top: 21%;
-    left: 65%;
-    height: 46.9%;
-    width: 52.3%;
-    background: #313131;
-    z-index: 4;
-    border-radius: 100%;
-}
-
-.rightEyeMiddle3 {
-    position: absolute;
-    top: 21%;
-    left: 25.2%;
-    height: 46.9%;
-    width: 52.3%;
-    background: #313131;
-    z-index: 4;
-    border-radius: 100%;
-}
-
-.leftEyeMiddle3 {
-    position: absolute;
-    left: 32%;
-    top: 23%;
-    height: 41.8%;
-    width: 45%;
-    background: #313131;
-    z-index: 4;
-    border-radius: 100%;
-}
-
-
-/*--------------------------------------------------------------------*/
 /*@media screen and (max-width: 1024px){*/
 /*    .avatar img {*/
 /*        margin-top: 3px;*/

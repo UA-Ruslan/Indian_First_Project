@@ -1,72 +1,63 @@
 import React, {useEffect, useState} from "react";
-import profileInfo from './profileInfo.module.css'
+import style from './profileInfo.module.css'
 import ProfileStatusHooks from "./profileStatus/ProfileStatusHooks.jsx";
 
 const ProfileInfo = (props) => {
-    const [switchToggled, setSwitchToggled] = useState("false");
+    let [positionInfo, setPositionInfo] = useState(true)
+    let [toggleLeft, setToggleLeft] = useState(false)
+    let [toggleRight, setToggleRight] = useState(false)
+    let [blink, setBlink] = useState(false)
+    let [blinkOnclick, setBlinkOnclick] = useState(false)
 
     useEffect(() => {
-        if (!switchToggled) {
-            setTimeout(() => setSwitchToggled(!switchToggled), 500)
-        }
+        setTimeout(() => setBlink(true), 0)
+        setTimeout(() => setBlink(false), 100)
+    }, [toggleLeft, toggleRight, blinkOnclick])
 
-    }, [switchToggled, setSwitchToggled])
-
-    const oldClass = () => {
-        setSwitchToggled(!switchToggled);
+    let MouseLeft = () => {
+        setToggleLeft(!toggleLeft)
+    }
+    let MouseRight = () => {
+        setToggleRight(!toggleRight)
+    }
+    let blinkClick = () => {
+        setBlinkOnclick(!blinkOnclick)
+        setPositionInfo(true)
     }
 
-    const eyeMove = (event) => {
-        let x = event.clientX;
-        // let y = event.clientY;
-        // console.log(x, y)
-        if (x < 700) {
-            profileInfo.leftEyeMiddle = profileInfo.leftEyeMiddle1
-            profileInfo.rightEyeMiddle = profileInfo.rightEyeMiddle1
-        } else if (x > 700 && x < 900) {
-            profileInfo.leftEyeMiddle = profileInfo.leftEyeMiddle3
-            profileInfo.rightEyeMiddle = profileInfo.rightEyeMiddle3
-        } else if (x > 900) {
-            profileInfo.leftEyeMiddle = profileInfo.leftEyeMiddle2
-            profileInfo.rightEyeMiddle = profileInfo.rightEyeMiddle2
-        }
+    let positionInactive = () => {
+        setPositionInfo(false)
     }
-    let mouseOut = (event) => {
-        profileInfo.leftEyeMiddle = profileInfo.leftEyeMiddle3
-        profileInfo.rightEyeMiddle = profileInfo.rightEyeMiddle3
-    }
-
-
-
     return (
-        <div onMouseMove={eyeMove} onClick={oldClass} onMouseOver={oldClass} onMouseOut={mouseOut}
-             className={profileInfo.avatar}>
-            <img className={profileInfo.injun} src={require("../../../../img/people/injun_1.png")} alt="ava"/>
-            <ProfileStatusHooks  status={props.status} setStatus={props.setStatus}/>
-            <div>
-                <div className={switchToggled ? profileInfo.leftEyeTop : profileInfo.leftTop}>
+        <div onMouseDown={blinkClick} className={style.profileInfoWrapper}>
+            <img className={`${style.sameAvatarParams} ${style.eyesLookStraight}`}
+                 src={require("../../../../img/people/injun/straight.png")} alt="ava"/>
+            {toggleLeft && <img className={`${style.eyesLookLeft} ${style.sameAvatarParams}`}
+                                src={require("../../../../img/people/injun/left.png")}
+                                alt="ava"/>}
+            {toggleRight &&
+                <img className={`${style.eyesLookRight} ${style.sameAvatarParams}`}
+                     src={require("../../../../img/people/injun/right.png")}
+                     alt="ava"/>}
+            {blink && <img className={`${style.eyesClose} ${style.sameAvatarParams}`}
+                           src={require("../../../../img/people/injun/close.png")}
+                           alt="ava"/>}
+
+            <div onMouseOver={MouseLeft} onMouseOut={MouseLeft} className={style.leftHoverBlock}>
+                <div>
+                    <h2 className={style.title}>Profile</h2>
                 </div>
-                <div className={switchToggled ? profileInfo.leftEyeBottom : profileInfo.leftBottom}>
-                </div>
-                <div className={switchToggled ? profileInfo.rightEyeTop : profileInfo.rightTop}>
-                </div>
-                <div className={switchToggled ? profileInfo.rightEyeBottom : profileInfo.rightBottom}>
-                </div>
-                <div className={switchToggled ? profileInfo.leftEyeLine : profileInfo.leftLine}>
-                </div>
-                <div className={switchToggled ? profileInfo.rightEyeLine : profileInfo.rightLine}>
-                </div>
-                <div className={profileInfo.leftEyeArea}>
-                    <div className={profileInfo.leftEyeMiddle}>
-                    </div>
-                </div>
-                <div className={profileInfo.rightEyeArea}>
-                    <div className={profileInfo.rightEyeMiddle}>
-                    </div>
+                <div className={positionInfo ? style.spanWrapper : style.spanWrapper1}>
+                    <h4 onClick={positionInactive} className={`${positionInfo ? style.closeBtnActive : style.closeBtnInactive}`}>+</h4>
+                    <p>Name: Night Woolf</p>
+                    <p>Age: 36</p>
+                    <p>City: Zimbabwe</p>
                 </div>
             </div>
-            <div>Name: Night Woolf</div>
-            <div>Age: 36</div>
+            <div className={style.status}>
+                <ProfileStatusHooks status={props.status} setStatus={props.setStatus}/>
+            </div>
+            <div onMouseOver={MouseRight} onMouseOut={MouseRight} className={style.rightHoverBlock}></div>
         </div>
     )
 }

@@ -34,9 +34,9 @@ let messageReducer = (state = initialState, action) => {
             let stateCopy = {
                 ...state,
                 messages: [...state.messages],
-                ...state.messages.pop()
+                ...state.messages.shift()
             }
-            stateCopy.messages.pop();
+            stateCopy.messages.shift();
             return stateCopy;
         }
         default:

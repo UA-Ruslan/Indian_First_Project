@@ -1,0 +1,18 @@
+.mount_1 {
+    position: absolute;
+    left: 17.3%;
+    top: 15.5%;
+    z-index: 1;
+    min-width: 27%;
+    height: 54%;
+}
+
+.mount_2 {
+    position: absolute;
+    left: 36.7%;
+    top: 21%;
+    z-index: 3;
+    min-width: 57%;
+    height: 46%;
+
+}

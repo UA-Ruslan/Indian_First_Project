@@ -31,13 +31,15 @@
 }
 
 .btnStyle {
-    background: rgba(57, 90, 119, 0.42);
+    background: rgb(57, 90, 119);
+    color: burlywood;
     border-radius: 3px;
     transition: .5s;
     border: 1px solid white;
 }
 
 .btnStyle:hover {
+    background: rgba(57, 90, 119, 0.42);
     transition: .5s;
     transform: scale(1.1);
     color: white;

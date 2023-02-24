@@ -1,5 +1,5 @@
 import React from "react";
-import messages from './Messages.module.css';
+import style from './Messages.module.css';
 import Dialog from "./dialog/Dialog";
 import Message from "./dialog/message/Message";
 import SendMessageForm from "./dialog/sendMessageForm/SendMessageForm";
@@ -17,15 +17,18 @@ const Messages = (props) => {
     }
 
     return (
-        <div>
-            <div className={messages.txtAreaBtn}>
+        <div className={style.dialogsWrapper}>
+            <div className={style.txtAreaBtn}>
+                <div>
+                    <h2>Dialogs</h2>
+                </div>
                 <SendMessageForm onSubmit={onSubmitNewMessage} DeleteLastMessage={props.DeleteLastMessage}/>
             </div>
-            <div className={messages.allDialogs}>
-                <div className={messages.dialogsArea}>
+            <div className={style.allDialogs}>
+                <div className={style.dialogsArea}>
                     {dialogsInfoMap}
                 </div>
-                <div className={messages.messageArea}>
+                <div className={style.messageArea}>
                     {messagesMap}
                 </div>
             </div>

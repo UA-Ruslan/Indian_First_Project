@@ -1,0 +1,59 @@
+.preloaderWrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+}
+
+.ImgWrapper {
+    position: relative;
+    top: 85vh;
+    left: 1vw;
+    height: 100px;
+    width: 100px;
+}
+
+.preloaderImg1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    animation-name: preloaderImg1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes preloaderImg1 {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+.preloaderImg2 {
+    min-width: 78%;
+    position: absolute;
+    top: 11%;
+    left: 11%;
+    animation-name: preloaderImg2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes preloaderImg2 {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(-360deg);
+    }
+}
+
+
+

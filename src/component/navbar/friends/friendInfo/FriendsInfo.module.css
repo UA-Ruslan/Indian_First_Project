@@ -1,23 +1,48 @@
-.mapProfileInfoWrapper {
-    color: white;
-    margin: 20px;
+.profileInfoMain {
+    overflow: auto;
+    height: calc(100vh - 132px);
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 3px;
+    padding: 15px 10px;
+    margin: 5px 0;
+    width: 100%;
+    height: calc(100vh - 132px);
 }
 
-a {
-    color: white;
+.profileInfoWrapper {
+    width: min-content;
+    overflow: auto;
+    padding: 15px;
+    background: rgba(10, 70, 104, 0.16);
+    border: 2px solid rgba(10, 70, 104, 0.25);
+    border-radius: 5px;
+}
+
+.Flex {
+    display: flex;
+    flex-direction: column;
+}
+.hrefDec {
     transition: .3s;
     margin-left: 20px;
 }
 
-a:hover {
-    transition: .3s;
-    color: black;
+.hrefDec:hover {
+    margin-left: 30px;
+    color: #d28044;
 }
 
-p {
+.pDec {
     margin: 5px 0 5px 0;
+    width: max-content;
 }
 
-h3 {
+.h3Dec {
     margin-top: 0;
+}
+
+.profileInfoWrapper div img {
+    min-width: 200px;
+    max-height: 200px;
+    align-self: center;
 }
