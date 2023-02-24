@@ -4,18 +4,21 @@ import style from './profileStatus.module.css'
 const ProfileStatusHooks = (props) => {
     let [editMode, setEditMode] = useState(false)
     let [status, setStatus] = useState(props.status)
+    let [active, setActive] = useState(true)
 
-    useEffect( () => {
-        setStatus(props.status)
+    useEffect(() => {
+            setStatus(props.status)
         },
         [props.status]
     )
 
     let activateEditMode = () => {
         setEditMode(true)
+        setActive(false)
     }
 
     let deactivateEditMode = () => {
+        setActive(true)
         setEditMode(false)
         props.setStatus(status)
     }
@@ -25,17 +28,10 @@ const ProfileStatusHooks = (props) => {
     }
 
     return (
-        <div className={style.statusWrapper}>
+        <div className={`${active ? style.statusWrapper: ""}`}>
             {!editMode &&
-                <div>
-                    <span>Status: </span><span
-                    onDoubleClick={activateEditMode}
-                >
-                        {props.status ||
-                    '"click twice to add status"'
-                    }
-                    </span>
-                </div>
+                <div><span>Status: </span><span
+                    onDoubleClick={activateEditMode}>{props.status || '"click twice to add status"'}</span></div>
             }
             {editMode &&
                 <div>

@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import {setProfileUserInfo, setPreloader, thunkUserProfileInfo} from "../../../../utilit/redux/FriendsReducer";
 import FriendsInfo from "./FriendsInfo";
-import Preloader from "../../../preloader/Preloader";
+import Preloader from "../../../../utilit/preloader/Preloader";
 import {getPreloader, getProfileUserInfo} from "../../../../utilit/redux/FriendsSelectors";
 
 class FriendsInfoApiContainer extends React.Component {

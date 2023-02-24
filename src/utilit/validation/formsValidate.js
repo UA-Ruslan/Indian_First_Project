@@ -1,6 +1,6 @@
 export let required = (value) => {
     if (value) return undefined
-    return `this field is required`
+    return `write some text before sending`
 }
 
 export let maxLength = (maxLength) => (value) => {

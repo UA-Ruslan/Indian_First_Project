@@ -6,8 +6,8 @@ import {thunkLogin} from "../../../utilit/redux/AuthReducer";
 import {Navigate} from "react-router-dom";
 const Login = (props) => {
     let onSubmit = (formData) => {
-        console.log(formData)
-        props.thunkLogin(formData.email, formData.password, formData.rememberMe)
+        props.thunkLogin(formData.email, formData.password)
+        // props.thunkLogin(formData.email, formData.password, formData.rememberMe)
     }
     if (props.isAuth) {
         return (<Navigate to="/"/>)
@@ -15,7 +15,6 @@ const Login = (props) => {
     return (
         <div className={style.loginWrapper}>
             <h1>YOU NEED TO LOGIN</h1>
-            <h2>HERE</h2>
             <LoginForm onSubmit={onSubmit}/>
         </div>
     );

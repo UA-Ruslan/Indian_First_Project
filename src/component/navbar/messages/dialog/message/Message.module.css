@@ -1,6 +1,13 @@
 .message {
-    background: rgba(57, 90, 119, 0.48);
     padding: 10px;
     margin: 5px 0;
     border-radius: 3px;
+    border: 2px solid rgba(10, 70, 104, 0.25);
+    background: rgba(10, 70, 104, 0.16);
+    transition: .3s;
+}
+
+.message:hover {
+    background: rgba(57, 90, 119, 0.48);
+    transition: .3s;
 }

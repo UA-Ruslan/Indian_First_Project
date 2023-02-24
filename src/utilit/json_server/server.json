@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "following": false,
+      "following": true,
       "name": "White Fang",
       "location": "Wachatty",
       "imgUrl": "https://pngimg.com/uploads/american_indian/american_indian_PNG36.png"
@@ -30,7 +30,7 @@
     },
     {
       "id": 5,
-      "following": true,
+      "following": false,
       "name": "Dust",
       "location": "Hell",
       "imgUrl": null
@@ -51,7 +51,7 @@
     },
     {
       "id": 8,
-      "following": false,
+      "following": true,
       "name": "Cunning Fox",
       "location": "Wild West",
       "imgUrl": "https://pngimg.com/uploads/american_indian/small/american_indian_PNG48.png"
@@ -93,7 +93,7 @@
     },
     {
       "id": 14,
-      "following": true,
+      "following": false,
       "name": "Ash",
       "location": "Azerot",
       "imgUrl": "https://pngimg.com/uploads/american_indian/small/american_indian_PNG9.png"
@@ -156,7 +156,7 @@
     },
     {
       "id": 23,
-      "following": false,
+      "following": true,
       "name": "Cunning Fox",
       "location": "Wild West",
       "imgUrl": "https://pngimg.com/uploads/american_indian/small/american_indian_PNG16.png"
@@ -532,6 +532,10 @@
     }
   ],
   "myStatus": {
-    "myStatus": "Hallo dog!"
+    "myStatus": "Hallo!"
+  },
+  "authMe": {
+    "email": "test",
+    "login": "test"
   }
 }

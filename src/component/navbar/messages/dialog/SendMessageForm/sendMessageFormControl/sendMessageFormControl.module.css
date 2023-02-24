@@ -4,9 +4,7 @@
     left: 0;
 }
 
-.formControl {
 
-}
 .areaDec {
     max-width: 300px;
     max-height: 45px;
@@ -39,9 +37,10 @@
 }
 
 .spanDec {
+    width: max-content;
     position: absolute;
-    top: 76%;
-    left: 14%;
+    top: -30%;
+    left: 15%;
     color: rgb(255, 255, 255);
 }
 

@@ -12,13 +12,13 @@ let SendMessageForm = (props) => {
     return (
         <div className={messages.messageFormWrapper}>
             <form className={messages.messageForm} onSubmit={props.handleSubmit}>
-                <button className={messages.sendBtnStyle}>Send</button>
+                <button className={`${messages.sendBtnStyle} ${"btnSameParams"}`}>Send</button>
                 <Field name='newMessageData'
                        component={TextArea}
                        validate={[required, maxPostLength]}
                 />
             </form>
-            <button onClick={deleteLastMessage} className={messages.deleteBtnStyle}>Delete message</button>
+            <button onClick={deleteLastMessage} className={`${messages.deleteBtnStyle} ${"btnSameParams"}`}>Delete message</button>
         </div>
     )
 }

@@ -3,9 +3,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    z-index: 0;
+    height: 100vh;
+    z-index: 2;
 }
+
 .fire_1 {
     border-radius: 50%;
     width: .7%;
@@ -21,8 +22,9 @@
     animation-direction: normal;
     animation-timing-function: ease-in-out;
 }
+
 @keyframes fire_1 {
-    0%{
+    0% {
         left: 26.5%;
     }
     25% {
@@ -37,13 +39,14 @@
         left: 27%;
     }
     100% {
-        top:64%;
+        top: 64%;
         left: 26.5%;
         background: red;
         border-radius: 0;
         opacity: .2;
     }
 }
+
 .fire_2 {
     border-radius: 50%;
     width: .7%;
@@ -59,8 +62,9 @@
     animation-direction: normal;
     animation-timing-function: ease-in;
 }
+
 @keyframes fire_2 {
-    0%{
+    0% {
         background: #ff0000;
     }
     25% {
@@ -74,13 +78,14 @@
         left: 25.5%;
     }
     100% {
-        top:65%;
+        top: 65%;
         left: 26%;
         background: #ffc800;
         border-radius: 5%;
         opacity: .4;
     }
 }
+
 .fire_3 {
     border-radius: 50%;
     width: .7%;
@@ -96,8 +101,9 @@
     animation-direction: normal;
     animation-timing-function: ease-in;
 }
+
 @keyframes fire_3 {
-    0%{
+    0% {
         left: 27%;
     }
     25% {
@@ -111,12 +117,13 @@
         left: 27%;
     }
     100% {
-        top:63%;
+        top: 63%;
         left: 26%;
         background: #ffc800;
         opacity: 0;
     }
 }
+
 .fire_4 {
     width: .7%;
     height: 1%;
@@ -131,8 +138,9 @@
     animation-direction: normal;
     animation-timing-function: ease-in;
 }
-@keyframes fire_4{
-    0%{
+
+@keyframes fire_4 {
+    0% {
         background: #ff0000;
     }
     25% {
@@ -153,6 +161,7 @@
         opacity: .3;
     }
 }
+
 .fire_5 {
     border-radius: 50%;
     width: .7%;
@@ -167,8 +176,9 @@
     animation-direction: normal;
     animation-timing-function: ease-in;
 }
+
 @keyframes fire_5 {
-    0%{
+    0% {
         background: yellow;
     }
     25% {

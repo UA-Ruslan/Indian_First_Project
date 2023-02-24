@@ -3,35 +3,19 @@
     flex-direction: column;
     background: rgba(255, 255, 255, 0.13);
     margin: 5px 0;
+    padding: 33px 5px 5px 5px;
     border-radius: 3px;
-    padding: 5px
-}
-
-.postsArea {
-    background: rgba(255, 255, 255, 0.13);
-    margin: 5px 0;
-    border-radius: 3px;
-    padding: 10px;
-    color: white;
+    overflow: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    grid-area: b;
 }
 
 .btnStyle {
     width: 150px;
-    background: rgba(57, 90, 119, 0.16);
-    color: #bdbdbc;
-    border-radius: 3px;
-    transition: .3s;
     margin: 15px 50px 15px 50px;
 }
-
-.btnStyle:hover {
-    background: rgba(57, 90, 119, 0.9);
-    color: white;
-    transform: scale(1.1);
-    transition: .3s;
-}
-
-
 
 ::placeholder {
     color: black;
@@ -45,7 +29,12 @@
 
 .postFormWrapper {
     display: flex;
+    position: absolute;
+    top: 58%
 }
 .postForm {
     display: flex;
+}
+.form {
+    position: fixed;
 }

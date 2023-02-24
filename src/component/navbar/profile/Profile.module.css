@@ -1,0 +1,8 @@
+.profileWrapper {
+    display: grid;
+    grid-template-areas:
+    "a"
+    "b";
+    grid-template-rows: 42.5vh 42.5vh;
+    overflow: hidden;
+}

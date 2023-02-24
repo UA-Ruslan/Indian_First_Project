@@ -5,3 +5,9 @@
     padding: 10px;
     color: white;
 }
+
+.musicTitle {
+    text-align: center;
+    color: black;
+    margin-bottom: 10px;
+}

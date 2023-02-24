@@ -3,19 +3,30 @@
     font-weight: bold;
     color: #b4b4b4;
 }
+
 .item {
-    background: rgba(57, 90, 119, 0.48);
+    background: rgba(10, 70, 104, 0.16);
     margin: 10px;
     padding: 5px 40px 5px 40px;
-    border-radius: 3px;
+    border-radius: 5px;
     color: white;
     display: flex;
     justify-content: space-between;
+    border: 2px solid rgba(10, 70, 104, 0.25);
+    transition: .3s;
 }
+
+.item:hover {
+    background: rgba(57, 90, 119, 0.48);
+    border: 2px solid rgba(10, 70, 104, 0.65);
+    transition: .3s;
+}
+
 .item img {
     max-width: 50px;
     align-self: flex-start;
 }
+
 .postMessage {
     align-self: center;
     justify-self: center;

@@ -1,6 +1,6 @@
 import React from "react";
-import Preloader from "../../../preloader/Preloader";
-import FriendsModuleCss from './FriendsInfo.module.css'
+import Preloader from "../../../../utilit/preloader/Preloader";
+import style from './FriendsInfo.module.css'
 
 const FriendsInfo = (props) => {
 
@@ -11,36 +11,36 @@ const FriendsInfo = (props) => {
             )
         }
         return (
-            <div key={index} className={FriendsModuleCss.mapProfileInfoWrapper}>
+            <div key={index} className={style.profileInfoWrapper}>
 
 
                 {element.profileInfo.map((el) => {
                     return (
-                        <div key={el.userId}>
+                        <div className={style.Flex} key={el.userId}>
                             <img src={element.imgUrl} alt="img"/>
-                            <p>Name: {element.name}</p>
-                            <p>Full Name: {el.fullName}</p>
-                            <p>From: {element.location}</p>
-                            <p>Age: {el.age}</p>
-                            <p>Subscribers: {el.subscriber}</p>
-                            <p>Status: {el.status}</p>
+                            <p className={style.pDec}>Name: {element.name}</p>
+                            <p className={style.pDec}>Full Name: {el.fullName}</p>
+                            <p className={style.pDec}>From: {element.location}</p>
+                            <p className={style.pDec}>Age: {el.age}</p>
+                            <p className={style.pDec}>Subscribers: {el.subscriber}</p>
+                            <p className={style.pDec}>Status: {el.status}</p>
                             <div style={{margin: '20px 0 0 0', display: 'flex'}}>
-                                <h3>Contacts:</h3>
+                                <h3 className={style.h3Dec}>Contacts:</h3>
                                 <div style={{paddingTop: '5px'}}>
                                     <div>
-                                        <a href={el.contacts.github}>Github</a>
+                                        <a className={style.hrefDec} href={el.contacts.github}>Github</a>
                                     </div>
                                     <div>
-                                        <a href={el.contacts.facebook}>Facebook</a>
+                                        <a className={style.hrefDec} href={el.contacts.facebook}>Facebook</a>
                                     </div>
                                     <div>
-                                        <a href={el.contacts.instagram}>Instagram</a>
+                                        <a className={style.hrefDec} href={el.contacts.instagram}>Instagram</a>
                                     </div>
                                     <div>
-                                        <a href={el.contacts.twitter}>Twitter</a>
+                                        <a className={style.hrefDec} href={el.contacts.twitter}>Twitter</a>
                                     </div>
                                     <div>
-                                        <a href={el.contacts.youtube}>Youtube</a>
+                                        <a className={style.hrefDec} href={el.contacts.youtube}>Youtube</a>
                                     </div>
                                 </div>
                             </div>
@@ -51,7 +51,7 @@ const FriendsInfo = (props) => {
         )
     })
     return (
-        <div>
+        <div className={style.profileInfoMain}>
             {mapProfileInfo}
         </div>
     )

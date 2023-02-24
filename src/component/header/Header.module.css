@@ -19,18 +19,7 @@
 }
 
 .logoutBtn {
-    background: rgba(57, 90, 119, 0.16);
-    color: #bdbdbc;
-    border-radius: 3px;
-    transition: .3s;
     margin-right: 20px;
-}
-
-.logoutBtn:hover {
-    transition: .3s;
-    transform: scale(1.1);
-    background: rgba(57, 90, 119, 0.9);
-    color: white;
 }
 
 .authFree {
@@ -68,28 +57,27 @@
 .header img {
     height: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 1px;
+    left: 2px;
     opacity: .7;
     transition: .5s;
 }
 
 .header img:hover {
-    transition: .5s;
-    transform: scale(1.3);
-    filter: blur(0) !important;
+    animation-name: logo;
+    animation-fill-mode: forwards;
+    animation-duration: .4s;
+}
+@keyframes logo {
+    100% {
+        transform: scale(1.3);
+        filter: blur(0) !important;
+    }
 }
 
 .header img:hover ~ .eye {
-    z-index: 7 !important;
-    width: 4px;
-    height: 4px;
-    background: white;
-    position: absolute;
-    left: 48.5px;
-    top: 15px;
-    border-radius: 3px;
     animation-name: eye;
+    animation-delay: .2s;
     animation-duration: 60s;
     animation-iteration-count: infinite;
     opacity: 0;
@@ -97,18 +85,31 @@
 
 @keyframes eye {
     0% {
-        opacity: 0;
-    }
-    0.5% {
+        z-index: 7;
+        width: 5px;
+        height: 5px;
+        background: white;
+        position: absolute;
+        left: 48px;
+        top: 14px;
         opacity: 1;
-    }
-    50% {
-
+        border-radius: 3px;
         box-shadow: 0 0 0 2px white;
         filter: blur(1px);
     }
+
     100% {
+        z-index: 7;
+        width: 6px;
+        height: 6px;
+        background: white;
+        position: absolute;
+        left: 48px;
+        top: 14px;
         opacity: 1;
+        border-radius: 3px;
+        box-shadow: 0 0 0 2px white;
+        filter: blur(2px);
     }
 }
 
@@ -128,6 +129,7 @@
     animation-name: smoke1;
     animation-iteration-count: infinite;
     animation-duration: 3s;
+    animation-delay: .3s;
     animation-timing-function: linear;
     filter: blur(3px);
     opacity: 0;
@@ -173,7 +175,7 @@
     animation-timing-function: linear;
     filter: blur(3px);
     opacity: 0;
-    animation-delay: .3s;
+    animation-delay: .2s;
 }
 
 @keyframes smoke2 {
@@ -216,7 +218,7 @@
     animation-timing-function: linear;
     filter: blur(3px);
     opacity: 0;
-    animation-delay: .7s;
+    animation-delay: .5s;
 }
 
 @keyframes smoke3 {
@@ -259,7 +261,7 @@
     animation-timing-function: linear;
     filter: blur(3px);
     opacity: 0;
-    animation-delay: 1s;
+    animation-delay: .7s;
 }
 
 @keyframes smoke4 {
@@ -302,7 +304,7 @@
     animation-timing-function: linear;
     filter: blur(3px);
     opacity: 0;
-    animation-delay: 1.3s;
+    animation-delay: 1s;
 }
 
 @keyframes smoke5 {
@@ -345,7 +347,7 @@
     animation-timing-function: linear;
     filter: blur(3px);
     opacity: 0;
-    animation-delay: 1.7s;
+    animation-delay: 1.2s;
 }
 
 @keyframes smoke6 {
@@ -388,7 +390,7 @@
     animation-timing-function: linear;
     filter: blur(3px);
     opacity: 0;
-    animation-delay: 2.2s;
+    animation-delay: 1.5s;
 }
 
 @keyframes smoke7 {

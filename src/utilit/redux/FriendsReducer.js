@@ -79,7 +79,6 @@ export const setProfileUserInfo = (setProfileUserInfo) => ({type: SET_PROFILE_US
 export const setDisabledOnBtn = (isDisabled, userId) => ({type: SET_TOGGLE_IN_PROGRESS, isDisabled, userId});
 
 
-
 export const thunkGetUsers = (usersOnPage, currentPage) => {
     return (dispatch) => {
         dispatch(setPreloader(true));
@@ -121,6 +120,25 @@ export const thunkUserProfileInfo = (id) => {
             })
     }
 }
-
+export const thunkSetUnfollow = (userId) => {
+    return (dispatch) => {
+        dispatch(setDisabledOnBtn(true, userId))
+        apiMethods.apiSetUnfollow(userId)
+            .then(data => {
+                dispatch(unfollow(userId))
+                dispatch(setDisabledOnBtn(false, userId))
+            })
+    }
+}
+export const thunkSetFollow = (userId) => {
+    return (dispatch) => {
+        dispatch(setDisabledOnBtn(true, userId))
+        apiMethods.apiSetFollow(userId)
+            .then(data => {
+                dispatch(follow(userId))
+                dispatch(setDisabledOnBtn(false, userId))
+            })
+    }
+}
 
 export default friendsReducer;

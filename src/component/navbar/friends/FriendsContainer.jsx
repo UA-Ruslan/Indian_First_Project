@@ -5,11 +5,14 @@ import {
     follow,
     unfollow,
     setCurrentPage,
-    setDisabledOnBtn, thunkGetUsers, thunkGetTotalUsersCount,
+    thunkGetUsers,
+    thunkGetTotalUsersCount,
     thunkPageChangeOnClick,
+    thunkSetUnfollow,
+    thunkSetFollow,
 } from "../../../utilit/redux/FriendsReducer";
 import React from "react";
-import Preloader from "../../preloader/Preloader";
+import Preloader from "../../../utilit/preloader/Preloader";
 import {
     getCurrentPage,
     getTotalUsersCount,
@@ -35,24 +38,15 @@ class FriendsApiContainer extends React.Component {
         return (
             <>
                 {this.props.setPreloader === true ? <Preloader/> : null}
-                <Friends
-                    unfollowOnClick={this.props.unfollowOnClick}
-                    totalUsersCount={this.props.totalUsersCount}
-                    usersOnPage={this.props.usersOnPage}
-                    currentPage={this.props.currentPage}
-                    users={this.props.users}
-                    follow={this.props.follow}
-                    unfollow={this.props.unfollow}
+                <Friends {...this.props}
                     pageChangeOnClick={this.pageChangeOnClick}
-                    toggleDisabled={this.props.toggleDisabled}
-                    setDisabledOnBtn={this.props.setDisabledOnBtn}
                 />
             </>
         )
     }
 }
 
-let mapPropsToState = (state) => {
+let mapStateToProps = (state) => {
     return {
         users: getUsers(state),
         totalUsersCount: getTotalUsersCount(state),
@@ -63,15 +57,16 @@ let mapPropsToState = (state) => {
     }
 }
 
-const FriendsContainer = connect(mapPropsToState, {
+const FriendsContainer = connect(mapStateToProps, {
     follow,
     unfollow,
     setUsers,
     setCurrentPage,
-    setDisabledOnBtn,
     thunkGetUsers,
     thunkGetTotalUsersCount,
-    thunkPageChangeOnClick
+    thunkPageChangeOnClick,
+    thunkSetUnfollow,
+    thunkSetFollow
 })
 (FriendsApiContainer);
 
