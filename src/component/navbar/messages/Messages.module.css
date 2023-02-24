@@ -1,3 +1,23 @@
+.dialogsWrapper {
+    overflow: hidden;
+    display: grid;
+    grid-template-areas:
+"title"
+"dialogs";
+    grid-template-rows: min-content calc(100vh - 310px);
+}
+
+.txtAreaBtn {
+    padding: 10px;
+    margin: 5px 0;
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .allDialogs {
     color: white;
     display: flex;
@@ -9,6 +29,7 @@
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.13);
     padding: 10px;
+    overflow: auto;
 }
 
 .messageArea {
@@ -17,70 +38,27 @@
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.13);
     padding: 10px;
+    overflow: auto;
 }
 
-.newMessageArea {
-    width: calc(100% - 20px);
-    margin: 5px 0;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.13);
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+
+.sendBtnStyle {
+    min-width: 160px;
+    align-self: center;
+    margin: 10px 20px 10px 20px;
 }
 
-.txtAreaBtn {
-    padding: 10px;
-    margin: 5px 0;
-    background: rgba(57, 90, 119, 0.48);
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.addNewMessage {
-    width: 30%;
-    background: rgba(57, 90, 119, 0.42);
-    color: white;
-    border-radius: 3px;
-    border: 1px solid white;
-    transition: .5s;
-    margin: 10px 40px;
-}
-
-.addNewMessage:hover {
-    background: rgba(57, 90, 119, 0.9);
-    transition: .5s;
-}
-
-::placeholder {
-    color: black;
-    transition: .5s;
-}
-
-.addNewMessage:hover::placeholder {
-    color: white;
-    transition: .5s;
-}
-
-.btnStyle {
-    min-width: 20%;
-    height: 50%;
-    background: rgba(57, 90, 119, 0.35);
-    color: black;
-    border-radius: 3px;
-    font-family: 'Syne Tactile', cursive;
-    transition: .3s;
+.deleteBtnStyle {
+    min-width: 160px;
     align-self: center;
     margin: 10px 20px;
 }
 
-.btnStyle:hover {
-    background: rgba(57, 90, 119, 0.9);
-    color: white;
-    transform: scale(1.1);
-    transition: .3s;
+.messageFormWrapper {
+    display: flex;
+}
+
+.messageForm {
+    display: flex;
 }

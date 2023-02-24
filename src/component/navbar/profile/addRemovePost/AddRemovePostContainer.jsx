@@ -1,19 +1,14 @@
-import {
-    UpdateNewPostText,
-    AddPost,
-    DeleteLastPost
-} from "../../../../redux/ProfileReducer";
+import {AddPost, DeleteLastPost} from "../../../../utilit/redux/ProfileReducer";
 import AddRemovePost from "./AddRemovePost";
 import {connect} from "react-redux";
 
 let mapStateToProps = (state) => {
     return {
-        newPostText: state.postPage.newPostText,
         postsData: state.postPage.postsData
     }
 };
 
-const AddRemovePostContainer = connect(mapStateToProps, {UpdateNewPostText, AddPost, DeleteLastPost})(AddRemovePost);
+const AddRemovePostContainer = connect(mapStateToProps, {AddPost, DeleteLastPost})(AddRemovePost);
 
 
 export default AddRemovePostContainer

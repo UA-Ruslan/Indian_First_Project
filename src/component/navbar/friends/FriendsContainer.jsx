@@ -5,11 +5,22 @@ import {
     follow,
     unfollow,
     setCurrentPage,
-    setDisabledOnBtn, thunkGetUsers, thunkGetTotalUsersCount,
+    thunkGetUsers,
+    thunkGetTotalUsersCount,
     thunkPageChangeOnClick,
-} from "../../../redux/FriendsReducer";
+    thunkSetUnfollow,
+    thunkSetFollow,
+} from "../../../utilit/redux/FriendsReducer";
 import React from "react";
-import Preloader from "../../preloader/Preloader";
+import Preloader from "../../../utilit/preloader/Preloader";
+import {
+    getCurrentPage,
+    getTotalUsersCount,
+    getUsers,
+    getUsersOnPage,
+    getPreloader,
+    setToggleDisabled
+} from "../../../utilit/redux/FriendsSelectors";
 
 
 
@@ -26,44 +37,36 @@ class FriendsApiContainer extends React.Component {
     render() {
         return (
             <>
-                {this.props.preloader === true ? <Preloader/> : null}
-                <Friends
-                    unfollowOnClick={this.props.unfollowOnClick}
-                    totalUsersCount={this.props.totalUsersCount}
-                    usersOnPage={this.props.usersOnPage}
-                    currentPage={this.props.currentPage}
-                    users={this.props.users}
-                    follow={this.props.follow}
-                    unfollow={this.props.unfollow}
+                {this.props.setPreloader === true ? <Preloader/> : null}
+                <Friends {...this.props}
                     pageChangeOnClick={this.pageChangeOnClick}
-                    toggleDisabled={this.props.toggleDisabled}
-                    setDisabledOnBtn={this.props.setDisabledOnBtn}
                 />
             </>
         )
     }
 }
 
-let mapPropsToState = (state) => {
+let mapStateToProps = (state) => {
     return {
-        users: state.friendsPage.users,
-        totalUsersCount: state.friendsPage.totalUsersCount,
-        usersOnPage: state.friendsPage.usersOnPage,
-        currentPage: state.friendsPage.currentPage,
-        preloader: state.friendsPage.preloader,
-        toggleDisabled: state.friendsPage.toggleDisabled,
+        users: getUsers(state),
+        totalUsersCount: getTotalUsersCount(state),
+        usersOnPage: getUsersOnPage(state),
+        currentPage: getCurrentPage(state),
+        setPreloader: getPreloader(state),
+        toggleDisabled: setToggleDisabled(state),
     }
 }
 
-const FriendsContainer = connect(mapPropsToState, {
+const FriendsContainer = connect(mapStateToProps, {
     follow,
     unfollow,
     setUsers,
     setCurrentPage,
-    setDisabledOnBtn,
     thunkGetUsers,
     thunkGetTotalUsersCount,
-    thunkPageChangeOnClick
+    thunkPageChangeOnClick,
+    thunkSetUnfollow,
+    thunkSetFollow
 })
 (FriendsApiContainer);
 

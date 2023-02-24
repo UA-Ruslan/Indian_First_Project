@@ -1,18 +1,27 @@
 import React from 'react';
-import loginModuleCSS from './login.module.css'
+import style from './loginForm/loginFormControl/LoginFormControl.module.css'
 import LoginForm from "./loginForm/LoginForm";
-const Login = () => {
+import {connect} from "react-redux";
+import {thunkLogin} from "../../../utilit/redux/AuthReducer";
+import {Navigate} from "react-router-dom";
+const Login = (props) => {
     let onSubmit = (formData) => {
-        console.log(formData)
+        props.thunkLogin(formData.email, formData.password)
+        // props.thunkLogin(formData.email, formData.password, formData.rememberMe)
+    }
+    if (props.isAuth) {
+        return (<Navigate to="/"/>)
     }
     return (
-        <div className={loginModuleCSS.loginWrapper}>
+        <div className={style.loginWrapper}>
             <h1>YOU NEED TO LOGIN</h1>
-            <h2>HERE</h2>
             <LoginForm onSubmit={onSubmit}/>
-            <a className={loginModuleCSS.loginLink} href='https://social-network.samuraijs.com/login'><h2>Login link</h2></a>
         </div>
     );
 };
 
-export default Login;
+let mapStateToProps = (state) => ({
+    isAuth: state.authUserData.isAuth
+})
+
+export default connect (mapStateToProps, {thunkLogin})(Login);

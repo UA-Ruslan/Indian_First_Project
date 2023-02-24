@@ -1,18 +1,33 @@
+* {
+  box-sizing: border-box;
+  color: burlywood;
+}
+
 body {
-  font-family: 'Syne Tactile', cursive;
+  margin: 0;
+  font-family: 'Righteous', cursive;
+  height: 100%;
+}
+
+h2 {
+  color: black;
+}
+a {
+  color: #de9e5e;
 }
 .app-wrapper {
+  overflow: hidden;
   position: relative;
-  margin: 0 auto;
+  top: 0;
+  left: 0;
   display: grid;
-  max-width: 1200px;
-  min-height: 100vh;
+  height: 100vh;
   background-image: url("./img/main_background/main_bg.png");
   background-size: 100% 100%;
   grid-template-areas:
 'h h'
 'n c';
-  grid-template-rows: 100px;
+  grid-template-rows: 12% 88%;
   grid-template-columns: 2fr 10fr;
 }
 
@@ -27,8 +42,22 @@ img {
   background: rgba(20, 19, 19, 0.36);
   padding: 10px;
   z-index: 5;
+  align-self: stretch;
+  justify-self: stretch;
 }
 
+.btnSameParams {
+  background: rgb(57, 90, 119);
+  color: burlywood;
+  border-radius: 3px;
+  transition: .3s;
+  border: 2px solid rgba(0, 0, 0, 0.45);
+}
 
-
-
+.btnSameParams:hover {
+  transform: scale(1.1);
+  background: rgba(57, 90, 119, 0.27);
+  color: white;
+  transition: .3s;
+  border: 2px solid rgb(255, 255, 255);
+}

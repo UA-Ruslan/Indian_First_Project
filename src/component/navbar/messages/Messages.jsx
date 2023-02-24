@@ -1,7 +1,8 @@
 import React from "react";
-import messages from './Messages.module.css';
+import style from './Messages.module.css';
 import Dialog from "./dialog/Dialog";
 import Message from "./dialog/message/Message";
+import SendMessageForm from "./dialog/sendMessageForm/SendMessageForm";
 
 const Messages = (props) => {
 
@@ -11,38 +12,27 @@ const Messages = (props) => {
     let messagesMap = props.messages.map((message, pos) => <Message txt={message.messagesData}
                                                                     key={pos}/>)
 
-    let ref = React.createRef();
-    let sendMessage = () => {
-        !ref.current.value ? alert('Your message is to short') : props.AddNewMessage()
+    let onSubmitNewMessage = (value) => {
+         props.AddNewMessage(value.newMessageData)
     }
-    let deleteLastMessage = () => {
-        props.DeleteLastMessage()
-    }
-    let updateMessageTxt = () => {
-        let valueMessage = ref.current.value
-        props.UpdateNewMessageTxt(valueMessage)
-    }
-    return (
-        <div>
 
-            <div className={messages.allDialogs}>
-                <div className={messages.dialogsArea}>
+    return (
+        <div className={style.dialogsWrapper}>
+            <div className={style.txtAreaBtn}>
+                <div>
+                    <h2>Dialogs</h2>
+                </div>
+                <SendMessageForm onSubmit={onSubmitNewMessage} DeleteLastMessage={props.DeleteLastMessage}/>
+            </div>
+            <div className={style.allDialogs}>
+                <div className={style.dialogsArea}>
                     {dialogsInfoMap}
                 </div>
-                <div className={messages.messageArea}>
+                <div className={style.messageArea}>
                     {messagesMap}
                 </div>
             </div>
-            <div className={messages.txtAreaBtn}>
-                <button onClick={sendMessage} className={messages.btnStyle}>Send</button>
-                <textarea onChange={updateMessageTxt}
-                          ref={ref}
-                          value={props.newMessageData}
-                          className={messages.addNewMessage}
-                          placeholder={'your new message'}/>
-                <button onClick={deleteLastMessage} className={messages.btnStyle}>Delete last message</button>
 
-            </div>
         </div>
     );
 };
