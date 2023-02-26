@@ -86,7 +86,7 @@
     },
     {
       "id": 13,
-      "following": false,
+      "following": true,
       "name": "Cunning Fox",
       "location": "Wild West",
       "imgUrl": "https://pngimg.com/uploads/american_indian/small/american_indian_PNG22.png"

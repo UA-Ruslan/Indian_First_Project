@@ -1,7 +1,6 @@
 .profileInfoWrapper {
     background: rgba(255, 255, 255, 0.13);
     margin: 5px 0;
-    border-radius: 3px;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -9,11 +8,9 @@
     position: relative;
     top: 0;
     left: 0;
-    grid-area: a;
-}
-
-img {
-    max-width: 25%;
+    grid-area: profileInfo;
+    overflow: hidden;
+    border-radius: 3px 0 0 3px;
 }
 
 .title {
@@ -26,15 +23,16 @@ img {
 
 
 .spanWrapper {
-    display: block;
+    height: 12vh;
+    width: max-content;
     color: wheat;
     background: rgba(10, 70, 104, 0.16);
     border: 2px solid rgba(10, 70, 104, 0.25);
     border-radius: 5px;
-    width: max-content;
-    padding: 0 20px;
-    position: relative;
-    top: 70%;
+    padding: 10px 20px 0 20px;
+    position: absolute;
+    top: 65vh;
+    left: calc(50% - 110px);
     animation-name: spanWrapper;
     animation-duration: 1s;
     animation-iteration-count: 1;
@@ -43,25 +41,26 @@ img {
 
 @keyframes spanWrapper {
     0% {
-        position: relative;
-        top: 70%;
+        position: absolute;
+        top: 85vh;
     }
     100% {
-        position: relative;
-        top: -5%;
+        position: absolute;
+        top: 65vh;
     }
 }
 
 .spanWrapper1 {
-    display: block;
+    height: 12vh;
+    width: max-content;
     color: wheat;
     background: rgba(10, 70, 104, 0.16);
     border: 2px solid rgba(10, 70, 104, 0.25);
     border-radius: 5px;
-    width: max-content;
     padding: 0 20px;
-    position: relative;
-    top: 0;
+    position: absolute;
+    top: 85vh;
+    left: calc(50% - 110px);
     animation-name: spanWrapper1;
     animation-duration: 1s;
     animation-iteration-count: 1;
@@ -70,12 +69,12 @@ img {
 
 @keyframes spanWrapper1 {
     0% {
-        position: relative;
-        top: -5%;
+        position: absolute;
+        top: 65vh;
     }
     100% {
-        position: relative;
-        top: 70%;
+        position: absolute;
+        top: 85vh;
     }
 }
 .closeBtnActive:hover {
@@ -87,7 +86,8 @@ img {
     cursor: pointer;
     margin: 0;
     position: absolute;
-    left: 190px;
+    top: -5px;
+    left: 195px;
     opacity: 0;
     animation-name: closeBtn;
     animation-delay: 1.5s;
@@ -117,22 +117,25 @@ img {
     cursor: pointer;
     margin: 0;
     position: absolute;
-    left: 190px;
+    top: -5px;
+    left: 195px;
 }
 
 .sameAvatarParams {
     position: absolute;
-    top: 0;
-    min-width: 241px;
-    min-height: 275px;
-    max-height: 300px;
-    left: calc(50% - 135px);
+    top: 17%;
+    left: calc(50% - 150px);
+    min-width: 300px;
+    min-height: 350px;
+    max-height: 350px;
 }
 
 .status {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
     z-index: 0;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .leftHoverBlock {
@@ -168,14 +171,72 @@ img {
 
 /*-------------------------------------------------------------------*/
 
+@media screen and (max-width: 860px) {
+    .profileInfoWrapper {
+        margin: 5px 0 0 0;
+        /*border-bottom-right-radius: 0;*/
+        /*border-top-right-radius: 0;*/
+        border-radius: 3px 3px 0 0;
+    }
+}
 
-/*@media screen and (max-width: 1024px){*/
-/*    .avatar img {*/
-/*        margin-top: 3px;*/
-/*    }*/
-/*}*/
-/*@media screen and (max-width: 920px){*/
-/*    .avatar img {*/
-/*        margin-top: 3px;*/
-/*    }*/
-/*}*/
+@media screen and (max-width: 425px){
+    .spanWrapper {
+        height: 7vh;
+        position: absolute;
+        top: 51vh;
+        left: calc(50% - 62px);
+    }
+    @keyframes spanWrapper {
+        0% {
+            position: absolute;
+            top: 65vh;
+        }
+        100% {
+            position: absolute;
+            top: 51vh;
+        }
+    }
+    .spanWrapper1 {
+        height: 7vh;
+        position: absolute;
+        top: 65vh;
+        left: calc(50% - 62px);
+    }
+
+    @keyframes spanWrapper1 {
+        0% {
+            position: absolute;
+            top: 51vh;
+        }
+        100% {
+            position: absolute;
+            top: 65vh;
+        }
+    }
+    .spanWrapper1 {
+        height: 8vh;
+        width: max-content;
+        position: absolute;
+        top: 85vh;
+        left: calc(50% - 17%);
+    }
+    .closeBtnActive {
+        position: absolute;
+        top: 0;
+        left: 92%;
+    }
+    .closeBtnInactive {
+        position: absolute;
+        top: 0;
+        left: 92%;
+    }
+    .sameAvatarParams {
+        position: absolute;
+        top: 10%;
+        left: calc(50% - 150px);
+        min-width: 300px;
+        min-height: 350px;
+        max-height: 350px;
+    }
+}

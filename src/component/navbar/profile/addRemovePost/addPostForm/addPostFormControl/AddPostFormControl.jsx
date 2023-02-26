@@ -4,7 +4,7 @@ import style from "./addPostFormControl.module.css"
 const AddPostFormControl = ({input, meta, ...props}) => {
     let formControl = meta.error && meta.touched
     return (
-        <div className={style.formControlWrapper}>
+        <div className={style.AddPostFormControl}>
             <div>
                 {formControl && <span className={style.spanDec}>{meta.error}</span>}
             </div>

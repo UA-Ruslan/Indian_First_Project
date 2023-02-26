@@ -39,10 +39,28 @@
 .spanDec {
     width: max-content;
     position: absolute;
-    top: -30%;
-    left: 15%;
+    top: 80%;
+    left: 13%;
     color: rgb(255, 255, 255);
 }
+@media screen and (max-width: 655px){
+    .areaDec {
+        margin: 10px 0 5px 0;
+    }
+    .spanDec {
+        position: absolute;
+        top: 120%;
+        left: 0%;
+    }
+}
+@media screen and (max-width: 425px){
+    .spanDec {
+        position: absolute;
+        top: 130%;
+        left: 0%;
+    }
+}
+
 
 
 

@@ -1,63 +1,88 @@
 * {
-  box-sizing: border-box;
-  color: burlywood;
+    box-sizing: border-box;
+    color: burlywood;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: 'Righteous', cursive;
-  height: 100%;
+    margin: 0;
+    font-family: 'Righteous', cursive;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
 }
 
 h2 {
-  color: black;
+    color: black;
 }
+
 a {
-  color: #de9e5e;
+    color: #de9e5e;
 }
-.app-wrapper {
-  overflow: hidden;
-  position: relative;
-  top: 0;
-  left: 0;
-  display: grid;
-  height: 100vh;
-  background-image: url("./img/main_background/main_bg.png");
-  background-size: 100% 100%;
-  grid-template-areas:
-'h h'
-'n c';
-  grid-template-rows: 12% 88%;
-  grid-template-columns: 2fr 10fr;
+
+.app {
+    overflow: hidden;
+    display: grid;
+    height: 100vh;
+    background-image: url("./img/main_background/main_bg.png");
+    background-size: 100% 100%;
+    grid-template-areas:'h h' 'n c';
+    grid-template-rows: 12% 88%;
+    grid-template-columns: 2fr 10fr;
 }
 
 img {
-  max-width: 100%;
+    max-width: 25%;
 }
 
-.app-wrapper-content {
-  grid-area: c;
-  margin: 0 5px 5px 0;
-  border-radius: 5px;
-  background: rgba(20, 19, 19, 0.36);
-  padding: 10px;
-  z-index: 5;
-  align-self: stretch;
-  justify-self: stretch;
+.appWrapperContent {
+    grid-area: c;
+    margin: 0 5px 5px 0;
+    border-radius: 5px;
+    background: rgba(20, 19, 19, 0.36);
+    padding: 10px;
+    z-index: 5;
+    align-self: stretch;
+    justify-self: stretch;
 }
 
 .btnSameParams {
-  background: rgb(57, 90, 119);
-  color: burlywood;
-  border-radius: 3px;
-  transition: .3s;
-  border: 2px solid rgba(0, 0, 0, 0.45);
+    background: rgb(57, 90, 119);
+    color: burlywood;
+    border-radius: 3px;
+    transition: .3s;
+    border: 2px solid rgba(0, 0, 0, 0.45);
 }
 
 .btnSameParams:hover {
-  transform: scale(1.1);
-  background: rgba(57, 90, 119, 0.27);
-  color: white;
-  transition: .3s;
-  border: 2px solid rgb(255, 255, 255);
+    transform: scale(1.1);
+    background: rgba(57, 90, 119, 0.27);
+    color: white;
+    transition: .3s;
+    border: 2px solid rgb(255, 255, 255);
+}
+@media screen and (max-width: 860px) {
+    .appWrapperContent {
+overflow: auto;
+    }
+}
+@media screen and (max-width: 425px)  {
+    .app {
+        display: grid;
+        grid-template-areas:
+    'h'
+    'n'
+    'c';
+        grid-template-rows: 6% min-content calc(100% - (6% + 53px));
+        grid-template-columns: 1fr;
+        overflow: auto;
+        font-size: .5rem;
+    }
+    .appWrapperContent {
+        margin-left: 5px;
+    }
 }

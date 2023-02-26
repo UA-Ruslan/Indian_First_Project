@@ -1,3 +1,12 @@
+.friendsWrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template-areas: "pages" "friends";
+    grid-template-rows: 15% 84%;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+}
+
 .friends {
     margin: 5px 0;
     border-radius: 5px;
@@ -5,9 +14,9 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: calc(100vh - 260px);
+    justify-content: space-around;
     overflow: auto;
+    grid-area: friends;
 }
 
 .friendsTitle {
@@ -25,6 +34,7 @@
     background: rgba(255, 255, 255, 0.13);
     margin: 5px 0;
     border-radius: 5px;
+    grid-area: pages;
 }
 
 .usersPageNumberDec {
@@ -41,6 +51,7 @@
     cursor: pointer;
 
 }
+
 .usersPageNumberDec:hover {
     transition: .3s;
     transform: scale(1.3);
@@ -74,6 +85,7 @@
 .imgInfoWrapper {
     display: flex;
 }
+
 .imgWrapper {
     width: 100px;
     height: 100px;
@@ -106,4 +118,38 @@
 
 .pDec {
     margin: 3px;
+}
+
+@media screen and (max-width: 600px) {
+    .userWrapper {
+        font-size: .7rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .friends {
+        overflow: auto;
+        justify-content: flex-start;
+    }
+    .friendsWrapper {
+        grid-template-rows: 10% 57%;
+        grid-template-columns: 1fr;
+        overflow: hidden;
+    }
+}
+@media screen and (max-width: 425px)  {
+    .userWrapper {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .friendsWrapper {
+        grid-template-rows: 15% 84%;
+        overflow: hidden;
+    }
+    .friends {
+        overflow: auto;
+        justify-content: space-around;
+    }
+    .usersPageNumberDec {
+        margin: 15px;
+    }
 }

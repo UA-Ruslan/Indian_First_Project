@@ -14,11 +14,11 @@ const AddRemovePost = (props) => {
     }
 
     return (
-        <div className={style.myPostsWrapper}>
-            <div className={style.btnWrapper}>
+        <div className={style.addRemovePost}>
+            <div>
                 <AddPostForm onSubmit={onFormSubmit} DeleteLastPost={props.DeleteLastPost}/>
             </div>
-            <div>
+            <div className={style.post}>
                 {postDataMap}
             </div>
         </div>
