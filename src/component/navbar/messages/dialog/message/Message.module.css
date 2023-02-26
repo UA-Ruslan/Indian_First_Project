@@ -11,3 +11,8 @@
     background: rgba(57, 90, 119, 0.48);
     transition: .3s;
 }
+@media screen and (max-width: 655px){
+    .message {
+        font-size: .7rem;
+    }
+}

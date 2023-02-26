@@ -1,15 +1,28 @@
-.myPostsWrapper {
+.addRemovePost {
     display: flex;
     flex-direction: column;
     background: rgba(255, 255, 255, 0.13);
-    margin: 5px 0;
-    padding: 33px 5px 5px 5px;
-    border-radius: 3px;
+    margin: 5px 0 5px 0;
+    padding: 5px;
+    grid-area: addRemovePost;
+    border-radius: 0 3px 3px 0;
+}
+
+.postFormWrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.post {
     overflow: auto;
-    position: relative;
-    top: 0;
-    left: 0;
-    grid-area: b;
+}
+
+.postForm {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 5px 0 2px 0;
 }
 
 .btnStyle {
@@ -27,14 +40,15 @@
     margin: 15px 0 15px 0;
 }
 
-.postFormWrapper {
-    display: flex;
-    position: absolute;
-    top: 58%
+.btnStyle {
+    max-height: min-content;
 }
-.postForm {
-    display: flex;
+
+@media screen and (max-width: 860px) {
+    .addRemovePost {
+        margin: 0  0 5px 0;
+        border-radius: 3px;
+    }
 }
-.form {
-    position: fixed;
-}
+
+

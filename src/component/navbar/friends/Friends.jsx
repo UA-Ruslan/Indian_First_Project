@@ -14,7 +14,7 @@ const Friends = (props) => {
     }
 
     return (
-        <div>
+        <div className={style.friendsWrapper}>
             <div className={style.usersPageNumberArea}>
                 <div>
                     <h2 className={style.friendsTitle}>Friends</h2>
@@ -40,18 +40,21 @@ const Friends = (props) => {
                                     <img className={style.userImg} src={user.imgUrl != null ? user.imgUrl : defaultAva}
                                          alt='UserImg'/>
                                 </div>
-                                <div className={style.userInfoWrapper}>
-                                    <div>
-                                        <p className={style.pDec}>Name: {user.name}</p>
-                                    </div>
-                                    <div>
-                                        <p className={style.pDec}>City: {user.location} </p>
-                                    </div>
-                                    <div>
-                                        <p className={style.pDec}>Id: {user.id} </p>
-                                    </div>
+
+                            </div>
+
+                            <div className={style.userInfoWrapper}>
+                                <div>
+                                    <p className={style.pDec}>Name: {user.name}</p>
+                                </div>
+                                <div>
+                                    <p className={style.pDec}>City: {user.location} </p>
+                                </div>
+                                <div>
+                                    <p className={style.pDec}>Id: {user.id} </p>
                                 </div>
                             </div>
+
                             <div className={style.userBtnWrapper}>
                                 {user.following
                                     ? <button disabled={props.toggleDisabled.some(id => id === user.id)}
@@ -69,6 +72,7 @@ const Friends = (props) => {
                         </div>
                     </NavLink>
                 )}
+
             </div>
         </div>
     )

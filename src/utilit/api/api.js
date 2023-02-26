@@ -128,6 +128,7 @@ export const apiMethods = {
                 })
         )
     },
+
     apiLogin(email, login) {
         return (
             axiosLocalServerInstance.put(`authMe`, {email, login})
@@ -144,5 +145,17 @@ export const apiMethods = {
                 })
         )
     },
+
+
+    // apiAuthUserData() {
+    //     return (
+    //         axios.get(`https://mocki.io/v1/4c97902a-fb21-4491-935a-e1133d609d62`)
+    //             .then(response => {
+    //                 return (
+    //                     response.data.authMe
+    //                 )
+    //             })
+    //     )
+    // },
 
 }

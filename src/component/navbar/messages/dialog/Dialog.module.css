@@ -20,3 +20,8 @@
 .pStyle {
     margin: 5px 0;
 }
+@media screen and (max-width: 655px){
+    .userDialog {
+        font-size: .7rem;
+    }
+}

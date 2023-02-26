@@ -9,7 +9,7 @@ const BackgroundAnimate = (props) => {
     const classToggle = props.isBolt ? bolt.active : bolt.inactive;
 
     return (
-        <div className='imgBox'>
+        <div className={clouds.imgBox}>
             <img className={birds.bird_1} src={require("../../img/birds/bird_1.png")} alt="bird"/>
             <img className={birds.bird_2} src={require("../../img/birds/bird_2.png")} alt="bird"/>
             <img className={birds.bird_3} src={require("../../img/birds/bird_3.png")} alt="bird"/>
