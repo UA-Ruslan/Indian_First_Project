@@ -28,12 +28,12 @@ const App = (props) => {
     }, [isBolt, setIsBolt])
 
     return (
-        <div className="app-wrapper">
+        <div className="app">
             <Fire/>
             <BackgroundAnimate isBolt={isBolt}/>
             <HeaderContainer setIsBolt={setIsBolt}/>
             <Navbar/>
-            <div className="app-wrapper-content">
+            <div className="appWrapperContent">
                 <Routes>
                     <Route path="/*" element={<ProfileContainer store={props.store}/>}/>
                     <Route path="/friends/:id" element={<FriendsInfoHooksContainer/>}/>

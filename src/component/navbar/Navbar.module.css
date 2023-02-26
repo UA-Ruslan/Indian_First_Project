@@ -6,24 +6,39 @@
     padding: 10px;
     z-index: 5;
 }
-.item a{
+
+.item a {
     padding: 0;
     margin: 0;
     text-decoration: none;
 }
+
 .item {
     background: rgba(255, 255, 255, 0.13);
     margin: 5px 0;
     border-radius: 3px;
     padding: 5px;
-    transition: .3s;
-}
-
-.item:hover {
-    transition: .3s;
-    padding-left: 10px;
 }
 
 .navLinkDec {
     transition: .3s;
+}
+
+@media screen and (max-width: 425px) {
+    .navArea {
+        display: flex;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+
+    }
+
+    .item {
+        width: calc((100% - 50px) / 6);
+        background: rgba(255, 255, 255, 0.13);
+        margin: 0 5px 5px 5px;
+        border-radius: 3px;
+        padding: 5px;
+        transition: .3s;
+        text-align: center;
+    }
 }

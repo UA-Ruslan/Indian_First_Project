@@ -1,8 +1,33 @@
 .profileWrapper {
+    min-height: 100%;
     display: grid;
     grid-template-areas:
-    "a"
-    "b";
-    grid-template-rows: 42.5vh 42.5vh;
-    overflow: hidden;
+    "profileInfo addRemovePost";
+    grid-template-rows: calc(100vh - 15vh);
+    grid-template-columns: 50% 50%;
+}
+
+@media screen and (max-width: 860px) {
+    .profileWrapper {
+        min-height: 100%;
+        display: grid;
+        grid-template-areas:
+    "profileInfo"
+    "addRemovePost";
+        grid-template-rows: calc(100vh - 15vh);
+        grid-template-columns: 1fr;
+        overflow: auto;
+    }
+}
+@media screen and (max-width: 425px){
+    .profileWrapper {
+        min-height: 100%;
+        display: grid;
+        grid-template-areas:
+    "profileInfo"
+    "addRemovePost";
+        grid-template-rows: 65vh 100vh;
+        grid-template-columns: 1fr;
+        overflow: auto;
+    }
 }

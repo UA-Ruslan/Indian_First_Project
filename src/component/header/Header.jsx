@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './Header.module.css';
 import {useNavigate} from "react-router-dom";
 
 const Header = (props) => {
+    let [isActive, setActive] = useState(false)
     let navigate = useNavigate()
-
+    const active = () => {
+        setActive(true)
+    }
+    const inactive = () => {
+        setActive(false)
+    }
     const handleClick = () => {
         props.setIsBolt(true);
     }
@@ -22,39 +28,20 @@ const Header = (props) => {
 
     return (
         <header className={style.header}>
-            <div className={style.headerArea}>
+            <div className={style.logoWrapper}>
+                <img className={isActive ? style.logoActive : style.logoImg} onClick={handleClick} src={require("../../img/logos/bird_logo.png")}
+                     alt="logo"/>
+                <div className={style.eye}></div>
+                <div className={style.eyeActive}></div>
+                <div className={style.eyeActive1}></div>
             </div>
-            <img onClick={handleClick} src={require("../../img/logos/bird_logo.png")} alt="logo"/>
-            <div className={style.eye}>
-            </div>
-            <div className={style.smoke1}>
-            </div>
-            <div className={style.smoke2}>
-            </div>
-            <div className={style.smoke3}>
-            </div>
-            <div className={style.smoke4}>
-            </div>
-            <div className={style.smoke5}>
-            </div>
-            <div className={style.smoke6}>
-            </div>
-            <div className={style.smoke7}>
-            </div>
+            <div onMouseOver={active} onMouseOut={inactive} className={style.activeArea}></div>
             {props.isAuth
                 ?
-                <div className={style.authWrapper}>
-                    <div>
-                        <button onClick={logoutBtn} className={`${style.logoutBtn} ${"btnSameParams"}`}>Logout</button>
-                    </div>
-                    <div>
-                        {props.login}
-                    </div>
-                </div>
+                <button onClick={logoutBtn} className={`${style.logBtn} ${"btnSameParams"}`}>Logout</button>
                 :
-                <div className={style.authWrapper}>
-                    <button className={`${style.logoutBtn} ${"btnSameParams"}`} onClick={loginBtn}>Login</button>
-                </div>}
+                <button className={`${style.logBtn} ${"btnSameParams"}`} onClick={loginBtn}>Login</button>
+            }
         </header>)
 }
 

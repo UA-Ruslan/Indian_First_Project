@@ -4,7 +4,7 @@
     grid-template-areas:
 "title"
 "dialogs";
-    grid-template-rows: min-content calc(100vh - 310px);
+    grid-template-rows: min-content calc(100vh - 32vh);
 }
 
 .txtAreaBtn {
@@ -61,4 +61,65 @@
 
 .messageForm {
     display: flex;
+}
+@media screen and (max-width: 855px){
+
+    .sendBtnStyle {
+        font-size: .5rem;
+        min-width: 100px;
+        margin: 0;
+    }
+
+    .deleteBtnStyle {
+        font-size: .5rem;
+        min-width: 100px;
+        margin: 0;
+    }
+}
+@media screen and (max-width: 655px){
+    .dialogsWrapper {
+
+        grid-template-rows: min-content calc(100vh - 37.5vh);
+    }
+    .messageForm {
+        flex-direction: column-reverse;
+    }
+    .messageFormWrapper {
+        flex-direction: column-reverse;
+        margin: 10px 20px;
+    }
+    .sendBtnStyle {
+        font-size: .5rem;
+        min-width: 100px;
+        margin: 0;
+    }
+
+    .deleteBtnStyle {
+        font-size: .5rem;
+        min-width: 100px;
+        margin: 0;
+    }
+}
+@media screen and (max-width: 425px){
+    .messageForm {
+        flex-direction: column-reverse;
+    }
+    .messageFormWrapper {
+        flex-direction: column-reverse;
+        margin: 10px 20px;
+    }
+    .sendBtnStyle {
+        font-size: .5rem;
+        min-width: 100px;
+        margin: 0;
+    }
+
+    .deleteBtnStyle {
+        font-size: .5rem;
+        min-width: 100px;
+        margin: 0;
+    }
+    .txtAreaBtn h2{
+font-size: 1.5rem;
+    }
 }

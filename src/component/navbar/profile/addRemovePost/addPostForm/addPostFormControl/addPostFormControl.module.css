@@ -1,9 +1,8 @@
-.formControlWrapper {
+.AddPostFormControl {
     position: relative;
     top: 0;
     left: 0;
 }
-
 .textareaStyle {
     width: 300px;
     max-width: 300px;
@@ -28,7 +27,6 @@
     transition: .5s;
 }
 
-.formControl.error input,
 .formControl.error textarea {
     border: 2px solid red;
     background: rgba(255, 0, 0, 0.32);
@@ -36,7 +34,7 @@
 
 .spanDec {
     position: absolute;
-    top: -40%;
+    top: -45%;
     left: 0;
     color: rgb(255, 255, 255);
 }
