@@ -2,10 +2,9 @@ import React from "react";
 import style from './Messages.module.css';
 import Dialog from "./dialog/Dialog";
 import Message from "./dialog/message/Message";
-import SendMessageForm from "./dialog/sendMessageForm/SendMessageForm";
+import SendMessageForm from "./dialog/SendMessageForm/SendMessageForm";
 
 const Messages = (props) => {
-
     let dialogsInfoMap = props.dialogsInfo.map((dialog, pos) => <Dialog userName={dialog.name}
                                                                         userId={dialog.id}
                                                                         key={pos}/>)

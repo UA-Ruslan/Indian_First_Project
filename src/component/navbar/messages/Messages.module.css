@@ -4,7 +4,7 @@
     grid-template-areas:
 "title"
 "dialogs";
-    grid-template-rows: min-content calc(100vh - 32vh);
+    grid-template-rows: min-content calc(100vh - 28.5vh);
 }
 
 .txtAreaBtn {
@@ -16,14 +16,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    grid-area: title;
 }
 
 .allDialogs {
     color: white;
     display: flex;
+    grid-area: dialogs;
 }
 
 .dialogsArea {
+    max-height: 100%;
     width: 50%;
     margin: 5px 10px 5px 0;
     border-radius: 5px;
@@ -40,7 +43,6 @@
     padding: 10px;
     overflow: auto;
 }
-
 
 
 .sendBtnStyle {
@@ -62,7 +64,30 @@
 .messageForm {
     display: flex;
 }
-@media screen and (max-width: 855px){
+
+@media screen and (max-width: 855px) {
+    .sendBtnStyle {
+        font-size: .5rem;
+        min-width: 100px;
+        margin: 0;
+    }
+
+    .deleteBtnStyle {
+        font-size: .5rem;
+        min-width: 100px;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 655px) {
+    .messageForm {
+        flex-direction: column-reverse;
+    }
+
+    .messageFormWrapper {
+        flex-direction: column-reverse;
+        margin: 10px 20px;
+    }
 
     .sendBtnStyle {
         font-size: .5rem;
@@ -76,18 +101,25 @@
         margin: 0;
     }
 }
-@media screen and (max-width: 655px){
+
+@media screen and (max-width: 425px) {
     .dialogsWrapper {
-
-        grid-template-rows: min-content calc(100vh - 37.5vh);
+        overflow: hidden;
+        display: grid;
+        grid-template-areas:
+"title"
+"dialogs";
+        grid-template-rows: min-content calc(100vh - 30vh);
     }
     .messageForm {
         flex-direction: column-reverse;
     }
+
     .messageFormWrapper {
         flex-direction: column-reverse;
         margin: 10px 20px;
     }
+
     .sendBtnStyle {
         font-size: .5rem;
         min-width: 100px;
@@ -99,27 +131,8 @@
         min-width: 100px;
         margin: 0;
     }
-}
-@media screen and (max-width: 425px){
-    .messageForm {
-        flex-direction: column-reverse;
-    }
-    .messageFormWrapper {
-        flex-direction: column-reverse;
-        margin: 10px 20px;
-    }
-    .sendBtnStyle {
-        font-size: .5rem;
-        min-width: 100px;
-        margin: 0;
-    }
 
-    .deleteBtnStyle {
-        font-size: .5rem;
-        min-width: 100px;
-        margin: 0;
-    }
-    .txtAreaBtn h2{
-font-size: 1.5rem;
+    .txtAreaBtn h2 {
+        font-size: 1.5rem;
     }
 }

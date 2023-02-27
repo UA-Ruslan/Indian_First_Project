@@ -6,7 +6,7 @@ import style from "./loginFormControl/LoginFormControl.module.css"
 
 let LoginForm = (props) => {
     const {handleSubmit} = props
-    let maxValueLength =maxLength(20)
+    let maxValueLength = maxLength(20)
     return (
         <form onSubmit={handleSubmit}>
             {props.error && <span className={style.generalError}>{props.error}</span>}
@@ -24,12 +24,12 @@ let LoginForm = (props) => {
                        validate={[required, maxValueLength]}
                 />
             </div>
-            <div>
+            <div className={style.checkbox}>
                 <Field
                     name="rememberMe"
-                       component="input"
-                       type="checkbox"
-                /> remember me
+                    component="input"
+                    type="checkbox"
+                /><p style={{marginLeft: "5px"}}>remember me</p>
             </div>
             <div>
                 <button className={style.btnStyle}>sign in</button>
