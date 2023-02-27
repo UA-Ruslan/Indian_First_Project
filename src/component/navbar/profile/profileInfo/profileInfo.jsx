@@ -43,19 +43,21 @@ const ProfileInfo = (props) => {
                            src={require("../../../../img/people/injun/close.png")}
                            alt="ava"/>}
 
-            <div className={positionInfo ? style.spanWrapper : style.spanWrapper1}>
-                <div>
-                    <h4 onClick={positionInactive} className={`${positionInfo ? style.closeBtnActive : style.closeBtnInactive}`}>+</h4>
-                </div>
-
-                <p>Name: Night Woolf</p>
-                <p>Age: 36</p>
-                <p>City: Zimbabwe</p>
-            </div>
 
             <div onMouseOver={MouseLeft} onMouseOut={MouseLeft} className={style.leftHoverBlock}></div>
             <div className={style.status}>
                 <h2>Profile</h2>
+                <div className={positionInfo ? style.spanWrapper : style.spanWrapper1}>
+                    <div className={style.closeBtnPosition}>
+                        <h4 onClick={positionInactive}
+                            className={`${positionInfo ? style.closeBtnActive : style.closeBtnInactive}`}>+</h4>
+
+
+                        <p>Name: Night Woolf</p>
+                        <p>Age: 36</p>
+                        <p>City: Zimbabwe</p>
+                    </div>
+                </div>
                 <ProfileStatusHooks status={props.status} setStatus={props.setStatus}/>
             </div>
             <div onMouseOver={MouseRight} onMouseOut={MouseRight} className={style.rightHoverBlock}></div>

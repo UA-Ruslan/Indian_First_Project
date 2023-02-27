@@ -1,24 +1,12 @@
 .friendsWrapper {
-    min-height: 100%;
+    height: calc(100vh - 15vh);
     display: grid;
     grid-template-areas: "pages" "friends";
-    grid-template-rows: 15% 84%;
+    grid-template-rows: 15% 85%;
     grid-template-columns: 1fr;
     overflow: hidden;
+    max-height: 100%;
 }
-
-.friends {
-    margin: 5px 0;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.13);
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    overflow: auto;
-    grid-area: friends;
-}
-
 .friendsTitle {
     text-align: center;
 }
@@ -58,6 +46,25 @@
 
 }
 
+.friendsList {
+    margin: 5px 0;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.13);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+    grid-area: friends;
+}
+
+.navLink {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    height: 25%;
+}
+
 .userWrapper {
     display: flex;
     justify-content: space-between;
@@ -67,37 +74,38 @@
     background: rgba(10, 70, 104, 0.16);
     transition: .3s;
     text-decoration: none;
+    height: 95%;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 .userWrapper:hover {
     background: rgba(57, 90, 119, 0.48);
     transition: .3s;
 }
-
-.userInfoWrapper {
-    justify-self: start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-
-.imgInfoWrapper {
-    display: flex;
-}
-
-.imgWrapper {
-    width: 100px;
-    height: 100px;
-
+.userImgWrapper {
+    max-width: 95px;
+    max-height: 95%;
     margin: 5px 15px 5px 5px;
 }
 
 .userImg {
-    min-width: 100px;
-    max-width: 100px;
+    min-width: 95px;
+    max-width: 95px;
     height: 100%;
+}
 
+.userInfoWrapper {
+    position: absolute;
+    top: 15%;
+    left: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.userInfoWrapper p{
+    margin: 3px;
 }
 
 .userBtnWrapper {
@@ -111,45 +119,57 @@
     min-width: 100px;
 }
 
-.navLink {
-    text-decoration: none;
-    margin: 0;
-}
-
-.pDec {
-    margin: 3px;
-}
-
 @media screen and (max-width: 600px) {
+    .navLink {
+        height: 50%;
+    }
     .userWrapper {
         font-size: .7rem;
         flex-direction: column;
         align-items: center;
     }
+    .userImg {
+        height: 95px;
+    }
     .friends {
-        overflow: auto;
         justify-content: flex-start;
     }
-    .friendsWrapper {
-        grid-template-rows: 10% 57%;
-        grid-template-columns: 1fr;
-        overflow: hidden;
+    .userInfoWrapper {
+        position: static;
     }
+
 }
 @media screen and (max-width: 425px)  {
     .userWrapper {
         flex-direction: row;
-        justify-content: space-around;
     }
-    .friendsWrapper {
-        grid-template-rows: 15% 84%;
-        overflow: hidden;
-    }
-    .friends {
-        overflow: auto;
-        justify-content: space-around;
-    }
+
     .usersPageNumberDec {
         margin: 15px;
+    }
+    .userImg {
+        min-height: 70px;
+        max-height: 70px;
+        width: 50px;
+    }
+}
+
+@media screen and (max-height: 600px)  {
+    .friendsWrapper {
+        font-size: .7rem;
+    }
+}
+
+@media screen and (max-height: 475px)  {
+    .friendsWrapper {
+        font-size: .5rem;
+    }
+}
+@media screen and (max-width: 600px)and (max-height: 636px)  {
+    .friendsWrapper {
+        font-size: .7rem;
+    }
+    .navLink {
+        height: max-content;
     }
 }

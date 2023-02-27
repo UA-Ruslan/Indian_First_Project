@@ -5,7 +5,6 @@ import Message from "./dialog/message/Message";
 import SendMessageForm from "./dialog/SendMessageForm/SendMessageForm";
 
 const Messages = (props) => {
-
     let dialogsInfoMap = props.dialogsInfo.map((dialog, pos) => <Dialog userName={dialog.name}
                                                                         userId={dialog.id}
                                                                         key={pos}/>)

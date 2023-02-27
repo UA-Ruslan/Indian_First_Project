@@ -30,28 +30,24 @@ const Friends = (props) => {
                             : style.usersPageNumberDec}>{el}</div>)}
                 </span>
             </div>
-            <div className={style.friends}>
+            <div className={style.friendsList}>
 
                 {props.users.map((user, index) =>
                     <NavLink key={index} className={style.navLink} to={'/friends/' + user.id}>
                         <div className={style.userWrapper}>
-                            <div className={style.imgInfoWrapper}>
-                                <div className={style.imgWrapper}>
-                                    <img className={style.userImg} src={user.imgUrl != null ? user.imgUrl : defaultAva}
-                                         alt='UserImg'/>
-                                </div>
-
+                            <div className={style.userImgWrapper}>
+                                <img className={style.userImg} src={user.imgUrl != null ? user.imgUrl : defaultAva}
+                                     alt='UserImg'/>
                             </div>
-
                             <div className={style.userInfoWrapper}>
                                 <div>
-                                    <p className={style.pDec}>Name: {user.name}</p>
+                                    <p>Name: {user.name}</p>
                                 </div>
                                 <div>
-                                    <p className={style.pDec}>City: {user.location} </p>
+                                    <p>City: {user.location} </p>
                                 </div>
                                 <div>
-                                    <p className={style.pDec}>Id: {user.id} </p>
+                                    <p>Id: {user.id} </p>
                                 </div>
                             </div>
 
