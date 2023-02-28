@@ -23,7 +23,7 @@
     },
     {
       "id": 4,
-      "following": false,
+      "following": true,
       "name": "Ash",
       "location": "Azerot",
       "imgUrl": "https://pngimg.com/uploads/american_indian/american_indian_PNG27.png"

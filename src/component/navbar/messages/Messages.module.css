@@ -4,7 +4,7 @@
     grid-template-areas:
 "title"
 "dialogs";
-    grid-template-rows: min-content calc(100vh - 28.5vh);
+    grid-template-rows: 25vh calc(100vh - 40vh);
 }
 
 .txtAreaBtn {
@@ -23,6 +23,7 @@
     color: white;
     display: flex;
     grid-area: dialogs;
+    overflow: auto;
 }
 
 .dialogsArea {

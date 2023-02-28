@@ -5,6 +5,7 @@
     border: 2px solid rgba(10, 70, 104, 0.25);
     background: rgba(10, 70, 104, 0.16);
     transition: .3s;
+    overflow: auto;
 }
 
 .message:hover {
