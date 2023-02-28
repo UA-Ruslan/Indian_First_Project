@@ -24,7 +24,7 @@
 
 .spanWrapper {
     min-height: max-content;
-    width: max-content;
+    width: 200px;
     color: wheat;
     background: rgba(10, 70, 104, 0.16);
     border: 2px solid rgba(10, 70, 104, 0.25);
@@ -32,7 +32,7 @@
     padding: 10px;
     position: absolute;
     top: 65vh;
-    left: calc(50% - 80px);
+    left: calc(50% - 100px);
     animation-name: spanWrapper;
     animation-duration: 1s;
     animation-iteration-count: 1;
@@ -52,7 +52,7 @@
 
 .spanWrapper1 {
     min-height: max-content;
-    width: max-content;
+    width: 200px;
     color: wheat;
     background: rgba(10, 70, 104, 0.16);
     border: 2px solid rgba(10, 70, 104, 0.25);
@@ -60,7 +60,7 @@
     padding: 10px;
     position: absolute;
     top: 85vh;
-    left: calc(50% - 80px);
+    left: calc(50% - 100px);
     animation-name: spanWrapper1;
     animation-duration: 1s;
     animation-iteration-count: 1;
@@ -191,7 +191,8 @@
 @media screen and (max-width: 425px) {
     .spanWrapper {
         top: 51vh;
-        left: calc(50% - 46px);
+        left: calc(50% - 100px);
+        text-align: center;
     }
 
     @keyframes spanWrapper {
@@ -206,7 +207,8 @@
     }
     .spanWrapper1 {
         top: 65vh;
-        left: calc(50% - 46px);
+        left: calc(50% - 100px);
+        text-align: center;
     }
 
     @keyframes spanWrapper1 {
