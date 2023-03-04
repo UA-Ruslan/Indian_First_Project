@@ -1,15 +1,18 @@
 import React from "react";
-import Preloader from "../../../../utilit/preloader/Preloader";
+import Preloader from "../../../generelComponent/preloader/Preloader";
 import style from './FriendsInfo.module.css'
+import { useNavigate } from "react-router-dom";
 
 const FriendsInfo = (props) => {
+    const navigate = useNavigate();
 
     let mapProfileInfo = props.friendsProfileInfo.map((element, index) => {
         if (!element.profileInfo) {
             return (
                 <Preloader key={index}/>
             )
-        }
+        };
+
         return (
             <div key={index} className={style.profileInfoWrapper}>
 
@@ -17,6 +20,7 @@ const FriendsInfo = (props) => {
                 {element.profileInfo.map((el) => {
                     return (
                         <div className={style.Flex} key={el.userId}>
+                            <button onClick={() => {navigate(-1)}} className={`${style.backBtn} btnSameParams`}>Back</button>
                             <img src={element.imgUrl} alt="img"/>
                             <p className={style.pDec}>Name: {element.name}</p>
                             <p className={style.pDec}>Full Name: {el.fullName}</p>

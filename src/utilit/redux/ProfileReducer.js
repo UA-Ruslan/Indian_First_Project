@@ -18,10 +18,10 @@ let profileReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_POST: {
-            let newPost ={id: 5, message: action.newPostText, likesCount: 3}
+            let newPost = {id: 5, message: action.newPostText, likesCount: 3}
             return {
                 ...state,
-                postsData: [newPost, ...state.postsData ]
+                postsData: [newPost, ...state.postsData]
             }
         }
         case DELETE_LAST_POST: {
@@ -45,24 +45,17 @@ let profileReducer = (state = initialState, action) => {
 
 export const AddPost = (newPostText) => ({type: ADD_POST, newPostText});
 export const DeleteLastPost = () => ({type: DELETE_LAST_POST});
-export const SetStatus = (setStatus)=> ({type: SET_STATUS, setStatus});
+export const SetStatus = (setStatus) => ({type: SET_STATUS, setStatus});
 
 
-export const thunkGetStatus = () => {
-    return (dispatch) => {
-        apiMethods.apiGetStatus()
-            .then(data =>{
-                dispatch(SetStatus(data.myStatus))
-            })
-    }
-}
-export const thunkSetStatus = (status) => {
-    return (dispatch) => {
-        apiMethods.apiSetStatus(status)
-            .then(data => {
-                dispatch(SetStatus(status));
-            })
-    }
-}
+export const thunkGetStatus = () => async (dispatch) => {
+    let data = await apiMethods.apiGetStatus()
+    dispatch(SetStatus(data.myStatus))
+};
+
+export const thunkSetStatus = (status) => async (dispatch) => {
+    await apiMethods.apiSetStatus(status)
+    dispatch(SetStatus(status));
+};
 
 export default profileReducer;

@@ -31,16 +31,16 @@ const ProfileInfo = (props) => {
     return (
         <div onMouseDown={blinkClick} className={style.profileInfoWrapper}>
             <img className={`${style.sameAvatarParams} ${style.eyesLookStraight}`}
-                 src={require("../../../../img/people/injun/straight.png")} alt="ava"/>
+                 src={require("../../../../img/people/injun/straight.webp")} alt="ava"/>
             {toggleLeft && <img className={`${style.eyesLookLeft} ${style.sameAvatarParams}`}
-                                src={require("../../../../img/people/injun/left.png")}
+                                src={require("../../../../img/people/injun/left.webp")}
                                 alt="ava"/>}
             {toggleRight &&
                 <img className={`${style.eyesLookRight} ${style.sameAvatarParams}`}
-                     src={require("../../../../img/people/injun/right.png")}
+                     src={require("../../../../img/people/injun/right.webp")}
                      alt="ava"/>}
             {blink && <img className={`${style.eyesClose} ${style.sameAvatarParams}`}
-                           src={require("../../../../img/people/injun/close.png")}
+                           src={require("../../../../img/people/injun/close.webp")}
                            alt="ava"/>}
 
 

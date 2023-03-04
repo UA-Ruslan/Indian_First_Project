@@ -2,7 +2,7 @@ import React from "react";
 import App from "./App";
 import {connect} from "react-redux";
 import {thunkSetAppInit} from "./utilit/redux/AppReducer";
-import Preloader from "./utilit/preloader/Preloader";
+import Preloader from "./component/generelComponent/preloader/Preloader";
 
 class AppContainer extends React.Component {
     componentDidMount() {

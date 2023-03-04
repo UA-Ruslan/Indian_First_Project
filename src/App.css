@@ -13,7 +13,6 @@ body {
     position: relative;
     top: 0;
     left: 0;
-    overflow: hidden;
 }
 
 h2 {
@@ -28,7 +27,7 @@ a {
     overflow: hidden;
     display: grid;
     height: 100vh;
-    background-image: url("./img/main_background/main_bg.png");
+    background-image: url("./img/main_background/main_bg.webp");
     background-size: 100% 100%;
     grid-template-areas:'h h' 'n c';
     grid-template-rows: 12% 88%;
@@ -65,12 +64,14 @@ img {
     transition: .3s;
     border: 2px solid rgb(255, 255, 255);
 }
+
 @media screen and (max-width: 860px) {
     .appWrapperContent {
-overflow: auto;
+        overflow: auto;
     }
 }
-@media screen and (max-width: 425px)  {
+
+@media screen and (max-width: 425px) {
     .app {
         display: grid;
         grid-template-areas:
@@ -82,7 +83,14 @@ overflow: auto;
         overflow: auto;
         font-size: .5rem;
     }
+
     .appWrapperContent {
         margin-left: 5px;
+    }
+}
+
+@media screen and (max-height: 425px) {
+    .appWrapperContent {
+        overflow: auto;
     }
 }

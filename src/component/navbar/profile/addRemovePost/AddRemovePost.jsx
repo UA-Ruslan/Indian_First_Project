@@ -12,7 +12,6 @@ const AddRemovePost = (props) => {
     let onFormSubmit = (value) => {
         props.AddPost(value.postForm)
     }
-
     return (
         <div className={style.addRemovePost}>
             <div>

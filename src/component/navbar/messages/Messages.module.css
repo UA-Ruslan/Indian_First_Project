@@ -137,3 +137,10 @@
         font-size: 1.5rem;
     }
 }
+@media screen and (max-height: 425px) {
+    .dialogsWrapper {
+        overflow: hidden;
+
+        grid-template-rows: max-content calc(100vh - 53vh);
+    }
+}

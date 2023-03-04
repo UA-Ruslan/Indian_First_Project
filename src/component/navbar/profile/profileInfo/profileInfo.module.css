@@ -303,3 +303,30 @@
         }
     }
 }
+@media screen and (max-height: 425px) {
+    .spanWrapper {
+        top: 80vh;
+        left: calc(50% - 100px);
+        text-align: center;
+    }
+    @keyframes spanWrapper {
+        0% {
+            top: 150vh;
+        }
+        100% {
+            top: 80vh;
+        }
+    }
+    .spanWrapper1 {
+        top: 150vh;
+    }
+
+    @keyframes spanWrapper1 {
+        0% {
+            top: 80vh;
+        }
+        100% {
+            top: 150vh;
+        }
+    }
+}
