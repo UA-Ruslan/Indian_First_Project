@@ -3,7 +3,7 @@ import {thunkAuthUserData} from "./AuthReducer";
 const SET_APP_INIT = "SET_APP_INIT"
 
 let initialState = {
-    appInit: false
+    appInit: true
 }
 
 let AppReducer = (state = initialState, action) => {
@@ -22,15 +22,11 @@ let AppReducer = (state = initialState, action) => {
 
 export const initApp = () => ({type: SET_APP_INIT})
 
-export const thunkSetAppInit = () => {
-    return (dispatch) => {
+export const thunkSetAppInit = () => (dispatch) => {
         let promise = dispatch(thunkAuthUserData());
         promise.then(() => {
             dispatch(initApp())
         })
-
-
-    }
 }
 
 export default AppReducer;

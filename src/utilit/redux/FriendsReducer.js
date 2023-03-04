@@ -23,7 +23,8 @@ let friendsReducer = (state = initialState, action) => {
     switch (action.type) {
         case FOLLOW: {
             return {
-                ...state, users: state.users.map(user => {
+                ...state,
+                users: state.users.map(user => {
                     if (user.id === action.userId) {
                         return {...user, following: true}
                     }
@@ -78,67 +79,45 @@ export const setPreloader = (setPreloader) => ({type: SET_TOGGLE_ON_FETCH, setPr
 export const setProfileUserInfo = (setProfileUserInfo) => ({type: SET_PROFILE_USER_INFO, setProfileUserInfo});
 export const setDisabledOnBtn = (isDisabled, userId) => ({type: SET_TOGGLE_IN_PROGRESS, isDisabled, userId});
 
-
-export const thunkGetUsers = (usersOnPage, currentPage) => {
-    return (dispatch) => {
-        dispatch(setPreloader(true));
-        apiMethods.apiSetTogglePreloader(usersOnPage, currentPage)
-            .then(data => {
-                dispatch(setPreloader(false));
-                dispatch(setUsers(data));
-            });
-    }
+//-----------------------------------------------------------------------------------//
+export const thunkGetUsers = (usersOnPage, currentPage) => async (dispatch) => {
+    dispatch(setPreloader(true));
+    let data = await apiMethods.apiSetTogglePreloader(usersOnPage, currentPage)
+    dispatch(setPreloader(false));
+    dispatch(setUsers(data));
 };
-export const thunkGetTotalUsersCount = () => {
-    return (dispatch) => {
-        apiMethods.apiSetTotalUsersCount()
-            .then(data => {
-                dispatch(setTotalUsersCount(data.totalUsersCount));
-            });
-    }
+export const thunkGetTotalUsersCount = () => async (dispatch) => {
+    let data = await apiMethods.apiSetTotalUsersCount()
+    dispatch(setTotalUsersCount(data.totalUsersCount));
 };
 
-
-export const thunkPageChangeOnClick = (el, usersOnPage) => {
-    return (dispatch) => {
-        dispatch(setCurrentPage(el));
-        dispatch(setPreloader(true));
-        apiMethods.apiPageChangeOnClick(usersOnPage, el)
-            .then(data => {
-                dispatch(setPreloader(false));
-                dispatch(setUsers(data));
-            });
-    }
+export const thunkPageChangeOnClick = (el, usersOnPage) => async (dispatch) => {
+    dispatch(setCurrentPage(el));
+    dispatch(setPreloader(true));
+    let data = await apiMethods.apiPageChangeOnClick(usersOnPage, el)
+    dispatch(setPreloader(false));
+    dispatch(setUsers(data));
 };
-export const thunkUserProfileInfo = (id) => {
-    return (dispatch) => {
-        dispatch(setPreloader(true));
-        apiMethods.apiSetProfileUserInfo2(id)
-            .then(data => {
-                dispatch(setPreloader(false));
-                dispatch(setProfileUserInfo(data));
-            })
-    }
+export const thunkUserProfileInfo = (id) => async (dispatch) => {
+    dispatch(setPreloader(true));
+    let data = await apiMethods.apiSetProfileUserInfo2(id)
+    dispatch(setPreloader(false));
+    dispatch(setProfileUserInfo(data));
 }
-export const thunkSetUnfollow = (userId) => {
-    return (dispatch) => {
-        dispatch(setDisabledOnBtn(true, userId))
-        apiMethods.apiSetUnfollow(userId)
-            .then(data => {
-                dispatch(unfollow(userId))
-                dispatch(setDisabledOnBtn(false, userId))
-            })
-    }
-}
-export const thunkSetFollow = (userId) => {
-    return (dispatch) => {
-        dispatch(setDisabledOnBtn(true, userId))
-        apiMethods.apiSetFollow(userId)
-            .then(data => {
-                dispatch(follow(userId))
-                dispatch(setDisabledOnBtn(false, userId))
-            })
-    }
+//-----------------------------------------------------------------------------------//
+let followUnfollowGeneral = async (dispatch, userId, apiMethod, actionCreator) => {
+    dispatch(setDisabledOnBtn(true, userId))
+    await apiMethod(userId)
+    dispatch(actionCreator(userId))
+    dispatch(setDisabledOnBtn(false, userId))
 }
 
+export const thunkSetUnfollow = (userId) => async (dispatch) => {
+    await followUnfollowGeneral(dispatch, userId, apiMethods.apiSetUnfollow, unfollow)
+};
+
+export const thunkSetFollow = (userId) => async (dispatch) => {
+    await followUnfollowGeneral(dispatch, userId, apiMethods.apiSetFollow, follow)
+};
+//-----------------------------------------------------------------------------------//
 export default friendsReducer;

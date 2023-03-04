@@ -1,3 +1,4 @@
+import React from "react";
 import Friends from "./Friends"
 import {connect} from "react-redux";
 import {
@@ -11,8 +12,7 @@ import {
     thunkSetUnfollow,
     thunkSetFollow,
 } from "../../../utilit/redux/FriendsReducer";
-import React from "react";
-import Preloader from "../../../utilit/preloader/Preloader";
+import Preloader from "../../generelComponent/preloader/Preloader";
 import {
     getCurrentPage,
     getTotalUsersCount,

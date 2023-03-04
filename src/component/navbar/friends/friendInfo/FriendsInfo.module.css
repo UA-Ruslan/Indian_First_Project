@@ -45,3 +45,9 @@
     max-height: 200px;
     align-self: center;
 }
+
+.backBtn {
+    margin-bottom: 15px;
+    width: 30%;
+    align-self: center;
+}

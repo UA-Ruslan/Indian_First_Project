@@ -1,5 +1,5 @@
 import React from "react";
-import style from './Messages.module.css';
+import style from "./Messages.module.css";
 import Dialog from "./dialog/Dialog";
 import Message from "./dialog/message/Message";
 import SendMessageForm from "./dialog/sendMessageForm/SendMessageForm";
@@ -14,7 +14,6 @@ const Messages = (props) => {
     let onSubmitNewMessage = (value) => {
          props.AddNewMessage(value.newMessageData)
     }
-
     return (
         <div className={style.dialogsWrapper}>
             <div className={style.txtAreaBtn}>

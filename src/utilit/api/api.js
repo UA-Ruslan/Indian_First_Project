@@ -118,16 +118,7 @@ export const apiMethods = {
 
 
 
-    apiAuthUserData() {
-        return (
-            axiosLocalServerInstance.get(`authMe`)
-                .then(response => {
-                    return (
-                        response.data
-                    )
-                })
-        )
-    },
+
 
     apiLogin(email, login) {
         return (
@@ -146,16 +137,15 @@ export const apiMethods = {
         )
     },
 
-
-    // apiAuthUserData() {
-    //     return (
-    //         axios.get(`https://mocki.io/v1/4c97902a-fb21-4491-935a-e1133d609d62`)
-    //             .then(response => {
-    //                 return (
-    //                     response.data.authMe
-    //                 )
-    //             })
-    //     )
-    // },
+    apiAuthUserData() {
+        return (
+            axios.get(`https://mocki.io/v1/4c97902a-fb21-4491-935a-e1133d609d62`)
+                .then(response => {
+                    return (
+                        response.data.authMe
+                    )
+                })
+        )
+    },
 
 }

@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from "react";
 import "./App.css";
-import "./utilit/backgroundAnimations/cloudsAnimation.module.css";
-import "./utilit/backgroundAnimations/birdsAnimation.module.css";
-import "./utilit/backgroundAnimations/fireAnimate/fireAnimation.module.css";
+import "./component/generelComponent/backgroundAnimations/cloudsAnimation.module.css";
+import "./component/generelComponent/backgroundAnimations/birdsAnimation.module.css";
+import "./component/generelComponent/backgroundAnimations/fireAnimate/fireAnimation.module.css";
 import Navbar from "./component/navbar/Navbar";
 import News from "./component/navbar/news/News";
 import Music from "./component/navbar/music/Music";
 import Settings from "./component/navbar/settings/Settings";
-import BackgroundAnimate from "./utilit/backgroundAnimations/ImgsAnimate";
+import BackgroundAnimate from "./component/generelComponent/backgroundAnimations/ImgsAnimate";
 import {Routes, Route} from "react-router-dom";
 import MessagesContainer from "./component/navbar/messages/MessagesContainer";
 import FriendsContainer from "./component/navbar/friends/FriendsContainer";
@@ -15,7 +15,7 @@ import FriendsInfoHooksContainer from "./component/navbar/friends/friendInfo/Fri
 import HeaderContainer from "./component/header/HeaderContainer";
 import Login from "./component/header/login/Login";
 import {ProfileContainer} from "./component/navbar/profile/ProfileContainer";
-import Fire from "./utilit/backgroundAnimations/fireAnimate/Fire";
+import Fire from "./component/generelComponent/backgroundAnimations/fireAnimate/Fire";
 
 const App = (props) => {
     const [isBolt, setIsBolt] = useState(null);

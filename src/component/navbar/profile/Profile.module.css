@@ -31,3 +31,15 @@
         overflow: auto;
     }
 }
+@media screen and (max-height: 425px){
+    .profileWrapper {
+        min-height: 100%;
+        display: grid;
+        grid-template-areas:
+    "profileInfo"
+    "addRemovePost";
+        grid-template-rows: 130vh 100vh;
+        grid-template-columns: 1fr;
+        overflow: auto;
+    }
+}

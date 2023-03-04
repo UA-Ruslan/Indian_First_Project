@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react"
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {WithAuthRedirect} from "../../../utilit/hok/withAuthRedirect";
+import {WithAuthRedirect} from "../../generelComponent/hok/withAuthRedirect";
 import {compose} from "redux";
 import {thunkGetStatus, thunkSetStatus} from "../../../utilit/redux/ProfileReducer";
 

@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import style from './Header.module.css';
+import React, {useState} from "react";
+import style from "./Header.module.css";
 import {useNavigate} from "react-router-dom";
 
 const Header = (props) => {
@@ -16,8 +16,8 @@ const Header = (props) => {
     }
     const logoutBtn = () => {
         return (
-            props.thunkLogout(null, null)
-            // props.thunkLogout()
+            props.thunkLogout(null, null)      //for local server
+            // props.thunkLogout()             //for remote server
         )
     }
     const loginBtn = () => {
@@ -29,7 +29,7 @@ const Header = (props) => {
     return (
         <header className={style.header}>
             <div className={style.logoWrapper}>
-                <img className={isActive ? style.logoActive : style.logoImg} onClick={handleClick} src={require("../../img/logos/bird_logo.png")}
+                <img className={isActive ? style.logoActive : style.logoImg} onClick={handleClick} src={require("../../img/logos/bird_logo.webp")}
                      alt="logo"/>
                 <div className={style.eye}></div>
                 <div className={style.eyeActive}></div>
@@ -40,7 +40,7 @@ const Header = (props) => {
                 ?
                 <button onClick={logoutBtn} className={`${style.logBtn} ${"btnSameParams"}`}>Logout</button>
                 :
-                <button className={`${style.logBtn} ${"btnSameParams"}`} onClick={loginBtn}>Login</button>
+                <button onClick={loginBtn} className={`${style.logBtn} ${"btnSameParams"}`} >Login</button>
             }
         </header>)
 }
