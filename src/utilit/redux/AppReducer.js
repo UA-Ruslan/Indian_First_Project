@@ -3,7 +3,7 @@ import {thunkAuthUserData} from "./AuthReducer";
 const SET_APP_INIT = "SET_APP_INIT"
 
 let initialState = {
-    appInit: true
+    appInit: false
 }
 
 let AppReducer = (state = initialState, action) => {

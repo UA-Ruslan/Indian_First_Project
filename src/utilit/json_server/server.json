@@ -1626,6 +1626,23 @@
   "myStatus": {
     "myStatus": "Hallo!"
   },
+  "myProfile": {
+    "id": "0",
+    "name": "Night Woolf",
+    "age": "33",
+    "city": "Zimbabwe",
+    "contacts": {
+      "github": "https://www.github.com",
+      "facebook": "https://www.facebook.com",
+      "instagram": "https://www.instagram.com",
+      "twitter": "https://www.twitter.com",
+      "youtube": "https://www.youtube.com"
+    },
+    "": ""
+  },
+  "mainAvatarUrl": {
+    "mainAvatarUrl": "https://media.tenor.com/Pl4WC5dd83UAAAAC/meme-memes.gif"
+  },
   "authMe": {
     "email": "test",
     "login": "test"

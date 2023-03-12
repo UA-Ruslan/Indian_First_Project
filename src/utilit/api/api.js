@@ -136,16 +136,25 @@ export const apiMethods = {
                 })
         )
     },
-
     apiAuthUserData() {
         return (
-            axios.get(`https://mocki.io/v1/4c97902a-fb21-4491-935a-e1133d609d62`)
+            axiosLocalServerInstance.get(`authMe`)
                 .then(response => {
                     return (
-                        response.data.authMe
+                        response.data
                     )
                 })
         )
     },
+    // apiAuthUserData() {
+    //     return (
+    //         axios.get(`https://mocki.io/v1/4c97902a-fb21-4491-935a-e1133d609d62`)
+    //             .then(response => {
+    //                 return (
+    //                     response.data.authMe
+    //                 )
+    //             })
+    //     )
+    // },
 
 }
