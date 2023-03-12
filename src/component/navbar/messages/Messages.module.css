@@ -1,13 +1,12 @@
 .dialogsWrapper {
-    overflow: hidden;
-    display: grid;
-    grid-template-areas:
-"title"
-"dialogs";
-    grid-template-rows: 25vh calc(100vh - 40vh);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    max-height: 100%;
 }
 
 .txtAreaBtn {
+    height: max-content;
     padding: 10px;
     margin: 5px 0;
     background: rgba(255, 255, 255, 0.13);
@@ -16,18 +15,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    grid-area: title;
 }
 
 .allDialogs {
+    flex-grow: 1;
     color: white;
     display: flex;
-    grid-area: dialogs;
     overflow: auto;
 }
 
 .dialogsArea {
-    max-height: 100%;
     width: 50%;
     margin: 5px 10px 5px 0;
     border-radius: 5px;
@@ -104,14 +101,7 @@
 }
 
 @media screen and (max-width: 425px) {
-    .dialogsWrapper {
-        overflow: hidden;
-        display: grid;
-        grid-template-areas:
-"title"
-"dialogs";
-        grid-template-rows: min-content calc(100vh - 30vh);
-    }
+
     .messageForm {
         flex-direction: column-reverse;
     }
@@ -135,12 +125,5 @@
 
     .txtAreaBtn h2 {
         font-size: 1.5rem;
-    }
-}
-@media screen and (max-height: 425px) {
-    .dialogsWrapper {
-        overflow: hidden;
-
-        grid-template-rows: max-content calc(100vh - 53vh);
     }
 }

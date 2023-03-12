@@ -1,5 +1,6 @@
 import React from "react";
-import ProfileInfo from "./profileInfo/profileInfo";
+import ProfileInfo from "./profileInfo/ProfileInfo";
+
 import AddRemovePostContainer from "./addRemovePost/AddRemovePostContainer";
 import style from "./Profile.module.css"
 

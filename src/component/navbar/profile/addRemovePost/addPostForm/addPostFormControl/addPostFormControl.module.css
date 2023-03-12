@@ -4,7 +4,7 @@
     left: 0;
 }
 .textareaStyle {
-    width: 300px;
+    width: 100%;
     max-width: 300px;
     max-height: 55px;
     background: rgba(57, 90, 119, 0.42);

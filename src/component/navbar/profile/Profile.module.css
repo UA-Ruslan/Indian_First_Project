@@ -19,27 +19,29 @@
         overflow: auto;
     }
 }
-@media screen and (max-width: 425px){
+
+@media screen and (max-width: 425px) {
     .profileWrapper {
         min-height: 100%;
         display: grid;
         grid-template-areas:
     "profileInfo"
     "addRemovePost";
-        grid-template-rows: 65vh 100vh;
+        grid-template-rows: 50vh 100vh;
         grid-template-columns: 1fr;
         overflow: auto;
     }
 }
-@media screen and (max-height: 425px){
+
+@media screen and (max-height: 425px) {
     .profileWrapper {
         min-height: 100%;
         display: grid;
         grid-template-areas:
     "profileInfo"
     "addRemovePost";
-        grid-template-rows: 130vh 100vh;
         grid-template-columns: 1fr;
         overflow: auto;
     }
 }
+

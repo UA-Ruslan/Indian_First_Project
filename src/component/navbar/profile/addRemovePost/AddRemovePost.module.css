@@ -1,10 +1,11 @@
 .addRemovePost {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     background: rgba(255, 255, 255, 0.13);
     margin: 5px 0 5px 0;
     padding: 5px;
-    grid-area: addRemovePost;
+    /*grid-area: addRemovePost;*/
     border-radius: 0 3px 3px 0;
 }
 

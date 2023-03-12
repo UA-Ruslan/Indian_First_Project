@@ -3,13 +3,13 @@
     background: rgba(255, 255, 255, 0.13);
     border-radius: 3px;
     padding: 15px 10px;
-    margin: 5px 0;
     width: 100%;
-    height: calc(100vh - 17vh);
+    min-height: 100%;
+    display: flex;
 }
 
 .profileInfoWrapper {
-    width: min-content;
+    min-width: 100%;
     overflow: auto;
     padding: 15px;
     background: rgba(10, 70, 104, 0.16);
@@ -17,7 +17,7 @@
     border-radius: 5px;
 }
 
-.Flex {
+.profileInfoContent {
     display: flex;
     flex-direction: column;
 }
@@ -48,6 +48,12 @@
 
 .backBtn {
     margin-bottom: 15px;
-    width: 30%;
+    width: 100px;
     align-self: center;
+}
+
+@media screen and (max-width: 425px){
+    .profileInfoMain {
+        font-size: 1rem;
+    }
 }

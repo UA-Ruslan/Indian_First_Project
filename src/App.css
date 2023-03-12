@@ -65,6 +65,30 @@ img {
     border: 2px solid rgb(255, 255, 255);
 }
 
+.inputSameParams {
+    width: 100%;
+    max-width: 300px;
+    max-height: 55px;
+    background: rgba(57, 90, 119, 0.42);
+    color: white;
+    border-radius: 3px;
+    border: 1px solid #ffffff;
+    transition: .3s;
+}
+
+.inputSameParams:hover {
+    background: rgba(57, 90, 119, 0.9);
+    transition: .3s;
+}
+::placeholder {
+    color: black;
+    transition: .5s;
+}
+.inputSameParams:hover::placeholder {
+    color: white;
+    transition: .5s;
+}
+
 @media screen and (max-width: 860px) {
     .appWrapperContent {
         overflow: auto;

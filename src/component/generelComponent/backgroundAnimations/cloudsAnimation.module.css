@@ -5,6 +5,7 @@
     height: 100%;
     overflow: hidden;
 }
+
 .smoke {
     position: absolute;
     top: 52vh;
@@ -355,12 +356,11 @@
 }
 
 .cloud_8 {
-    opacity: 0;
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    transform: rotate(180deg);
+    top: 20%;
+    left: 30%;
+    z-index: 0;
+    transform: rotateY(-180deg);
     animation-name: cloud_8;
     animation-duration: 60s;
     animation-iteration-count: infinite;
@@ -369,24 +369,43 @@
 
 @keyframes cloud_8 {
     0% {
-        opacity: 1;
-        position: absolute;
-        left: -1500px;
-        top: -150px;
-        min-width: 1500px;
-        height:450px;
+        opacity: .7;
+        left: 40%;
+        height: 300px;
+        transform: scaleX(1);
     }
-    70% {
+    30% {
+        transform: scaleX(6);
         opacity: .4;
     }
+    60% {
+        transform: scaleX(11)
+    }
     100% {
-        position: absolute;
-        left: 1500px;
-        top: -350px;
-        height: 600px;
-        min-width: 2000px;
-        opacity: 0;
+        top: -800px;
+        height: 1000px;
+        left: 0%;
+        opacity: .5;
+        transform: scaleX(20);
     }
 }
 
 /*----------------/clouds-animations--------------*/
+
+
+
+@media screen and (max-height: 630px) {
+    .cloud_8 {
+        top: 15%;
+    }
+}
+@media screen and (max-height: 530px) {
+    .cloud_8 {
+        top: 5%;
+    }
+}
+@media screen and (max-height: 425px) {
+    .cloud_8 {
+        top: 0;
+    }
+}

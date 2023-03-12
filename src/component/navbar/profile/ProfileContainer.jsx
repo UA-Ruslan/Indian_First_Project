@@ -1,7 +1,7 @@
 import React from "react"
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {WithAuthRedirect} from "../../generelComponent/hok/withAuthRedirect";
+import {WithAuthRedirect} from "../../../utilit/hok/withAuthRedirect";
 import {compose} from "redux";
 import {thunkGetStatus, thunkSetStatus} from "../../../utilit/redux/ProfileReducer";
 
@@ -24,4 +24,4 @@ let mapStateToProps = (state) => ({
     status: state.postPage.status
 })
 
-export const ProfileContainer = compose(connect(mapStateToProps,{thunkGetStatus, thunkSetStatus}), WithAuthRedirect)(ProfileApiContainer);
+export default compose(connect(mapStateToProps,{thunkGetStatus, thunkSetStatus}), WithAuthRedirect)(ProfileApiContainer);
