@@ -82,6 +82,7 @@
     left: 0;
     min-width: 100%;
     min-height: 100%;
+    z-index: 8;
 }
 
 .closeBtnActive:hover {
@@ -200,11 +201,13 @@
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+    z-index: 7;
 }
 
 .rightHoverBlock {
     width: 35%;
     min-height: 100%;
+    z-index: 7;
 }
 
 .eyesLookStraight {
@@ -258,7 +261,7 @@
         }
     }
     .spanWrapperInactive {
-        top: 35vh;
+        top: 100%;
         left: calc(50% - 100px);
         text-align: center;
         font-size: .8rem;
@@ -267,11 +270,11 @@
     @keyframes spanWrapperInactive {
         0% {
             position: absolute;
-            top: 32vh;
+            top: 75%;
         }
         100% {
             position: absolute;
-            top: 65vh;
+            top: 100%;
         }
     }
 
