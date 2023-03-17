@@ -1,12 +1,18 @@
-import React from "react";
+import React, {useEffect} from "react";
 import style from "./Navbar.module.css";
 import {NavLink} from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const NavBar = () => {
 
+    useEffect(() => {
+        AOS.init();
+    }, [])
 
     return (
-        <nav className={style.navArea}>
+        <nav className={style.navArea} data-aos="fade-right" data-aos-duration="2000" >
             <div className={style.item}>
                 <NavLink
                     to="/"

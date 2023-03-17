@@ -20,6 +20,19 @@
     }
 }
 
+@media screen and (max-height: 690px) {
+    .profileWrapper {
+        min-height: 100%;
+        display: grid;
+        grid-template-areas:
+    "profileInfo"
+    "addRemovePost";
+        grid-template-rows: 120vh 100vh;
+        grid-template-columns: 1fr;
+        overflow: auto;
+    }
+}
+
 @media screen and (max-width: 425px) {
     .profileWrapper {
         min-height: 100%;
@@ -27,19 +40,7 @@
         grid-template-areas:
     "profileInfo"
     "addRemovePost";
-        grid-template-rows: 50vh 100vh;
-        grid-template-columns: 1fr;
-        overflow: auto;
-    }
-}
-
-@media screen and (max-height: 425px) {
-    .profileWrapper {
-        min-height: 100%;
-        display: grid;
-        grid-template-areas:
-    "profileInfo"
-    "addRemovePost";
+        grid-template-rows: 80vh 100vh;
         grid-template-columns: 1fr;
         overflow: auto;
     }

@@ -29,7 +29,7 @@
     border-radius: 5px;
     padding: 10px;
     position: absolute;
-    top: 64vh;
+    top: 70%;
     left: calc(50% - 100px);
     animation-name: spanWrapperActive;
     animation-duration: 1s;
@@ -40,11 +40,11 @@
 @keyframes spanWrapperActive {
     0% {
         position: absolute;
-        top: 85vh;
+        top: 100%;
     }
     100% {
         position: absolute;
-        top: 64vh;
+        top: 70%;
     }
 }
 
@@ -57,7 +57,7 @@
     border-radius: 5px;
     padding: 10px;
     position: absolute;
-    top: 85vh;
+    top: 100%;
     left: calc(50% - 100px);
     animation-name: spanWrapperInactive;
     animation-duration: 1s;
@@ -68,11 +68,11 @@
 @keyframes spanWrapperInactive {
     0% {
         position: absolute;
-        top: 65vh;
+        top: 70%;
     }
     100% {
         position: absolute;
-        top: 85vh;
+        top: 100%;
     }
 }
 
@@ -131,11 +131,19 @@
 
 .sameAvatarParams {
     position: absolute;
-    top: 17%;
-    left: calc(50% - 150px);
-    min-width: 300px;
-    min-height: 350px;
-    max-height: 350px;
+    top: 15%;
+    height: 40vh;
+    min-width: 34vh;
+    left: calc(50% - 17vh);
+}
+
+.selectedAva {
+    position: absolute;
+    top: 20%;
+    min-width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    left: calc(50% - 125px);
 }
 
 .avatarBtnWrapper {
@@ -185,15 +193,6 @@
     font-size: 0.7rem;
 }
 
-.selectedAva {
-    position: absolute;
-    top: 23%;
-    left: calc(50% - 100px);
-    min-width: 200px;
-    min-height: 200px;
-    border-radius: 50%;
-}
-
 .leftHoverBlock {
     width: 35%;
     min-height: 100%;
@@ -235,31 +234,34 @@
     .avatarBtnWrapper {
         flex-direction: column;
     }
+    .sameAvatarParams {
+        top: 20%;
+    }
 }
 
 @media screen and (max-width: 425px) {
     .spanWrapperActive {
-        top: 32vh;
+        top: 75%;
         left: calc(50% - 100px);
         text-align: center;
-        font-size: .4rem;
+        font-size: .8rem;
     }
 
     @keyframes spanWrapperActive {
         0% {
             position: absolute;
-            top: 65vh;
+            top: 100%;
         }
         100% {
             position: absolute;
-            top: 32vh;
+            top: 75%;
         }
     }
     .spanWrapperInactive {
-        top: 32vh;
+        top: 35vh;
         left: calc(50% - 100px);
         text-align: center;
-        font-size: .4rem;
+        font-size: .8rem;
     }
 
     @keyframes spanWrapperInactive {
@@ -271,23 +273,6 @@
             position: absolute;
             top: 65vh;
         }
-    }
-
-    .sameAvatarParams {
-        top: 28%;
-        left: calc(50% - 50px);
-        min-width: 100px;
-        min-height: 100px;
-        max-height: 100px;
-    }
-
-    .selectedAva {
-        top: 29%;
-        left: calc(50% - 50px);
-        min-width: 100px;
-        max-width: 100px;
-        min-height: 100px;
-        max-height: 100px;
     }
 
     .closeBtnActive {
@@ -295,138 +280,24 @@
     }
 }
 
+@media screen and (max-height: 690px) {
+    .profileInfoWrapper {
+        margin: 5px 0 0 0;
+        border-radius: 3px 3px 0 0;
+    }
 
-@media screen  and (min-width: 425px) and (max-height: 705px) {
+    .sameAvatarParams {
+        top: 25%;
+        height: 50vh;
+        min-width: 40vh;
+        left: calc(50% - 20vh);
+    }
+}
+@media screen and (max-height: 690px) and (max-width: 425px) {
     .sameAvatarParams {
         top: 20%;
-        left: calc(50% - 125px);
-        min-width: 250px;
-        min-height: 250px;
-        max-height: 250px;
-    }
-
-    .spanWrapperActive {
-        top: 59vh;
-    }
-
-    @keyframes spanWrapperActive {
-        0% {
-            top: 100vh;
-        }
-        100% {
-            top: 59vh;
-        }
-    }
-    .spanWrapperInactive {
-        top: 100vh;
-    }
-
-    @keyframes spanWrapperInactive {
-        0% {
-            top: 59vh;
-        }
-        100% {
-            top: 100vh;
-        }
+        height: 40vh;
+        min-width: 34vh;
+        left: calc(50% - 17vh);
     }
 }
-
-@media screen and (min-width: 425px) and (max-height: 630px) {
-    .sameAvatarParams {
-        top: 30%;
-        left: calc(50% - 75px);
-        min-width: 150px;
-        min-height: 150px;
-        max-height: 150px;
-    }
-
-    .selectedAva {
-        top: 30%;
-        left: calc(50% - 60px);
-        min-width: 120px;
-        max-width: 120px;
-        min-height: 120px;
-        max-height: 120px;
-    }
-
-    .spanWrapperActive {
-        font-size: .4rem;
-        width: 100px;
-        top: 60vh;
-        left: calc(50% - 50px);
-    }
-
-    .spanWrapperInactive {
-        font-size: .4rem;
-        width: 100px;
-        top: 60vh;
-        left: calc(50% - 50px);
-    }
-
-    @keyframes spanWrapperActive {
-        0% {
-            top: 100vh;
-        }
-        100% {
-            top: 59vh;
-        }
-    }
-    .spanWrapperInactive {
-        top: 100vh;
-    }
-
-    @keyframes spanWrapperInactive {
-        0% {
-            top: 59vh;
-        }
-        100% {
-            top: 100vh;
-        }
-    }
-}
-
-@media screen and (max-height: 425px) {
-    .sameAvatarParams {
-        top: 35%;
-        left: calc(50% - 50px);
-        min-width: 100px;
-        min-height: 100px;
-        max-height: 100px;
-    }
-
-    .selectedAva {
-        top: 37%;
-        left: calc(50% - 40px);
-        min-width: 80px;
-        max-width: 80px;
-        min-height: 80px;
-        max-height: 80px;
-    }
-
-    .spanWrapperActive {
-        font-size: .4rem;
-        width: 100px;
-        top: 56vh;
-        left: calc(50% - 50px);
-    }
-
-    .spanWrapperInactive {
-        font-size: .4rem;
-        width: 100px;
-        top: 56vh;
-        left: calc(50% - 50px);
-    }
-
-    @keyframes spanWrapperActive {
-        0% {
-            top: 100vh;
-        }
-        100% {
-            top: 56vh;
-        }
-    }
-    .spanWrapperInactive {
-        top: 100vh;
-    }
-}
-
