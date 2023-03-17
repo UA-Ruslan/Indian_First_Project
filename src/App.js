@@ -9,6 +9,8 @@ import HeaderContainer from "./component/header/HeaderContainer";
 import Navbar from "./component/navbar/Navbar";
 import BackgroundAnimate from "./component/generelComponent/backgroundAnimations/ImgsAnimate";
 import Fire from "./component/generelComponent/backgroundAnimations/fireAnimate/Fire";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 //--------------------------------------------------------------------------------------------------------//
 const FriendsContainer = React.lazy(() => import("./component/navbar/friends/FriendsContainer"));
 const FriendsInfoHooksContainer = React.lazy(() => import("./component/navbar/friends/friendInfo/FriendsInfoHooksContainer"));
@@ -23,6 +25,11 @@ const Login = React.lazy(() => import("./component/header/login/Login"));
 const App = (props) => {
 
     const [isBolt, setIsBolt] = useState(null);
+
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
     useEffect(() => {
         if (isBolt) {
             setTimeout(() => {
@@ -37,7 +44,7 @@ const App = (props) => {
             <BackgroundAnimate isBolt={isBolt}/>
             <HeaderContainer setIsBolt={setIsBolt}/>
             <Navbar/>
-            <div className="appWrapperContent">
+            <div className="appWrapperContent" data-aos="fade-up-left" data-aos-delay="300" data-aos-duration="1500">
                 <Routes>
                     <Route path="/*" element={<ProfileContainer store={props.store}/>}/>
                     <Route path="/friends/:id" element={

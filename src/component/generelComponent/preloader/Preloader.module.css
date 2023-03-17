@@ -3,16 +3,16 @@
     left: 0;
     top: 0;
     height: 0;
-    width: 0;
-    z-index: -1;
+    min-width: 100%;
+    z-index: 10;
 }
 
 .ImgWrapper {
     position: relative;
-    top: 85vh;
-    left: 1vw;
-    height: 100px;
-    width: 100px;
+    top: 1vh;
+    left: calc(50% - 5vw);
+    height: 10vh;
+    width: 10vh;
 }
 
 .preloaderImg1 {
@@ -52,6 +52,13 @@
     }
     100% {
         transform: rotateZ(-360deg);
+    }
+}
+
+@media screen and (max-width: 425px){
+    .ImgWrapper {
+        height: 5vh;
+        width: 5vh;
     }
 }
 

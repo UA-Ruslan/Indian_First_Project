@@ -28,7 +28,7 @@ const Friends = (props) => {
                     <h2 className={style.friendsTitle}>Friends</h2>
                 </div>
                 <span className={style.paginationSpan}>
-                     <button onClick={prevPortionPages} disabled={portionNumber == 1}
+                     <button onClick={prevPortionPages} disabled={portionNumber === 1}
                              className={`${style.paginationBtn} btnSameParams`}>{"<"}</button>
                     {arrPageCount.filter((el) => el >= leftPortionNumber && el <= rightPortionNumber).map((el, id) =>
                         <div
@@ -39,7 +39,7 @@ const Friends = (props) => {
                             className={props.currentPage === el
                                 ? style.activeUsersPageNumberDec
                                 : style.usersPageNumberDec}>{el}</div>)}
-                    <button onClick={nextPortionPages} disabled={portionNumber == portionCount}
+                    <button onClick={nextPortionPages} disabled={portionNumber === portionCount}
                             className={`${style.paginationBtn} btnSameParams`}>{">"}</button>
                 </span>
             </div>

@@ -9,7 +9,8 @@ const LoginFormControl = ({input, meta, ...props}) => {
                 {formControl && <span className={style.spanStyle}>{meta.error}</span>}
             </div>
             <div className={style.formControl + " " + (formControl ? style.error : "")}>
-                <input className={style.inputStyle}
+                {/*<input className={style.inputStyle}*/}
+                <input className={"inputSameParams"}
                        {...input}
                        {...props}
                 ></input>

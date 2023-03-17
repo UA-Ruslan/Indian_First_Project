@@ -3,7 +3,6 @@ import style from './profileInfo.module.css'
 import ProfileStatusHooks from "./profileStatus/ProfileStatusHooks.jsx";
 import DefaultAvatar from "./defaultAvatar/DefaultAvatar";
 import axios from "axios";
-// https://forum.warspear-online.com/uploads/monthly_2021_12/perun-perkun.thumb.gif.d23a191ef8ef22cb644528a67d6df440.gif
 
 const ProfileInfo = (props) => {
     const [dropMenuPosition, setDropMenuPosition] = useState(true);
@@ -25,16 +24,17 @@ const ProfileInfo = (props) => {
     const [sendId, setSendId] = useState("");
     const [editingActive, setEditingActive] = useState(false);
 
+    const baseUrl = `https://rest-api-uk0m.onrender.com/`
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/mainAvatarUrl`)
+        axios.get(`${baseUrl}mainAvatarUrl`)
             .then(res => {
-                res ? setNewAvatar(res.data.mainAvatarUrl) : setDefaultAva(true)
+                res.data.mainAvatarUrl=="" ? setDefaultAva(true) : setNewAvatar(res.data.mainAvatarUrl)
             })
             .catch(error => {
                 setDefaultAva(true)
             })
-        axios.get(`http://localhost:4000/myProfile`)
+        axios.get(`${baseUrl}myProfile`)
             .then(res => {
                 setProfileData(res.data)
             })
@@ -44,8 +44,8 @@ const ProfileInfo = (props) => {
         if (postActive) {
             const sequentialRequests = async () => {
                 await setDefaultAva(false)
-                await axios.post(`http://localhost:4000/mainAvatarUrl`, {mainAvatarUrl: inputValue})
-                await axios.get(`http://localhost:4000/mainAvatarUrl`)
+                await axios.post(`${baseUrl}mainAvatarUrl`, {mainAvatarUrl: inputValue})
+                await axios.get(`${baseUrl}mainAvatarUrl`)
                     .then(res => {
                         let response = res.data.mainAvatarUrl
                         setNewAvatar(response)
@@ -60,8 +60,8 @@ const ProfileInfo = (props) => {
     useEffect(() => {
         if (cleanServerImg) {
             const sequentialRequests = async () => {
-                await axios.post(`http://localhost:4000/mainAvatarUrl`, {mainAvatarUrl: ""})
-                await axios.get(`http://localhost:4000/mainAvatarUrl`)
+                await axios.post(`${baseUrl}mainAvatarUrl`, {mainAvatarUrl: ""})
+                await axios.get(`${baseUrl}mainAvatarUrl`)
                     .then(res => {
                         let response = res.data.mainAvatarUrl
                         setNewAvatar(response)
@@ -72,6 +72,8 @@ const ProfileInfo = (props) => {
             sequentialRequests()
         }
     })
+
+    //------------------------editing my profile-----------------------//
     const data = {
         [sendId]: sendData
     };
@@ -79,11 +81,12 @@ const ProfileInfo = (props) => {
     const headers = {
         'Content-Type': 'application/json'
     };
+
     useEffect(() => {
         if (editingActive) {
             const sequentialRequests = async () => {
-                await axios.patch(`http://localhost:4000/myProfile`, JSON.stringify(data), {headers})
-                await axios.get(`http://localhost:4000/myProfile`)
+                await axios.patch(`${baseUrl}myProfile`, JSON.stringify(data), {headers})
+                await axios.get(`${baseUrl}myProfile`)
                     .then(res => {
                         setProfileData(res.data)
                     })
@@ -92,7 +95,7 @@ const ProfileInfo = (props) => {
             sequentialRequests()
         }
     })
-
+    //------------------------editing my profile-----------------------//
     useEffect(() => {
         setTimeout(() => setBlink(true), 0)
         setTimeout(() => setBlink(false), 100)
@@ -154,7 +157,7 @@ const ProfileInfo = (props) => {
     };
 
     const editInactiveOnEnter = (e) => {
-        if(e.key === 'Enter') {
+        if (e.key === 'Enter') {
             setEditProfileName(false)
             setEditProfileAge(false)
             setEditProfileCity(false)
@@ -192,10 +195,10 @@ const ProfileInfo = (props) => {
                         </form>
                         <button className={formActive ? style.AvaFormInactive : `${style.avatarBtn} btnSameParams`}
                                 onClick={setDefaultAvatar}>Default
-                            photo
+                            avatar
                         </button>
                         <button className={formActive ? style.AvaFormInactive : `${style.avatarBtn} btnSameParams`}
-                                onClick={setActiveForm}>Set photo
+                                onClick={setActiveForm}>Set avatar
                         </button>
                     </div>
                 </div>
@@ -212,8 +215,9 @@ const ProfileInfo = (props) => {
                                 ? <div>
                                     {editProfileName
                                         ? <input id={"name"} onChange={onChange} className="inputSameParams"
-                                                   placeholder={"Name"}
-                                                   onBlur={editProfileInactive} onKeyDown={editInactiveOnEnter} autoFocus={true}/>
+                                                 placeholder={"Name"}
+                                                 onBlur={editProfileInactive} onKeyDown={editInactiveOnEnter}
+                                                 autoFocus={true}/>
                                         : <p onDoubleClick={editName}><b>Name:</b> {profileData.name}</p>}
                                     {editProfileAge
                                         ? <input id={"age"} onChange={onChange} className="inputSameParams"

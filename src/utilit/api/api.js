@@ -6,7 +6,7 @@ import axios from "axios";
 // })
 const axiosLocalServerInstance = axios.create({
     withCredentials: true,
-    baseURL: `http://localhost:4000/`
+    baseURL: `https://rest-api-uk0m.onrender.com/`
 })
 
 export const apiMethods = {
