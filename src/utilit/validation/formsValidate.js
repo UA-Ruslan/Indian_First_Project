@@ -1,6 +1,6 @@
 export let required = (value) => {
     if (value) return undefined
-    return `write some text before sending`
+    return `write some text`
 }
 
 export let maxLength = (maxLength) => (value) => {
