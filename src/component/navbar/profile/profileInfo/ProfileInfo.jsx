@@ -29,7 +29,7 @@ const ProfileInfo = (props) => {
     useEffect(() => {
         axios.get(`${baseUrl}mainAvatarUrl`)
             .then(res => {
-                res.data.mainAvatarUrl=="" ? setDefaultAva(true) : setNewAvatar(res.data.mainAvatarUrl)
+                res.data.mainAvatarUrl == "" ? setDefaultAva(true) : setNewAvatar(res.data.mainAvatarUrl)
             })
             .catch(error => {
                 setDefaultAva(true)
@@ -208,6 +208,7 @@ const ProfileInfo = (props) => {
                         : <img className={style.selectedAva} src={newAvatar} alt="ava"/>}
 
                     <div className={dropMenuPosition ? style.spanWrapperActive : style.spanWrapperInactive}>
+                            <span className={style.dropMenuSpan}>ON DOUBLE CLICK</span>
                         <div className={style.closeBtnPosition}>
                             <h4 onClick={DropMenuPositionInactive}
                                 className={`${dropMenuPosition ? style.closeBtnActive : style.closeBtnInactive}`}>+</h4>
@@ -235,8 +236,13 @@ const ProfileInfo = (props) => {
                         </div>
                     </div>
                 </div>
+                <div>
+                    <div style={{display:"flex", justifyContent:"center"}}>
+                        <span className={style.statusSpan}>ON DOUBLE CLICK</span>
+                    </div>
+                    <ProfileStatusHooks status={props.status} setStatus={props.setStatus}/>
+                </div>
 
-                <ProfileStatusHooks status={props.status} setStatus={props.setStatus}/>
             </div>
 
             <div onMouseOver={MouseRight} onMouseOut={MouseRight} className={style.rightHoverBlock}></div>

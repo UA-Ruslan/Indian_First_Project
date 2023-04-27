@@ -75,7 +75,14 @@
         top: 100%;
     }
 }
-
+.dropMenuSpan {
+    color: rgb(0, 0, 0);
+    font-size: .5rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
 .closeBtnPosition {
     position: relative;
     top: 0;
@@ -226,6 +233,11 @@
     z-index: 6;
 }
 
+.statusSpan {
+    color: black;
+    font-size: .5rem;
+}
+
 /*-------------------------------------------------------------------*/
 
 @media screen and (max-width: 860px) {
@@ -237,6 +249,7 @@
     .avatarBtnWrapper {
         flex-direction: column;
     }
+
     .sameAvatarParams {
         top: 20%;
     }
@@ -296,6 +309,7 @@
         left: calc(50% - 20vh);
     }
 }
+
 @media screen and (max-height: 690px) and (max-width: 425px) {
     .sameAvatarParams {
         top: 20%;

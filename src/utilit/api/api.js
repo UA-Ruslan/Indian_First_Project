@@ -1,47 +1,11 @@
 import axios from "axios";
 
-// const axiosSamuraiInstance = axios.create({
-//     withCredentials: true,
-//     baseURL: `https://social-network.samuraijs.com/api/1.0/`
-// })
 const axiosLocalServerInstance = axios.create({
     withCredentials: true,
     baseURL: `https://rest-api-uk0m.onrender.com/`
 })
 
 export const apiMethods = {
-
-    //----------------------------------------------------------------Samurai.js-Server-------------------------------------------------//
-
-    // apiAuthUserData() {
-    //     return (
-    //         axiosSamuraiInstance.get(`auth/me`)
-    //             .then(response => {
-    //                 return (
-    //                     response.data
-    //                 )
-    //             })
-    //     )
-    // },
-    // apiLogin (email, password, rememberMe= false) {
-    //     return(
-    //         axiosSamuraiInstance.post(`/auth/login`, {email, password, rememberMe})
-    //             .then(response => {
-    //                 return (response.data)
-    //             })
-    //     )
-    // },
-    // apiLogout () {
-    //     return (
-    //         axiosSamuraiInstance.delete(`/auth/login`)
-    //             .then(response => {
-    //                 return(response.data)
-    //             })
-    //     )
-    // }
-
-
-    //----------------------------------------------------------------My-Local-Server-------------------------------------------------------//
 
     apiPageChangeOnClick(usersOnPage, el) {
         return (
@@ -115,11 +79,6 @@ export const apiMethods = {
                 })
         )
     },
-
-
-
-
-
     apiLogin(email, login) {
         return (
             axiosLocalServerInstance.put(`authMe`, {email, login})
@@ -146,15 +105,4 @@ export const apiMethods = {
                 })
         )
     },
-    // apiAuthUserData() {
-    //     return (
-    //         axios.get(`https://mocki.io/v1/4c97902a-fb21-4491-935a-e1133d609d62`)
-    //             .then(response => {
-    //                 return (
-    //                     response.data.authMe
-    //                 )
-    //             })
-    //     )
-    // },
-
 }
