@@ -4,6 +4,6 @@ export let required = (value) => {
 }
 
 export let maxLength = (maxLength) => (value) => {
-    if (value.length > maxLength) return `max symbol value is ${maxLength}`
+    if (value.length > maxLength) return `${maxLength} symbols max`
     return undefined
 }

@@ -7,13 +7,13 @@ let initialState = {
         {id: 2, name: 'Cunning Fox'},
         {id: 3, name: 'The Devils Bite'},
         {id: 4, name: 'Ash'},
-        {id: 5, name: 'Horse Fucker'},
+        {id: 5, name: 'Red-skin'},
         {id: 6, name: 'Wind Voice'},
     ],
 
     messages: [
         {id: 1, messagesData: "Hallo, how are you?"},
-        {id: 2, messagesData: "Wtf?"},
+        {id: 2, messagesData: "hi!"},
         {id: 3, messagesData: "Whats up?"},
         {id: 4, messagesData: "VaffaNapoli!"},
         {id: 5, messagesData: "I am bat to the bone!"},

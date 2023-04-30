@@ -13,7 +13,7 @@ let SendMessageForm = (props) => {
         <div className={messages.messageFormWrapper}>
             <form className={messages.messageForm} onSubmit={props.handleSubmit}>
                 <button className={`${messages.sendBtnStyle} ${"btnSameParams"}`}>Send</button>
-                <Field name='newMessageData'
+                <Field  name='newMessageData'
                        component={TextArea}
                        validate={[required, maxPostLength]}
                 />

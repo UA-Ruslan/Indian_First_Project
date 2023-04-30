@@ -3,6 +3,20 @@
     color: burlywood;
     margin: 0;
     padding: 0;
+
+}
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(57, 90, 119, 0.27);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgb(57, 90, 119);
+    border-radius: 3px;
+    border: 1px solid rgb(255, 255, 255);
 }
 @font-face {
     font-family: Righteous;
@@ -38,9 +52,7 @@ a {
     grid-template-columns: 2fr 10fr;
 }
 
-img {
-    max-width: 25%;
-}
+
 
 .appWrapperContent {
     grid-area: c;
@@ -92,7 +104,9 @@ img {
     color: white;
     transition: .5s;
 }
-
+img {
+    max-width: 25%;
+}
 @media screen and (max-width: 860px) {
     .appWrapperContent {
         overflow: auto;
